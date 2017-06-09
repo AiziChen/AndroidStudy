@@ -22,12 +22,11 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp" />
 
-    <com.cnsunrun.androidstudy.widgtet.RoundImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_image02"
-        app:borderRadius="3dp"
-        app:type="round" />
+    <ImageView
+        android:id="@+id/iv_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp" />
+
+
 </LinearLayout>

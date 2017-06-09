@@ -24,6 +24,7 @@
         android:layout_marginTop="20dp" />
 
     <com.cnsunrun.androidstudy.widgtet.RoundImageView
+        android:id="@+id/iv_circle_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -33,6 +34,7 @@
 
 
     <com.cnsunrun.androidstudy.widgtet.RoundImageView
+        android:id="@+id/iv_roundimage"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
@@ -42,4 +44,12 @@
         app:type="round" />
 
 
+    <com.cnsunrun.androidstudy.widgtet.RoundImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_image02"
+        app:borderRadius="3dp"
+        app:type="round" />
 </LinearLayout>

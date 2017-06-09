@@ -87,8 +87,8 @@ public class DropdownSelectActivity extends Activity {
                     recyclerView.addOnItemTouchListener(new OnItemClickListener() {
                         @Override
                         public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                            tvKnowledgeSort.setText(mDatas.get(position));
-                            tvKnowledgeSort.setTextColor(getResources().getColor(R.color.red));
+                            tvKnowledgeType.setText(mDatas.get(position));
+                            tvKnowledgeType.setTextColor(getResources().getColor(R.color.main_color_2));
                             popupWindow.dismiss();
                         }
                     });
@@ -98,6 +98,30 @@ public class DropdownSelectActivity extends Activity {
                 break;
 
             case TYPE_TWO://中间的textview
+
+                try {
+                    View popUpView = View.inflate(this, R.layout.include_recyclerview, null);
+                    final PopupWindow popupWindow = PopupUtils.generatePop(popUpView);
+                    popupWindow.setAnimationStyle(R.style.bottomInWindowAnim);//从底部弹出
+//                    popupWindow.setAnimationStyle(R.style.rightInWindowAnim);//从右边弹出
+//                    popupWindow.setAnimationStyle(R.style.dialogWindowAnim);//正常弹出
+                    //以某个控件的x和y的偏移量位置开始显示窗口
+                    popupWindow.showAsDropDown(view, 0, 0);
+                    RecyclerView recyclerView = (RecyclerView) popUpView.findViewById(R.id.recyclerview);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(DropdownSelectActivity.this, LinearLayout.VERTICAL, false));
+                    recyclerView.setAdapter(adapter);
+                    recyclerView.addOnItemTouchListener(new OnItemClickListener() {
+                        @Override
+                        public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                            tvKnowledgeCategory.setText(mDatas.get(position));
+                            tvKnowledgeCategory.setTextColor(getResources().getColor(R.color.yellow_80));
+                            popupWindow.dismiss();
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 break;
 
             case TYPE_THREE:
@@ -109,8 +133,8 @@ public class DropdownSelectActivity extends Activity {
                     popupWindow2.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#56abe4")));
                     //添加弹出、弹入的动画
                     popupWindow2.setAnimationStyle(R.style.dialogWindowAnim);
-//                    popupWindow2.showAtLocation(view, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
-                    popupWindow2.showAsDropDown(view, 0, 0);
+//                    popupWindow2.showAtLocation(view, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);//相对于父级容器
+                    popupWindow2.showAsDropDown(view, 0, 0);  //相对于控件
                     RecyclerView recyclerView2 = (RecyclerView) popupWindowVIew.findViewById(R.id.recyclerview);
                     recyclerView2.setLayoutManager(new LinearLayoutManager(DropdownSelectActivity.this, LinearLayout.VERTICAL, false));
                     recyclerView2.setAdapter(adapter);

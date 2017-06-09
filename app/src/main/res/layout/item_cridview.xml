@@ -7,9 +7,10 @@
 
     <com.cnsunrun.androidstudy.widgtet.RoundImageView
         android:id="@+id/iv_roundimage"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_margin="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/ic_image02"
         app:borderRadius="3dp"
         app:type="round" />
@@ -22,6 +23,16 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/iv_roundimage"
         android:text="测试数据" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/iv_roundimage"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/line_bg_light" />
 
 
 </RelativeLayout>

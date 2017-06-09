@@ -2,6 +2,7 @@ package com.cnsunrun.androidstudy.base;
 
 import android.app.Application;
 
+import com.sunrun.toollibrary.LibApplication;
 import com.sunrun.toollibrary.utils.FileUtils;
 
 
@@ -10,7 +11,7 @@ import com.sunrun.toollibrary.utils.FileUtils;
  * Effect:BaseApplication
  */
 
-public class BaseApplication extends Application {
+public class BaseApplication extends LibApplication {
 
     public static BaseApplication instance;
 
