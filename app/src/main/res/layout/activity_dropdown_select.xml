@@ -92,9 +92,7 @@
         </LinearLayout>
     </LinearLayout>
 
-
-
-
+    <include layout="@layout/include_recyclerview" />
 
 
 </LinearLayout>

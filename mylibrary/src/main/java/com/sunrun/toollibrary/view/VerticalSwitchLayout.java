@@ -14,7 +14,7 @@ import com.sunrun.toollibrary.R;
 import java.util.List;
 
 /**
- * Created by RayYeung on 2016/5/26.
+ * Created by zhoubin on 2016/5/26.
  */
 public class VerticalSwitchLayout extends LinearLayout implements View.OnClickListener {
 

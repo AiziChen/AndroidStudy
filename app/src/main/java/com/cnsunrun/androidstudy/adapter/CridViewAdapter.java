@@ -26,8 +26,8 @@ public class CridViewAdapter extends BaseQuickAdapter<ProductMes, BaseViewHolder
 
     @Override
     protected void convert(BaseViewHolder helper, ProductMes item) {
-//        RoundImageView imageView = (RoundImageView) helper.getView(R.id.iv_roundimage);
-//        Glide.with(mContext).load(item.getImageUrl()).into(imageView);
+        RoundImageView imageView = (RoundImageView) helper.getView(R.id.iv_roundimage);
+        Glide.with(mContext).load(item.getImageUrl()).into(imageView);
         Logger.d("ImageUrl==" + item.getImageUrl());
         helper.setText(R.id.tv_message, item.getProductMes());
 

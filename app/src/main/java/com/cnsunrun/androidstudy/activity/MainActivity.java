@@ -3,6 +3,7 @@ package com.cnsunrun.androidstudy.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,11 @@ import com.cnsunrun.androidstudy.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import me.weyye.hipermission.HiPermission;
+import me.weyye.hipermission.PermissionCallback;
+
+import static com.nostra13.universalimageloader.core.ImageLoader.TAG;
+import static com.sunrun.toollibrary.utils.ToastUtils.showToast;
 
 public class MainActivity extends Activity {
 
@@ -21,7 +27,9 @@ public class MainActivity extends Activity {
     ListView listview;
     private String[] titles = {"下拉刷新,上拉加载", "流式布局",
             "FlycotabLayout",
-            "选择Window的对话框"
+            "选择Window的对话框",
+            "搜索栏悬浮",
+            "高德地图的练习"
     };
     private ArrayAdapter<String> adapter;
 
@@ -30,8 +38,30 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        HiPermission.create(MainActivity.this)
+                .checkMutiPermission(new PermissionCallback() {
+                    @Override
+                    public void onClose() {
+                        Log.i(TAG, "onClose");
+                        showToast("用户关闭权限申请");
+                    }
 
-        initView();
+                    @Override
+                    public void onFinish() {
+//                        showToast("所有权限申请完成");
+                        initView();
+                    }
+
+                    @Override
+                    public void onDeny(String permission, int position) {
+                        Log.i(TAG, "onDeny");
+                    }
+
+                    @Override
+                    public void onGuarantee(String permission, int position) {
+                        Log.i(TAG, "onGuarantee");
+                    }
+                });
 
     }
 
@@ -58,7 +88,12 @@ public class MainActivity extends Activity {
                     case 3:
                         startActivity(new Intent(MainActivity.this, DropdownSelectActivity.class));
                         break;
-
+                    case 4:
+                        startActivity(new Intent(MainActivity.this, SuspensionActivity.class));
+                        break;
+                    case 5:
+                        startActivity(new Intent(MainActivity.this, MapActivity.class));
+                        break;
                 }
             }
         });

@@ -16,8 +16,9 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
+import com.cnsunrun.androidstudy.adapter.RatingBarAdapter;
+import com.cnsunrun.androidstudy.model.RatingBarModel;
 import com.sunrun.toollibrary.utils.PopupUtils;
-import com.sunrun.toollibrary.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,13 +37,15 @@ public class DropdownSelectActivity extends Activity {
     TextView tvKnowledgeCategory;
     @BindView(R.id.tv_knowledge_sort)
     TextView tvKnowledgeSort;
-
+    private RecyclerView recyclerView;
     private static final int TYPE_ONE = 1;//知识分类
     private static final int TYPE_TWO = 2;//全部主题
     private static final int TYPE_THREE = 3;//默认排序
     private List<String> mDatas = new ArrayList<>();
     private PopupWindowAdapter adapter;
-    boolean isShowDown = false;
+    private List<RatingBarModel> projuctData = new ArrayList<>();
+    private RatingBarAdapter ratingAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +54,32 @@ public class DropdownSelectActivity extends Activity {
         ButterKnife.bind(this);
         initView();
 
+        loadRecyclerView();
+
+    }
+
+    /**
+     * 加载评分条
+     */
+    private void loadRecyclerView() {
+        projuctData.add(new RatingBarModel("语文", 3));
+        projuctData.add(new RatingBarModel("数学", 5));
+        projuctData.add(new RatingBarModel("外语", 4));
+        projuctData.add(new RatingBarModel("政治", 4));
+        projuctData.add(new RatingBarModel("历史", 2));
+        projuctData.add(new RatingBarModel("地理", 1));
+        projuctData.add(new RatingBarModel("物理", 3));
+        projuctData.add(new RatingBarModel("化学", 2));
+        projuctData.add(new RatingBarModel("生物", 5));
+        ratingAdapter = new RatingBarAdapter(projuctData);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(DropdownSelectActivity.this, LinearLayout.VERTICAL, false));
+        recyclerView.setAdapter(ratingAdapter);
     }
 
     private void initView() {
+
+        tvTitle.setText("选择性提示框的练习");
         mDatas.add("张学友");
         mDatas.add("林忆莲");
         mDatas.add("刘德华");
@@ -121,7 +147,6 @@ public class DropdownSelectActivity extends Activity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
                 break;
 
             case TYPE_THREE:
@@ -153,7 +178,6 @@ public class DropdownSelectActivity extends Activity {
                             popupWindow2.dismiss();
                         }
                     });
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
