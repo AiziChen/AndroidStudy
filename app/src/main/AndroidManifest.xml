@@ -46,10 +46,10 @@
     <!-- 自定义权限 -->
     <uses-permission android:name="getui.permission.GetuiService.${applicationId}" />
 
-<!--高德地图-->
+    <!-- 高德地图 -->
     <meta-data
         android:name="com.amap.api.v2.apikey"
-        android:value="f118cfd8094fef0a4695714eabe3cb52"></meta-data>
+        android:value="f118cfd8094fef0a4695714eabe3cb52" />
 
     <application
         android:name=".base.BaseApplication"
@@ -70,7 +70,8 @@
         <activity android:name=".activity.FlycotabLayoutActivity" />
         <activity android:name=".activity.DropdownSelectActivity" />
         <activity android:name=".activity.SuspensionActivity" />
-        <activity android:name=".activity.MapActivity"></activity>
+        <activity android:name=".activity.MapActivity" />
+        <activity android:name=".activity.RecyclerViewAddHeader"></activity>
     </application>
 
 </manifest>

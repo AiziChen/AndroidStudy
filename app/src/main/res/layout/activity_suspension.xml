@@ -10,46 +10,46 @@
     <include layout="@layout/include_titllebar"></include>
 
     <!--<android.support.design.widget.AppBarLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@color/white"-->
-        <!--app:elevation="0dp">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/white"-->
+    <!--app:elevation="0dp">-->
 
-        <!--<android.support.design.widget.CollapsingToolbarLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:layout_scrollFlags="scroll">-->
+    <!--<android.support.design.widget.CollapsingToolbarLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:layout_scrollFlags="scroll">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
 
-                <TextView
-                    android:id="@+id/tv_search"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/shape_et_search"
-                    android:drawableLeft="@drawable/ic_search"
-                    android:drawablePadding="3dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="4dp"
-                    android:text="取快递"
-                    android:textColor="@color/black_40"
-                    android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_et_search"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="3dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="4dp"
+            android:text="取快递"
+            android:textColor="@color/black_40"
+            android:textSize="13sp" />
 
-                <com.youth.banner.Banner
-                    android:id="@+id/banner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:indicator_drawable_selected="@drawable/sel_banner_show"
-                    app:indicator_drawable_unselected="@drawable/sel_banner_hide" />
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:indicator_drawable_selected="@drawable/sel_banner_show"
+            app:indicator_drawable_unselected="@drawable/sel_banner_hide" />
 
-            </RelativeLayout>
+    </RelativeLayout>
 
-        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+    <!--</android.support.design.widget.CollapsingToolbarLayout>-->
 
     <!--</android.support.design.widget.AppBarLayout>-->
 
@@ -57,8 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <com.cnsunrun.androidstudy.widgtet.YellowRatingBar
@@ -74,33 +73,7 @@
     </LinearLayout>
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp">
-
-
-        <com.bigkoo.convenientbanner.ConvenientBanner
-            android:id="@+id/banner2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:canLoop="true" />
-
-        <TextView
-            android:id="@+id/tvSearch"
-            android:layout_width="160dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_et_search"
-            android:drawableLeft="@drawable/ic_search"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:hint="搜索项/商品"
-            android:paddingLeft="10dp"
-            android:textSize="@dimen/txtsize_body" />
-    </RelativeLayout>
+    <include layout="@layout/include_banner_header" />
 
 
 </LinearLayout>
