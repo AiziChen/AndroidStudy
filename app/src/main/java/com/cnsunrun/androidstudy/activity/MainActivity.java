@@ -30,7 +30,8 @@ public class MainActivity extends Activity {
             "选择Window的对话框",
             "搜索栏悬浮",
             "高德地图的练习",
-            "RececlerView添加Banner头部"
+            "RececlerView添加Banner头部",
+            "自定义的TabLayout"
     };
     private ArrayAdapter<String> adapter;
 
@@ -97,6 +98,9 @@ public class MainActivity extends Activity {
                         break;
                     case 6:
                         startActivity(new Intent(MainActivity.this, RecyclerViewAddHeader.class));
+                        break;
+                    case 7:
+                        startActivity(new Intent(MainActivity.this, CustomTabLayoutActivity.class));
                         break;
                 }
             }

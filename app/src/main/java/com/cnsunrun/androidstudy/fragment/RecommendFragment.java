@@ -29,6 +29,15 @@ public class RecommendFragment extends Fragment {
     RoundImageView ivRoundimage;
     Unbinder unbinder;
 
+
+    public static RecommendFragment newInstance() {
+        RecommendFragment fragment = new RecommendFragment();
+        Bundle bundle = new Bundle();
+        fragment.setArguments(bundle);
+        return fragment;
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,7 +46,6 @@ public class RecommendFragment extends Fragment {
         return rootView;
 
     }
-
 
 
     @Override

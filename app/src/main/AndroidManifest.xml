@@ -71,7 +71,8 @@
         <activity android:name=".activity.DropdownSelectActivity" />
         <activity android:name=".activity.SuspensionActivity" />
         <activity android:name=".activity.MapActivity" />
-        <activity android:name=".activity.RecyclerViewAddHeader"></activity>
+        <activity android:name=".activity.RecyclerViewAddHeader" />
+        <activity android:name=".activity.CustomTabLayoutActivity"></activity>
     </application>
 
 </manifest>

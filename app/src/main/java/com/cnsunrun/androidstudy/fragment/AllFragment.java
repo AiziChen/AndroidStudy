@@ -30,6 +30,15 @@ public class AllFragment extends Fragment {
     ImageView ivImageview;
     private BitMapUtils bitMapUtils;
 
+    public static AllFragment newInstance() {
+        AllFragment fragment = new AllFragment();
+        Bundle bundle = new Bundle();
+        fragment.setArguments(bundle);
+        return fragment;
+
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
