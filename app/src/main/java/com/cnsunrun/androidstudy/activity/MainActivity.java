@@ -17,10 +17,20 @@ import butterknife.ButterKnife;
 import me.weyye.hipermission.HiPermission;
 import me.weyye.hipermission.PermissionCallback;
 
+import static android.content.ContentValues.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 import static com.nostra13.universalimageloader.core.ImageLoader.TAG;
 import static com.sunrun.toollibrary.utils.ToastUtils.showToast;
 
 public class MainActivity extends Activity {
+    private static final String TAG = "MainActivity";
 
     private ImageView iv_back;
     @BindView(R.id.listview)
@@ -31,7 +41,9 @@ public class MainActivity extends Activity {
             "搜索栏悬浮",
             "高德地图的练习",
             "RececlerView添加Banner头部",
-            "自定义的TabLayout"
+            "自定义的TabLayout",
+            "高德地图的使用",
+            "图片的压缩"
     };
     private ArrayAdapter<String> adapter;
 

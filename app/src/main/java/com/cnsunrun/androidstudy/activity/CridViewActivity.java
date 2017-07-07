@@ -47,6 +47,7 @@ public class CridViewActivity extends Activity {
     }
 
     private void listeners() {
+        refreshLayout.startRefresh();
         refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
             @Override
             public void onRefresh(final TwinklingRefreshLayout refreshLayout) {

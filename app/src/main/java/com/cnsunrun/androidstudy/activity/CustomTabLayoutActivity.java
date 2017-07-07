@@ -22,7 +22,6 @@ import butterknife.OnClick;
 
 public class CustomTabLayoutActivity extends LibActivity {
 
-
     @BindView(R.id.iv_arrow_back)
     ImageView ivArrowBack;
     @BindView(R.id.tv_title)
@@ -32,9 +31,7 @@ public class CustomTabLayoutActivity extends LibActivity {
     @BindView(R.id.viewpager)
     ViewPager viewpager;
     private List<Fragment> fragents = new ArrayList<>();
-
     private String[] title = {"任务详情", "查看评价", "个人信息", "个人相册"};
-
 
     @Override
     protected void loadViewLayout() {
