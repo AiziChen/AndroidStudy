@@ -16,7 +16,6 @@ import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.widgtet.ImageHolderView;
-import com.gyf.barlibrary.ImmersionBar;
 import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
