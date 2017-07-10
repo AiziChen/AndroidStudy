@@ -42,7 +42,6 @@ public class MainActivity extends Activity {
             "高德地图的练习",
             "RececlerView添加Banner头部",
             "自定义的TabLayout",
-            "高德地图的使用",
             "图片的压缩"
     };
     private ArrayAdapter<String> adapter;
@@ -113,6 +112,9 @@ public class MainActivity extends Activity {
                         break;
                     case 7:
                         startActivity(new Intent(MainActivity.this, CustomTabLayoutActivity.class));
+                        break;
+                    case 8:
+                        startActivity(new Intent(MainActivity.this, YaSuoImageViewActivity.class));
                         break;
                 }
             }

@@ -16,6 +16,7 @@ import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.widgtet.ImageHolderView;
+import com.gyf.barlibrary.ImmersionBar;
 import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
@@ -131,5 +132,11 @@ public class RecyclerViewAddHeader extends LibActivity {
     @OnClick(R.id.iv_arrow_back)
     public void onViewClicked() {
         finish();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

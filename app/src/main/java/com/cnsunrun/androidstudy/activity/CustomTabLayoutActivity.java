@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
 import com.cnsunrun.androidstudy.fragment.RecommendFragment;
+import com.jaeger.library.StatusBarUtil;
 import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
@@ -36,6 +37,9 @@ public class CustomTabLayoutActivity extends LibActivity {
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_custom_tab_layout);
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.red));
+//        StatusBarUtil.setTransparent(this);
+//        StatusBarUtil.setTranslucent(this, 100);
         ButterKnife.bind(this);
     }
 
