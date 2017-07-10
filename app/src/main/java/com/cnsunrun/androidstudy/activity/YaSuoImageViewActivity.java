@@ -57,28 +57,6 @@ public class YaSuoImageViewActivity extends LibActivity {
     protected void processLogic(Bundle savedInstanceState) {
         Glide.with(mContext).load(path).into(ivImageview);
 
-//        File newFile = compressPhoto(path);
-//        Luban.with(mContext)
-//                .load(newFile)                     //传人要压缩的图片
-//                .setCompressListener(new OnCompressListener() { //设置回调
-//                    @Override
-//                    public void onStart() {
-//                        //  压缩开始前调用，可以在方法内启动 loading UI
-//                    }
-//
-//                    @Override
-//                    public void onSuccess(File file) {
-//                        //  压缩成功后调用，返回压缩后的图片文件
-//                        Glide.with(mContext).load(file).into(ivImageview);
-//
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        //  当压缩过程出现问题时调用
-//                        Log.e("ssss", e.toString());
-//                    }
-//                }).launch();    //启动压缩
 
     }
 

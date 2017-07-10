@@ -16,17 +16,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.weyye.hipermission.HiPermission;
 import me.weyye.hipermission.PermissionCallback;
-
-import static android.content.ContentValues.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-import static com.nostra13.universalimageloader.core.ImageLoader.TAG;
 import static com.sunrun.toollibrary.utils.ToastUtils.showToast;
 
 public class MainActivity extends Activity {
@@ -42,7 +31,8 @@ public class MainActivity extends Activity {
             "高德地图的练习",
             "RececlerView添加Banner头部",
             "自定义的TabLayout",
-            "图片的压缩"
+            "图片的压缩",
+            "图片的选择"
     };
     private ArrayAdapter<String> adapter;
 
@@ -115,6 +105,9 @@ public class MainActivity extends Activity {
                         break;
                     case 8:
                         startActivity(new Intent(MainActivity.this, YaSuoImageViewActivity.class));
+                        break;
+                    case 9:
+                        startActivity(new Intent(MainActivity.this, ChooseImageActivity.class));
                         break;
                 }
             }

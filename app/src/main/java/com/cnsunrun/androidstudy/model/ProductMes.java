@@ -15,6 +15,7 @@ public class ProductMes {
         this.productMes = productMes;
     }
 
+
     public String getImageUrl() {
         return imageUrl;
     }
