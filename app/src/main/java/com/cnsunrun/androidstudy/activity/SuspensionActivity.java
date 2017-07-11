@@ -16,6 +16,7 @@ import com.cnsunrun.androidstudy.widgtet.YellowRatingBar;
 import com.sunrun.toollibrary.LibActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,11 +56,11 @@ public class SuspensionActivity extends LibActivity {
     @Override
     protected void bindViews() {
         tvTitle.setText("悬浮栏的练习");
-
     }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
+        ratingBar.setRating(4.5f);
         String[] imageList = {
                 "http://s1.cdn.xiachufang.com/957171ee064011e7947d0242ac110002_1280w_853h.jpg",
                 "http://s2.cdn.xiachufang.com/288dacb48b2a11e6b87c0242ac110003_1080w_1468h.jpg",
@@ -94,6 +95,13 @@ public class SuspensionActivity extends LibActivity {
                 showToast("点击了" + position);
             }
         });
+        banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                showToast("点击了" + position);
+            }
+        });
+
     }
 
     @Override
@@ -102,13 +110,17 @@ public class SuspensionActivity extends LibActivity {
     }
 
 
-    @OnClick({R.id.iv_arrow_back, R.id.tv_search})
+    @OnClick({R.id.iv_arrow_back, R.id.tv_search, R.id.tvSearch})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_arrow_back:
                 finish();
                 break;
             case R.id.tv_search:
+                showToast("点击了搜索框");
+                break;
+            case R.id.tvSearch:
+                showToast("点击了搜索框2");
                 break;
         }
     }

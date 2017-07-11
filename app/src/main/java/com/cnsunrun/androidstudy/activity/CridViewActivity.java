@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
+import com.cnsunrun.androidstudy.widgtet.VerticalItemDecoration;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.lcodecore.tkrefreshlayout.footer.LoadingView;
@@ -96,6 +96,7 @@ public class CridViewActivity extends Activity {
         }
         adapter = new CridViewAdapter(mDatas);
         recyclerview.setLayoutManager(new LinearLayoutManager(CridViewActivity.this));
+//        recyclerview.addItemDecoration(new VerticalItemDecoration(this, getResources().getColor(R.color.line_bg_light), 1));
         SinaRefreshView headerView = new SinaRefreshView(this);
         headerView.setArrowResource(R.drawable.arrow);
 //        headerView.setTextColor(0xff745D5C);

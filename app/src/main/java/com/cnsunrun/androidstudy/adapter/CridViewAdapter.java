@@ -1,6 +1,5 @@
 package com.cnsunrun.androidstudy.adapter;
 
-import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -26,7 +25,7 @@ public class CridViewAdapter extends BaseQuickAdapter<ProductMes, BaseViewHolder
 
     @Override
     protected void convert(BaseViewHolder helper, ProductMes item) {
-        RoundImageView imageView = (RoundImageView) helper.getView(R.id.iv_roundimage);
+        RoundImageView imageView = helper.getView(R.id.iv_roundimage);
         Glide.with(mContext).load(item.getImageUrl()).into(imageView);
         Logger.d("ImageUrl==" + item.getImageUrl());
         helper.setText(R.id.tv_message, item.getProductMes());
