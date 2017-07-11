@@ -74,7 +74,8 @@
         <activity android:name=".activity.RecyclerViewAddHeader" />
         <activity android:name=".activity.CustomTabLayoutActivity" />
         <activity android:name=".activity.YaSuoImageViewActivity" />
-        <activity android:name=".activity.ChooseImageActivity"></activity>
+        <activity android:name=".activity.ChooseImageActivity" />
+        <activity android:name=".activity.ScrollViewAndRecyclerView"></activity>
     </application>
 
 </manifest>

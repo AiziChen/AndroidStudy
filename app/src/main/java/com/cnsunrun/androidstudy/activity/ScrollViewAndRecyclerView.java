@@ -1,21 +1,16 @@
 package com.cnsunrun.androidstudy.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
-import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
-import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
-import com.lcodecore.tkrefreshlayout.footer.LoadingView;
-import com.lcodecore.tkrefreshlayout.header.SinaRefreshView;
+import com.cnsunrun.androidstudy.widgtet.CustomerScrollView;
+import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +19,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CridViewActivity extends Activity {
+//ScrollView中嵌套RcyclerView
+public class ScrollViewAndRecyclerView extends LibActivity {
+
 
     @BindView(R.id.iv_arrow_back)
     ImageView ivArrowBack;
@@ -32,48 +29,25 @@ public class CridViewActivity extends Activity {
     TextView tvTitle;
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
-    @BindView(R.id.twinklingLayout)
-    TwinklingRefreshLayout refreshLayout;
+    @BindView(R.id.scrollView)
+    CustomerScrollView scrollView;
     private List<ProductMes> mDatas = new ArrayList<>();
     private CridViewAdapter adapter;
 
+    @Override
+    protected void loadViewLayout() {
+        setContentView(R.layout.activity_scroll_view_and_recycler_view);
+        ButterKnife.bind(this);
+
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crid_view);
-        ButterKnife.bind(this);
-        initView();
-        listeners();
+    protected void bindViews() {
+        tvTitle.setText("SclloView中嵌套RecyclerView");
     }
 
-    private void listeners() {
-        refreshLayout.startRefresh();
-        refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
-            @Override
-            public void onRefresh(final TwinklingRefreshLayout refreshLayout) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshLayout.finishRefreshing();
-                    }
-                }, 1000);
-            }
-
-            @Override
-            public void onLoadMore(final TwinklingRefreshLayout refreshLayout) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshLayout.finishLoadmore();
-                    }
-                }, 1000);
-            }
-        });
-    }
-
-    private void initView() {
-        tvTitle.setText("TwinklingRefreshLayout的练习");
+    @Override
+    protected void processLogic(Bundle savedInstanceState) {
         String[] imageList = {
                 "http://s1.cdn.xiachufang.com/bc55fd5aec3911e6bc9d0242ac110002_640w_427h.jpg",
                 "http://s1.cdn.xiachufang.com/957171ee064011e7947d0242ac110002_1280w_853h.jpg",
@@ -95,14 +69,12 @@ public class CridViewActivity extends Activity {
             mDatas.add(new ProductMes(imageList[i], "测试数据" + i));
         }
         adapter = new CridViewAdapter(mDatas);
-        recyclerview.setLayoutManager(new LinearLayoutManager(CridViewActivity.this));
-        SinaRefreshView headerView = new SinaRefreshView(this);
-        headerView.setArrowResource(R.drawable.arrow);
-//        headerView.setTextColor(0xff745D5C);
-        refreshLayout.setHeaderView(headerView);
-        LoadingView loadingView = new LoadingView(this);
-        refreshLayout.setBottomView(loadingView);
         recyclerview.setAdapter(adapter);
+        recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
+    }
+
+    @Override
+    protected void setListener() {
 
     }
 
@@ -110,5 +82,4 @@ public class CridViewActivity extends Activity {
     public void onViewClicked() {
         finish();
     }
-
 }
