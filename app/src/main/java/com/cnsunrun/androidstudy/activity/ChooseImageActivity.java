@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -85,7 +86,9 @@ public class ChooseImageActivity extends TakePhotoActivity {
                 break;
             case R.id.tv_aulbame:
                 //相册获取
+
 //                getImageViews(view, getTakePhoto(), TYPE_AULBAM);
+
                 break;
 
             case R.id.tv_cancml:
@@ -94,6 +97,7 @@ public class ChooseImageActivity extends TakePhotoActivity {
                 break;
         }
     }
+
 
     private void getImageViews(View view, TakePhoto takePhoto, int type_aulbam) {
         File file = new File(Environment.getExternalStorageDirectory(), "/temp/" + System.currentTimeMillis() + ".jpg");
