@@ -39,4 +39,15 @@
 
     <style name="RatingBarSmall" parent="Base.Widget.AppCompat.RatingBar.Small"></style>
 
+    <!-- popupwindow 动画 -->
+    <style name="Animation">
+        <item name="android:windowEnterAnimation">@anim/enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/out_anim</item>
+    </style>
+    <!--底部popupwindow的样式-->
+    <style name="Popupwindow">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_in</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_out</item>
+    </style>
+
 </resources>

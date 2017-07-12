@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 import me.weyye.hipermission.HiPermission;
 import me.weyye.hipermission.PermissionCallback;
 
+import static com.amap.api.col.bz.P;
 import static com.sunrun.toollibrary.utils.ToastUtils.showToast;
 
 public class MainActivity extends Activity {
@@ -34,7 +35,8 @@ public class MainActivity extends Activity {
             "自定义的TabLayout",
             "图片的压缩",
             "图片的选择",
-            "ScrollView嵌套RecyclerView"
+            "ScrollView嵌套RecyclerView",
+            "PopupWindow练习"
     };
     private ArrayAdapter<String> adapter;
 
@@ -113,6 +115,9 @@ public class MainActivity extends Activity {
                         break;
                     case 10:
                         startActivity(new Intent(MainActivity.this, ScrollViewAndRecyclerView.class));
+                        break;
+                    case 11:
+                        startActivity(new Intent(MainActivity.this, PopupWindowActivity.class));
                         break;
                 }
             }
