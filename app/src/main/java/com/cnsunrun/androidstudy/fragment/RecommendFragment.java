@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.utils.BitMapUtils;
 import com.cnsunrun.androidstudy.widgtet.RoundImageView;
+import com.sunrun.toollibrary.LibFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,12 +23,11 @@ import butterknife.Unbinder;
  * Effect:  推荐的fragment
  */
 
-public class RecommendFragment extends Fragment {
+public class RecommendFragment extends LibFragment {
     @BindView(R.id.iv_circle_image)
     RoundImageView ivCircleImage;
     @BindView(R.id.iv_roundimage)
     RoundImageView ivRoundimage;
-    Unbinder unbinder;
 
 
     public static RecommendFragment newInstance() {
@@ -38,19 +38,26 @@ public class RecommendFragment extends Fragment {
 
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    protected View loadViewLayout(LayoutInflater inflater, ViewGroup container) {
         View rootView = inflater.inflate(R.layout.fragment_recommend, null);
-        unbinder = ButterKnife.bind(this, rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
-
     }
-
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
+    protected void bindViews(View view) {
+
     }
+
+    @Override
+    protected void processLogic() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
 }

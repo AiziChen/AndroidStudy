@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tl="http://schemas.android.com/tools"
     android:id="@+id/activity_custom_tab_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,14 +9,24 @@
 
     <include layout="@layout/include_titllebar" />
 
-    <android.support.design.widget.TabLayout
+    <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tabLayout"
+        tl:tl_divider_color="#1A000000"
+        tl:tl_divider_padding="0dp"
+        tl:tl_divider_width="1dp"
+        tl:tl_indicator_color="@color/blue_color"
+        tl:tl_indicator_height="1.5dp"
+        tl:tl_tab_padding="10dp"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textSelectColor="@color/blue_color"
+        tl:tl_textUnselectColor="@color/hint_text_color"
+        tl:tl_underline_color="#1A000000"
+        tl:tl_underline_height="1dp"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/white"
-        app:tabIndicatorColor="@color/blue_color"
-        app:tabSelectedTextColor="@color/blue_color"
-        app:tabTextColor="@color/hint_text_color" />
+        app:tl_indicator_width_equal_title="true" />
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"

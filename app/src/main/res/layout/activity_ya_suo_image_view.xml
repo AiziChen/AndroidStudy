@@ -8,19 +8,5 @@
 
     <include layout="@layout/include_titllebar" />
 
-    <ImageView
-        android:id="@+id/iv_imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop" />
-
-    <TextView
-        android:id="@+id/tv_show_dailog"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:text="弹出对话框" />
-
 
 </LinearLayout>
