@@ -17,6 +17,7 @@ public class GlideImageLoader extends ImageLoader {
     public void displayImage(Context context, Object path, ImageView imageView) {
         //Glide 加载图片简单用法
         Logger.d("imageUrl==" + path);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         Glide.with(context).load(path).into(imageView);
     }
 

@@ -8,39 +8,17 @@
 
     <include layout="@layout/include_titllebar" />
 
-    <com.cnsunrun.androidstudy.widgtet.CustomerScrollView
-        android:id="@+id/scrollView"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="none">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/ic_image01" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="never"
-                android:scrollbars="none" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/ic_image02" />
-
-        </LinearLayout>
-
-    </com.cnsunrun.androidstudy.widgtet.CustomerScrollView>
-
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </LinearLayout>

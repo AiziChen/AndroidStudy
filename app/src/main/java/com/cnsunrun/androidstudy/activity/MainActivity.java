@@ -33,9 +33,9 @@ public class MainActivity extends Activity {
             "高德地图的练习",
             "RececlerView添加Banner头部",
             "自定义的TabLayout",
-            "图片的压缩",
-            "图片的选择",
-            "ScrollView嵌套RecyclerView",
+            "CommonTabLayout",
+            "置吸附置顶的TabLayout",
+            "刷新的框架",
             "PopupWindow练习"
     };
     private ArrayAdapter<String> adapter;

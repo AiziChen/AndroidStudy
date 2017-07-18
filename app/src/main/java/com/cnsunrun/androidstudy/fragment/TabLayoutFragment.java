@@ -1,54 +1,66 @@
-package com.cnsunrun.androidstudy.activity;
+package com.cnsunrun.androidstudy.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ImageView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
-import com.scwang.smartrefresh.layout.listener.OnRefreshLoadmoreListener;
-import com.sunrun.toollibrary.LibActivity;
+import com.cnsunrun.androidstudy.utils.ConstantValue;
+import com.cnsunrun.androidstudy.widgtet.VerticalItemDecoration;
+import com.sunrun.toollibrary.LibFragment;
+import com.sunrun.toollibrary.utils.CommonUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import static com.amap.api.col.bz.p;
 
-//ScrollView中嵌套RcyclerView
-public class ScrollViewAndRecyclerView extends LibActivity {
+/**
+ * Created by ZhouBin on 2017/7/18.
+ * Effect: fragment
+ */
 
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.recyclerview)
-    RecyclerView recyclerview;
-    @BindView(R.id.smartLayout)
-    SmartRefreshLayout smartLayout;
+public class TabLayoutFragment extends LibFragment {
+
+    private TextView tvTitle;
+    private String title;
+    private RecyclerView recyclerview;
     private List<ProductMes> mDatas = new ArrayList<>();
     private CridViewAdapter adapter;
 
+    public static TabLayoutFragment newInstance(String title) {
+        TabLayoutFragment fragment = new TabLayoutFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(ConstantValue.TITLE, title);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+
     @Override
-    protected void loadViewLayout() {
-        setContentView(R.layout.activity_scroll_view_and_recycler_view);
-        ButterKnife.bind(this);
+    protected View loadViewLayout(LayoutInflater inflater, ViewGroup container) {
+        View rootView = inflater.inflate(R.layout.fragment_tablayout, null);
+        return rootView;
+    }
+
+    @Override
+    protected void bindViews(View view) {
+        tvTitle = (TextView) view.findViewById(R.id.tv_fragment_title);
+        recyclerview = (RecyclerView) view.findViewById(R.id.recyclerview);
 
     }
 
     @Override
-    protected void bindViews() {
-    }
-
-    @Override
-    protected void processLogic(Bundle savedInstanceState) {
+    protected void processLogic() {
+        title = getArguments().getString(ConstantValue.TITLE);
+        tvTitle.setText(title + "的Fragment");
         String[] imageList = {
                 "http://s1.cdn.xiachufang.com/bc55fd5aec3911e6bc9d0242ac110002_640w_427h.jpg",
                 "http://s1.cdn.xiachufang.com/957171ee064011e7947d0242ac110002_1280w_853h.jpg",
@@ -71,29 +83,13 @@ public class ScrollViewAndRecyclerView extends LibActivity {
         }
         adapter = new CridViewAdapter(mDatas);
         recyclerview.setAdapter(adapter);
-        recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
+        recyclerview.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false));
+//        recyclerview.addItemDecoration(new VerticalItemDecoration(mContext, getResources().getColor(R.color.blue_color), 1));
+
     }
 
     @Override
     protected void setListener() {
 
-        smartLayout.setOnRefreshListener(new OnRefreshLoadmoreListener() {
-            @Override
-            public void onLoadmore(RefreshLayout refreshlayout) {
-                refreshlayout.finishLoadmore(2000);
-            }
-
-            @Override
-            public void onRefresh(RefreshLayout refreshlayout) {
-                refreshlayout.finishRefresh(2000);
-            }
-        });
-
-    }
-
-
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
     }
 }

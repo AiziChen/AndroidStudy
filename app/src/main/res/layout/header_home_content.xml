@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:indicator_drawable_selected="@drawable/sel_banner_show"
+        app:indicator_drawable_unselected="@drawable/sel_banner_hide" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="12.0dip"
+        android:paddingTop="15.0dip">
+
+        <TextView
+            android:id="@+id/classification_layout"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="10.0dip"
+            android:drawableTop="@drawable/ic_youxuan"
+            android:gravity="center_horizontal"
+            android:text="超市尖货"
+            android:textSize="13.0sp" />
+
+        <TextView
+            android:id="@+id/help_center_layout"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="10.0dip"
+            android:drawableTop="@drawable/icon_activity"
+            android:gravity="center_horizontal"
+            android:text="好货直达"
+            android:textSize="13.0sp" />
+
+        <TextView
+            android:id="@+id/recharge_layout"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="10.0dip"
+            android:drawableTop="@drawable/ic_youxuan"
+            android:gravity="center_horizontal"
+            android:text="优选直购"
+            android:textSize="13.0sp" />
+
+        <TextView
+            android:id="@+id/activity_layout"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="10.0dip"
+            android:drawableTop="@drawable/icon_activity"
+            android:gravity="center_horizontal"
+            android:text="新手帮助"
+            android:textSize="13.0sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_image01" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_image02" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
-import com.cnsunrun.androidstudy.fragment.AllFragment;
-import com.cnsunrun.androidstudy.fragment.RecommendFragment;
+import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
 import com.flyco.tablayout.SlidingTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
@@ -38,22 +38,48 @@ public class CustomTabLayoutActivity extends LibActivity {
     @Override
     protected void bindViews() {
         tvTitle.setText("自定义TabLayout");
-
     }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
         for (int i = 0; i < title.length; i++) {
-            fragents.add(new RecommendFragment());
+            fragents.add(TabLayoutFragment.newInstance(title[i]));
         }
         viewpager.setAdapter(new TitlePagerAdapter(getSupportFragmentManager(), fragents, title));
         tabLayout.setViewPager(viewpager);
         viewpager.setOffscreenPageLimit(title.length);
-
     }
 
     @Override
     protected void setListener() {
+        tabLayout.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+                viewpager.setCurrentItem(position);
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+
+            }
+        });
+        viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.setCurrentTab(position);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 

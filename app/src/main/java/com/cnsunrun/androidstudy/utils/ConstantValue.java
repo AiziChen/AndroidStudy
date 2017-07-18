@@ -10,4 +10,8 @@ public interface ConstantValue {
 
     //    banner滚动时间
     int VP_TURN_TIME = 5000;
+
+    String TITLE="title";
+
+
 }
