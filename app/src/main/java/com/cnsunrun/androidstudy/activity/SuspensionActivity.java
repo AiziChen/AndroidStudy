@@ -9,11 +9,12 @@ import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.base.MySwipeBackActivity;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.utils.GlideImageLoader;
+import com.cnsunrun.androidstudy.utils.LoadDialog;
 import com.cnsunrun.androidstudy.widgtet.ImageHolderView;
 import com.cnsunrun.androidstudy.widgtet.YellowRatingBar;
-import com.sunrun.toollibrary.LibActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
@@ -25,7 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SuspensionActivity extends LibActivity {
+public class SuspensionActivity extends MySwipeBackActivity {
 
     private static final String TAG = "SuspensionActivity";
     @BindView(R.id.iv_arrow_back)
@@ -117,9 +118,23 @@ public class SuspensionActivity extends LibActivity {
                 finish();
                 break;
             case R.id.tv_search:
+                LoadDialog.show(mContext);
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        LoadDialog.dismiss(mContext);
+                    }
+                }, 2000);
                 showToast("点击了搜索框");
                 break;
             case R.id.tvSearch:
+                LoadDialog.show(mContext, "加载中");
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        LoadDialog.dismiss(mContext);
+                    }
+                }, 2000);
                 showToast("点击了搜索框2");
                 break;
         }

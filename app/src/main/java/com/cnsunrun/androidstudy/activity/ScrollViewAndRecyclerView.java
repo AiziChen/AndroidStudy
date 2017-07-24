@@ -3,17 +3,19 @@ package com.cnsunrun.androidstudy.activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
+import com.cnsunrun.androidstudy.base.MySwipeBackActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadmoreListener;
-import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 //ScrollView中嵌套RcyclerView
-public class ScrollViewAndRecyclerView extends LibActivity {
+public class ScrollViewAndRecyclerView extends MySwipeBackActivity {
 
     @BindView(R.id.iv_arrow_back)
     ImageView ivArrowBack;
@@ -86,6 +88,13 @@ public class ScrollViewAndRecyclerView extends LibActivity {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
                 refreshlayout.finishRefresh(2000);
+            }
+        });
+
+        recyclerview.addOnItemTouchListener(new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                intent2Activity(PopupWindowActivity.class);
             }
         });
 

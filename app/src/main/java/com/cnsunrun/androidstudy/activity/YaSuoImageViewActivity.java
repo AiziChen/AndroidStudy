@@ -43,8 +43,8 @@ public class YaSuoImageViewActivity extends LibActivity {
 
     @Override
     protected void bindViews() {
-    }
 
+    }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {

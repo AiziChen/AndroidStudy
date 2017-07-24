@@ -69,14 +69,19 @@
         <activity android:name=".activity.StreamingActivity" />
         <activity android:name=".activity.FlycotabLayoutActivity" />
         <activity android:name=".activity.DropdownSelectActivity" />
-        <activity android:name=".activity.SuspensionActivity" />
-        <activity android:name=".activity.MapActivity" />
+        <activity android:name=".activity.SuspensionActivity"
+            android:theme="@style/otherPageStyle"
+            />
+        <activity android:name=".activity.MapActivity"
+            />
         <activity android:name=".activity.RecyclerViewAddHeader" />
         <activity android:name=".activity.CustomTabLayoutActivity" />
         <activity android:name=".activity.YaSuoImageViewActivity" />
         <activity android:name=".activity.ChooseImageActivity" />
         <activity android:name=".activity.ScrollViewAndRecyclerView" />
-        <activity android:name=".activity.PopupWindowActivity"></activity>
+        <activity
+            android:name=".activity.PopupWindowActivity"
+            android:theme="@style/otherPageStyle"/>
     </application>
 
 </manifest>

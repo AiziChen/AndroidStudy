@@ -6,14 +6,13 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
+import com.cnsunrun.androidstudy.base.MySwipeBackActivity;
 import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.utils.GlideImageLoader;
-import com.sunrun.toollibrary.LibActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
@@ -27,7 +26,7 @@ import butterknife.ButterKnife;
 /**
  * 图片选择
  */
-public class ChooseImageActivity extends LibActivity {
+public class ChooseImageActivity extends MySwipeBackActivity {
 
 
     @BindView(R.id.collapsingtoolbarlayout)

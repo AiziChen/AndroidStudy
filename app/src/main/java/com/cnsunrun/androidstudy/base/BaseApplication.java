@@ -1,7 +1,5 @@
 package com.cnsunrun.androidstudy.base;
 
-import android.app.Application;
-
 import com.sunrun.toollibrary.LibApplication;
 import com.sunrun.toollibrary.utils.FileUtils;
 

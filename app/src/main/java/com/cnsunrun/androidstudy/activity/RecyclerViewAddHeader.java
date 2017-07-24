@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
@@ -97,6 +98,14 @@ public class RecyclerViewAddHeader extends LibActivity {
                 showToast("点击了搜索");
             }
         });
+
+        recyclerview.addOnItemTouchListener(new com.chad.library.adapter.base.listener.OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                intent2Activity(SuspensionActivity.class);
+            }
+        });
+
     }
 
     /**
