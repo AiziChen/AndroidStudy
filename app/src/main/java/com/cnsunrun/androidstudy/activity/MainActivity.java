@@ -36,7 +36,8 @@ public class MainActivity extends Activity {
             "CommonTabLayout",
             "置吸附置顶的TabLayout",
             "刷新的框架",
-            "PopupWindow练习"
+            "PopupWindow练习",
+            "封装支付宝支付"
     };
     private ArrayAdapter<String> adapter;
 
@@ -118,6 +119,9 @@ public class MainActivity extends Activity {
                         break;
                     case 11:
                         startActivity(new Intent(MainActivity.this, PopupWindowActivity.class));
+                        break;
+                    case 12:
+                        startActivity(new Intent(MainActivity.this, AliPayActivity.class));
                         break;
                 }
             }
