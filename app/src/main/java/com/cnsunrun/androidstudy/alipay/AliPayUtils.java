@@ -17,7 +17,7 @@ import java.util.Map;
  * Effect:  简单的支付宝支付
  */
 
-public class Alipay {
+public class AliPayUtils {
 
     // 商户PID
     public static final String APP_ID = ConstantValue.ALI_APPID;
@@ -30,20 +30,21 @@ public class Alipay {
 
     private OnAlipayListener mListener;
 
-    public Alipay(Activity activity) {
+    public AliPayUtils(Activity activity) {
         mActivity = new WeakReference<Activity>(activity);
     }
-
 
     /**
      * 请求支付,创建订单信息
      *
-     * @param alipayBean 业务参数
-     * @param callUrl    回调地址
+     * @param orderTitle  交易标题
+     * @param orderNumber 订单号
+     * @param totalMoney  订单总金额
+     * @param callBackUrl 回调地址
      */
-    public void requestPay(AlipayBean alipayBean, String callBackUrl) {
+    public void requestPay(String orderTitle, String orderNumber, String totalMoney, String callBackUrl) {
 
-        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APP_ID, alipayBean, callBackUrl, true);
+        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APP_ID, orderTitle, orderNumber, totalMoney, callBackUrl);
 
         String orderParam = OrderInfoUtil2_0.buildOrderParam(params);
 
@@ -108,9 +109,7 @@ public class Alipay {
     }
 
     /**
-     * 支付回调接口
-     *
-     * @author lenovo
+     * 支付的回调
      */
     public static class OnAlipayListener {
         /**

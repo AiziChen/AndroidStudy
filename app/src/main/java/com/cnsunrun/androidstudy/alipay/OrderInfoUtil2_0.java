@@ -1,7 +1,5 @@
 package com.cnsunrun.androidstudy.alipay;
 
-import com.google.gson.Gson;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -63,20 +61,29 @@ public class OrderInfoUtil2_0 {
     /**
      * 构造支付订单参数列表
      *
-     * @param pid
-     * @param app_id
-     * @param target_id
+     * @param app_id      app_id
+     * @param orderTitle  交易标题
+     * @param orderNumber 订单编号
+     * @param totalMoney  订单总金额
+     * @param callBackUrl 回调地址
      * @return
      */
-    public static Map<String, String> buildOrderParamMap(String app_id, AlipayBean alipayBean, String callBackUrl, boolean rsa2) {
+    public static Map<String, String> buildOrderParamMap(String app_id, String orderTitle, String orderNumber, String totalMoney, String callBackUrl) {
         Map<String, String> keyValues = new HashMap<String, String>();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Gson gson = new Gson();
 
         keyValues.put("app_id", app_id);
 
-        keyValues.put("biz_content", gson.toJson(alipayBean));
+        keyValues.put("subject", orderTitle);
+
+        keyValues.put("out_trade_no", orderNumber);
+
+        keyValues.put("total_amount", totalMoney);
+
+        keyValues.put("notify_url", callBackUrl);
+
+        keyValues.put("timestamp", sdf.format(new Date()));
 
         keyValues.put("product_code", "QUICK_MSECURITY_PAY");
 
@@ -86,11 +93,7 @@ public class OrderInfoUtil2_0 {
 
         keyValues.put("method", "alipay.trade.app.pay");
 
-        keyValues.put("notify_url", callBackUrl);
-
         keyValues.put("sign_type", "RSA2");
-
-        keyValues.put("timestamp", sdf.format(new Date()));
 
         keyValues.put("version", "1.0");
 
@@ -188,7 +191,6 @@ public class OrderInfoUtil2_0 {
         SimpleDateFormat format = new SimpleDateFormat("MMddHHmmss", Locale.getDefault());
         Date date = new Date();
         String key = format.format(date);
-
         Random r = new Random();
         key = key + r.nextInt();
         key = key.substring(0, 15);

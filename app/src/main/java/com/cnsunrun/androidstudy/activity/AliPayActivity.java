@@ -7,9 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.alipay.Alipay;
-import com.cnsunrun.androidstudy.alipay.AlipayBean;
-import com.cnsunrun.androidstudy.utils.ConstantValue;
+import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -56,20 +54,21 @@ public class AliPayActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 支付宝支付
+     */
     private void toSendAliPay() {
 
-        String title = "测试支付宝";
-        String price = "0.01";
+        String orderTitle = "测试支付宝";
         String orderNumber = "2017072656974848";
+        String totalPrice = "0.01";
         String callUrl = "http://test.cnsunrun.com/shunshou//Api/Pay/Callback/ali_callback";
 
-        Alipay alipay = new Alipay(AliPayActivity.this);
+        AliPayUtils alipay = new AliPayUtils(AliPayActivity.this);
 
-        AlipayBean alipayBean = new AlipayBean(title, orderNumber, price);
+        alipay.requestPay(orderTitle, orderNumber, totalPrice, callUrl);
 
-        alipay.requestPay(alipayBean, callUrl);
-
-        alipay.setPayListener(new Alipay.OnAlipayListener() {
+        alipay.setPayListener(new AliPayUtils.OnAlipayListener() {
             @Override
             public void onSuccess() {
                 super.onSuccess();
@@ -82,10 +81,11 @@ public class AliPayActivity extends AppCompatActivity {
                 ToastUtils.showToast("取消支付!");
             }
         });
-
     }
 
-
+    /**
+     * 微信支付
+     */
     private void toSendWxPay() {
 
     }
