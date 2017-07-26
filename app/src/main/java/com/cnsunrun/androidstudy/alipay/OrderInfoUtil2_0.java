@@ -68,7 +68,7 @@ public class OrderInfoUtil2_0 {
      * @param callBackUrl 回调地址
      * @return
      */
-    public static Map<String, String> buildOrderParamMap(String app_id, String orderTitle, String orderNumber, String totalMoney, String callBackUrl) {
+    public static Map<String, String> buildOrderParamMap(String app_id, String orderTitle, String orderNumber, String totalMoney, String sellerId, String callBackUrl) {
         Map<String, String> keyValues = new HashMap<String, String>();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -80,6 +80,8 @@ public class OrderInfoUtil2_0 {
         keyValues.put("out_trade_no", orderNumber);
 
         keyValues.put("total_amount", totalMoney);
+
+        keyValues.put("seller_id", sellerId);
 
         keyValues.put("notify_url", callBackUrl);
 

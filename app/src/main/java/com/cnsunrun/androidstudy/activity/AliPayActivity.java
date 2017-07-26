@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
+import com.cnsunrun.androidstudy.wxpay.WXPayUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -87,6 +88,10 @@ public class AliPayActivity extends AppCompatActivity {
      * 微信支付
      */
     private void toSendWxPay() {
+
+
+        WXPayUtils wxPayUtils = new WXPayUtils(AliPayActivity.this);
+
 
     }
 

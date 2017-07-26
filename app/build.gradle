@@ -52,4 +52,5 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.3.0'
     //    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
     compile files('libs/alipaySdk-20170710.jar')
+    compile files('libs/libammsdk.jar')
 }
