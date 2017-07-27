@@ -52,6 +52,10 @@
     <style name="RatingBarSmall" parent="Base.Widget.AppCompat.RatingBar.Small"></style>
 
 
+    <style name="RatingBarlager" parent="Base.Widget.AppCompat.RatingBar.Indicator">
+
+    </style>
+
     <style name="RatBaringStyle" parent="Base.Widget.AppCompat.RatingBar.Indicator"></style>
 
     <style name="otherPageStyle" parent="AppTheme.NoActionBar">
@@ -65,5 +69,14 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="fiveRatingBar" parent="@android:style/Widget.RatingBar">
+               
+        <item name="android:progressDrawable">@drawable/five_rating_bar</item>
+               
+        <item name="android:minHeight">23dp</item>
+               
+        <item name="android:maxHeight">23dp</item>
+
+    </style>
 
 </resources>

@@ -59,6 +59,7 @@ public class AliPayUtils {
 
             @Override
             public void run() {
+                //使用弱引用,确保activity不为null
                 Activity activity = mActivity.get();
                 if (activity == null) return;
                 // 构造PayTask 对象

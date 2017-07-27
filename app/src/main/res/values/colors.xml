@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#FF3F4E</color>
     <color name="colorAccent">#FF3F4E</color>
 
-
+    <color name="yellow_text_color">#F1AB08</color>
     <color name="main_color">#FFCD04</color>
     <color name="main_color_2">#9FA8DA</color>
     <color name="black">#000000</color>

@@ -15,7 +15,7 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
  * Effect:  返回上一级的基类
  */
 
-public abstract class MySwipeBackActivity extends LibActivity implements SwipeBackActivityBase {
+public abstract class SwipeBackActivity extends LibActivity implements SwipeBackActivityBase {
 
     private SwipeBackActivityHelper mHelper;
 
@@ -32,13 +32,7 @@ public abstract class MySwipeBackActivity extends LibActivity implements SwipeBa
         super.onPostCreate(savedInstanceState);
         mHelper.onPostCreate();
     }
-    @Override
-    public View findViewById(int id) {
-        View v = super.findViewById(id);
-        if (v == null && mHelper != null)
-            return mHelper.findViewById(id);
-        return v;
-    }
+
     @Override
     public SwipeBackLayout getSwipeBackLayout() {
         return mHelper.getSwipeBackLayout();

@@ -3,10 +3,15 @@
 
     <item
         android:id="@android:id/background"
-        android:drawable="@drawable/ic_ratbar_hide"></item>
+        android:drawable="@drawable/ic_ratbar_hide"/>
+
+    <item
+        android:id="@android:id/secondaryProgress"
+
+        android:drawable="@drawable/ic_ratbar_hide" />
 
     <item
         android:id="@android:id/progress"
-        android:drawable="@drawable/ic_ratbar_show"></item>
+        android:drawable="@drawable/ic_ratbar_show"/>
 
 </layer-list>

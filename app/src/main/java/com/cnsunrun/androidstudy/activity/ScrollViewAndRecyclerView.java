@@ -11,7 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
-import com.cnsunrun.androidstudy.base.MySwipeBackActivity;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 //ScrollView中嵌套RcyclerView
-public class ScrollViewAndRecyclerView extends MySwipeBackActivity {
+public class ScrollViewAndRecyclerView extends SwipeBackActivity {
 
     @BindView(R.id.iv_arrow_back)
     ImageView ivArrowBack;

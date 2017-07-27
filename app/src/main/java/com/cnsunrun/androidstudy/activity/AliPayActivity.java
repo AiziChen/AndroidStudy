@@ -1,13 +1,13 @@
 package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.wxpay.WXPayUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
@@ -15,7 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AliPayActivity extends AppCompatActivity {
+public class AliPayActivity extends SwipeBackActivity {
 
     @BindView(R.id.iv_arrow_back)
     ImageView ivArrowBack;
@@ -26,19 +26,28 @@ public class AliPayActivity extends AppCompatActivity {
     @BindView(R.id.tv_wxpay)
     TextView tvWxpay;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void loadViewLayout() {
         setContentView(R.layout.activity_ali_pay);
         ButterKnife.bind(this);
-
-        initViews();
     }
 
-    private void initViews() {
+    @Override
+    protected void bindViews() {
         tvTitle.setText("对于支付的封装");
+    }
+
+    @Override
+    protected void processLogic(Bundle savedInstanceState) {
 
     }
+
+    @Override
+    protected void setListener() {
+
+    }
+
 
     @OnClick({R.id.iv_arrow_back, R.id.tv_alipay, R.id.tv_wxpay})
     public void onViewClicked(View view) {
@@ -80,6 +89,18 @@ public class AliPayActivity extends AppCompatActivity {
             public void onCancel() {
                 super.onCancel();
                 ToastUtils.showToast("取消支付!");
+            }
+
+            @Override
+            public void onFailed() {
+                super.onFailed();
+                ToastUtils.showToast("支付失败!");
+            }
+
+            @Override
+            public void onWait() {
+                super.onWait();
+                ToastUtils.showToast("结果待确认!");
             }
         });
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_popup_window"
     android:layout_width="match_parent"
@@ -9,16 +10,49 @@
     <include layout="@layout/include_titllebar" />
 
 
-    <TextView
-        android:id="@+id/tv_show_popupwindow"
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/RatingBar02"
+        style="@style/RatingBarlager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="@color/yellow_text_color"
+        android:progressTint="@color/yellow_text_color" />
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/RatingBar03"
+        style="@style/RatBaringStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:progressBackgroundTint="@color/yellow_text_color"
+        android:progressTint="@color/yellow_text_color" />
+
+
+    <com.cnsunrun.androidstudy.view.CustomRatingBar
+        android:id="@+id/almanac_yunshi_treasure"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:gravity="center"
-        android:text="弹出PopUpWindow1" />
-    <TextView
-        android:id="@+id/tv_show_popupwindow2"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:custom_rate_active_drawable="@drawable/ic_ratbar_show"
+        app:custom_rate_active_size="0"
+        app:custom_rate_disactive_drawable="@drawable/ic_ratbar_hide"
+        app:custom_rate_padding="5dp"
+        app:custom_rate_size="5"
+        app:custom_rate_width="30dp" />
+
+    <com.cnsunrun.androidstudy.view.CustomRatingBar
+        android:id="@+id/almanac_yunshi_treasure2"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:gravity="center"
-        android:text="弹出PopUpWindow2" />
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:custom_rate_active_drawable="@drawable/ic_ratbar_show"
+        app:custom_rate_active_size="2"
+        app:custom_rate_disactive_drawable="@drawable/ic_ratbar_hide"
+        app:custom_rate_padding="5dp"
+        app:custom_rate_size="5"
+        app:custom_rate_width="30dp" />
+
+
 </LinearLayout>

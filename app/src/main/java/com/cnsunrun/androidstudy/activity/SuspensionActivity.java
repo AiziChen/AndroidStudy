@@ -9,7 +9,7 @@ import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.MySwipeBackActivity;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.utils.GlideImageLoader;
 import com.cnsunrun.androidstudy.utils.LoadDialog;
@@ -26,7 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SuspensionActivity extends MySwipeBackActivity {
+public class SuspensionActivity extends SwipeBackActivity {
 
     private static final String TAG = "SuspensionActivity";
     @BindView(R.id.iv_arrow_back)

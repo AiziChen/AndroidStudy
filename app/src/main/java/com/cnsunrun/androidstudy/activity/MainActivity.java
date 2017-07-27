@@ -26,7 +26,9 @@ public class MainActivity extends Activity {
     private ImageView iv_back;
     @BindView(R.id.listview)
     ListView listview;
-    private String[] titles = {"下拉刷新,上拉加载", "流式布局",
+    private String[] titles = {
+            "下拉刷新,上拉加载",
+            "流式布局",
             "FlycotabLayout",
             "选择Window的对话框",
             "搜索栏悬浮",
@@ -37,7 +39,7 @@ public class MainActivity extends Activity {
             "置吸附置顶的TabLayout",
             "刷新的框架",
             "PopupWindow练习",
-            "封装支付宝支付"
+            "对于支付的封装"
     };
     private ArrayAdapter<String> adapter;
 
