@@ -33,9 +33,7 @@ public class PopupWindowActivity extends SwipeBackActivity {
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_popup_window);
-
         ButterKnife.bind(this);
-
 
     }
 

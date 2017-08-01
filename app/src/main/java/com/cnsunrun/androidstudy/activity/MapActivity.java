@@ -8,6 +8,7 @@ import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.sunrun.toollibrary.LibActivity;
 
 import butterknife.BindView;
@@ -17,7 +18,7 @@ import butterknife.OnClick;
 /**
  * 高德地图的实现
  */
-public class MapActivity extends LibActivity {
+public class MapActivity extends BaseActivity {
     //初始化地图控制器对象
     AMap aMap;
     @BindView(R.id.iv_arrow_back)

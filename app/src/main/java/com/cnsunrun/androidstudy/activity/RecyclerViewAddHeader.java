@@ -14,6 +14,7 @@ import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.widgtet.ImageHolderView;
@@ -26,7 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RecyclerViewAddHeader extends LibActivity {
+public class RecyclerViewAddHeader extends BaseActivity {
 
     @BindView(R.id.iv_arrow_back)
     ImageView ivArrowBack;

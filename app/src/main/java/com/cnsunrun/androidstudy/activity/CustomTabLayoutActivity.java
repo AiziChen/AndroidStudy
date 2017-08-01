@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -19,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CustomTabLayoutActivity extends LibActivity {
+public class CustomTabLayoutActivity extends BaseActivity {
     @BindView(R.id.tv_title)
     TextView tvTitle;
     @BindView(R.id.tabLayout)

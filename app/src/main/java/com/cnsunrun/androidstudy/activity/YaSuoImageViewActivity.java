@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
 import com.cnsunrun.androidstudy.utils.TabEntity;
 import com.cnsunrun.androidstudy.widgtet.NoScrollViewPager;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class YaSuoImageViewActivity extends LibActivity {
+public class YaSuoImageViewActivity extends BaseActivity {
 
     @BindView(R.id.viewpager)
     NoScrollViewPager viewpager;

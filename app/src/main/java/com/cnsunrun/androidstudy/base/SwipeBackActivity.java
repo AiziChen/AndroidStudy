@@ -3,6 +3,8 @@ package com.cnsunrun.androidstudy.base;
 import android.os.Bundle;
 import android.view.View;
 
+import com.cnsunrun.androidstudy.R;
+import com.jaeger.library.StatusBarUtil;
 import com.sunrun.toollibrary.LibActivity;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
@@ -24,6 +26,7 @@ public abstract class SwipeBackActivity extends LibActivity implements SwipeBack
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
         mHelper.onActivityCreate();
     }
 

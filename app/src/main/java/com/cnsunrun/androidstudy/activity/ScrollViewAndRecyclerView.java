@@ -1,47 +1,16 @@
 package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
-import com.cnsunrun.androidstudy.model.ProductMes;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshLoadmoreListener;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 //ScrollView中嵌套RcyclerView
 public class ScrollViewAndRecyclerView extends SwipeBackActivity {
 
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.recyclerview)
-    RecyclerView recyclerview;
-    @BindView(R.id.smartLayout)
-    SmartRefreshLayout smartLayout;
-    private List<ProductMes> mDatas = new ArrayList<>();
-    private CridViewAdapter adapter;
-
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_scroll_view_and_recycler_view);
-        ButterKnife.bind(this);
 
     }
 
@@ -68,41 +37,11 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
                 "http://s2.cdn.xiachufang.com/c7d3fad4876611e6b87c0242ac110003_616w_800h.jpg",
                 "http://s1.cdn.xiachufang.com/af570278afe611e6bc9d0242ac110002_1280w_962h.jpg"
         };
-        for (int i = 0; i < imageList.length; i++) {
-            mDatas.add(new ProductMes(imageList[i], "测试数据" + i));
-        }
-        adapter = new CridViewAdapter(mDatas);
-        recyclerview.setAdapter(adapter);
-        recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
     }
 
     @Override
     protected void setListener() {
 
-        smartLayout.setOnRefreshListener(new OnRefreshLoadmoreListener() {
-            @Override
-            public void onLoadmore(RefreshLayout refreshlayout) {
-                refreshlayout.finishLoadmore(2000);
-            }
-
-            @Override
-            public void onRefresh(RefreshLayout refreshlayout) {
-                refreshlayout.finishRefresh(2000);
-            }
-        });
-
-        recyclerview.addOnItemTouchListener(new OnItemClickListener() {
-            @Override
-            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                intent2Activity(PopupWindowActivity.class);
-            }
-        });
-
     }
 
-
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
-    }
 }
