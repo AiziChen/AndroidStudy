@@ -1,19 +1,24 @@
 package com.cnsunrun.androidstudy.activity;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
-import com.cnsunrun.androidstudy.view.CustomRatingBar;
-import com.sunrun.toollibrary.utils.ToastUtils;
+import com.lzy.ninegrid.ImageInfo;
+import com.lzy.ninegrid.NineGridView;
+import com.lzy.ninegrid.preview.NineGridViewClickAdapter;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.sunrun.toollibrary.utils.ImageLoaderUtils;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 
 public class PopupWindowActivity extends SwipeBackActivity {
 
@@ -22,49 +27,71 @@ public class PopupWindowActivity extends SwipeBackActivity {
     ImageView ivArrowBack;
     @BindView(R.id.tv_title)
     TextView tvTitle;
-    @BindView(R.id.RatingBar02)
-    MaterialRatingBar RatingBar02;
-    @BindView(R.id.RatingBar03)
-    MaterialRatingBar RatingBar03;
-    @BindView(R.id.almanac_yunshi_treasure)
-    CustomRatingBar almanacYunshiTreasure;
+    @BindView(R.id.nineView)
+    NineGridView nineView;
 
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_popup_window);
+
         ButterKnife.bind(this);
+
 
     }
 
     @Override
     protected void bindViews() {
-        tvTitle.setText("自定义RatingBar");
 
     }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-        RatingBar02.setRating(2f);
-        RatingBar03.setRating(3.5f);
-        almanacYunshiTreasure.setActiveSize(4);
+        NineGridView.setImageLoader(new UniversalImageLoader());
+        String[] imageList = {
+                "http://s1.cdn.xiachufang.com/bc55fd5aec3911e6bc9d0242ac110002_640w_427h.jpg",
+                "http://s1.cdn.xiachufang.com/957171ee064011e7947d0242ac110002_1280w_853h.jpg",
+                "http://s2.cdn.xiachufang.com/895d027820d611e7bc9d0242ac110002_1382w_1038h.jpg",
+                "http://s2.cdn.xiachufang.com/cc808350880a11e6b87c0242ac110003_550w_380h.jpg",
+                "http://s1.cdn.xiachufang.com/86a642a68b6c11e6b87c0242ac110003_2080w_1560h.jpg",
+                "http://s1.cdn.xiachufang.com/bd54e300886c11e6a9a10242ac110002_640w_640h.jpg",
+                "http://s2.cdn.xiachufang.com/2b6a110e88c611e6a9a10242ac110002_1000w_667h.jpg",
+                "http://s2.cdn.xiachufang.com/c7d3fad4876611e6b87c0242ac110003_616w_800h.jpg",
+                "http://s1.cdn.xiachufang.com/af570278afe611e6bc9d0242ac110002_1280w_962h.jpg"
+        };
 
+        ArrayList<ImageInfo> imageInfo = new ArrayList<>();
+
+        for (int i = 0; i < imageList.length; i++) {
+            ImageInfo imagesInfo = new ImageInfo();
+            imagesInfo.setThumbnailUrl(imageList[i]);
+            imagesInfo.setBigImageUrl(imageList[i]);
+            imageInfo.add(imagesInfo);
+        }
+        nineView.setAdapter(new NineGridViewClickAdapter(mContext, imageInfo));
     }
 
     @Override
     protected void setListener() {
-        RatingBar03.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                ToastUtils.showToast("几颗星=" + rating);
-            }
-        });
 
     }
 
+    /**
+     * UniversalImageLoader加载
+     */
+    private class UniversalImageLoader implements NineGridView.ImageLoader {
+        @Override
+        public void onDisplayImage(Context context, ImageView imageView, String url) {
+            ImageLoaderUtils.displayBigImage(url, imageView);
+        }
+
+        @Override
+        public Bitmap getCacheImage(String url) {
+            return null;
+        }
+    }
 
     @OnClick(R.id.iv_arrow_back)
     public void onViewClicked() {
         finish();
     }
-
 }

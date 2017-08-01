@@ -52,5 +52,6 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.3.0'
     compile files('libs/alipaySdk-20170710.jar')
     compile files('libs/libammsdk.jar')
-    compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
+    compile 'com.lzy.widget:ninegridview:0.2.0'
+
 }

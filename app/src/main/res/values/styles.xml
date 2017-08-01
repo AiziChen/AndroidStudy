@@ -69,13 +69,10 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="fiveRatingBar" parent="@android:style/Widget.RatingBar">
+    <style name="fiveRatingBar" parent="RatBaringStyle">
                
         <item name="android:progressDrawable">@drawable/five_rating_bar</item>
                
-        <item name="android:minHeight">23dp</item>
-               
-        <item name="android:maxHeight">23dp</item>
 
     </style>
 

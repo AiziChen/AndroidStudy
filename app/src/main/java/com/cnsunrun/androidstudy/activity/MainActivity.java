@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
             "CommonTabLayout",
             "置吸附置顶的TabLayout",
             "刷新的框架",
-            "PopupWindow练习",
+            "九宫格显示图片",
             "对于支付的封装"
     };
     private ArrayAdapter<String> adapter;

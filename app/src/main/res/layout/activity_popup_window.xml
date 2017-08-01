@@ -1,58 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_popup_window"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titllebar" />
+    <include layout="@layout/include_titllebar"></include>
 
 
-    <me.zhanghai.android.materialratingbar.MaterialRatingBar
-        android:id="@+id/RatingBar02"
-        style="@style/RatingBarlager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:backgroundTint="@color/yellow_text_color"
-        android:progressTint="@color/yellow_text_color" />
-
-    <me.zhanghai.android.materialratingbar.MaterialRatingBar
-        android:id="@+id/RatingBar03"
-        style="@style/RatBaringStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:progressBackgroundTint="@color/yellow_text_color"
-        android:progressTint="@color/yellow_text_color" />
-
-
-    <com.cnsunrun.androidstudy.view.CustomRatingBar
-        android:id="@+id/almanac_yunshi_treasure"
+    <com.lzy.ninegrid.NineGridView
+        android:id="@+id/nineView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:custom_rate_active_drawable="@drawable/ic_ratbar_show"
-        app:custom_rate_active_size="0"
-        app:custom_rate_disactive_drawable="@drawable/ic_ratbar_hide"
-        app:custom_rate_padding="5dp"
-        app:custom_rate_size="5"
-        app:custom_rate_width="30dp" />
-
-    <com.cnsunrun.androidstudy.view.CustomRatingBar
-        android:id="@+id/almanac_yunshi_treasure2"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:custom_rate_active_drawable="@drawable/ic_ratbar_show"
-        app:custom_rate_active_size="2"
-        app:custom_rate_disactive_drawable="@drawable/ic_ratbar_hide"
-        app:custom_rate_padding="5dp"
-        app:custom_rate_size="5"
-        app:custom_rate_width="30dp" />
-
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:ngv_maxSize="9"
+        app:ngv_mode="grid" />
 
 </LinearLayout>

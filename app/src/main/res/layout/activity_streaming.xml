@@ -16,5 +16,45 @@
         app:auto_select_effect="false"
         app:max_select="-1" />
 
+    <com.cnsunrun.androidstudy.view.NineGridImageView
+        android:id="@+id/nineView01"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_nineview_bg" />
+
+    <com.cnsunrun.androidstudy.view.NineGridImageView
+        android:id="@+id/nineView02"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_nineview_bg" />
+
+    <com.cnsunrun.androidstudy.view.NineGridImageView
+        android:id="@+id/nineView03"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_nineview_bg" />
+
+    <com.cnsunrun.androidstudy.view.NineGridImageView
+        android:id="@+id/nineView04"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_nineview_bg" />
+
+    <com.cnsunrun.androidstudy.view.NineGridImageView
+        android:id="@+id/nineView05"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_nineview_bg" />
+
 
 </LinearLayout>
