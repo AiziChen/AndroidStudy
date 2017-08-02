@@ -6,6 +6,10 @@ import android.support.v4.app.Fragment;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
+import com.cnsunrun.androidstudy.fragment.ContactsFragment;
+import com.cnsunrun.androidstudy.fragment.HomeFragment;
+import com.cnsunrun.androidstudy.fragment.MessageFragment;
+import com.cnsunrun.androidstudy.fragment.MoreOtherFragment;
 import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
 import com.cnsunrun.androidstudy.utils.TabEntity;
 import com.cnsunrun.androidstudy.widgtet.NoScrollViewPager;
@@ -52,9 +56,10 @@ public class YaSuoImageViewActivity extends BaseActivity {
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
-        for (int i = 0; i < mTitles.length; i++) {
-            mFragments.add(TabLayoutFragment.newInstance(mTitles[i]));
-        }
+        mFragments.add(HomeFragment.newInstance());
+        mFragments.add(MessageFragment.newInstance());
+        mFragments.add(ContactsFragment.newInstance());
+        mFragments.add(MoreOtherFragment.newInstance());
         viewpager.setAdapter(new TitlePagerAdapter(getSupportFragmentManager(), mFragments, mTitles));
         tabLayout.setTabData(mTabEntities);
         viewpager.setOffscreenPageLimit(mTitles.length);

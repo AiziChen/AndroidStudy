@@ -87,7 +87,7 @@
             android:value="f118cfd8094fef0a4695714eabe3cb52" />
 
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.YaSuoImageViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -104,7 +104,7 @@
         <activity android:name=".activity.MapActivity" />
         <activity android:name=".activity.RecyclerViewAddHeader" />
         <activity android:name=".activity.CustomTabLayoutActivity" />
-        <activity android:name=".activity.YaSuoImageViewActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.ChooseImageActivity" />
         <activity android:name=".activity.ScrollViewAndRecyclerView" />
         <activity

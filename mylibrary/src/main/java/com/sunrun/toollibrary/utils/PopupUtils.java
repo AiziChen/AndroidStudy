@@ -21,7 +21,7 @@ public class PopupUtils {
     public static PopupWindow generatePop(View view) {
         PopupWindow popupWindow = new PopupWindow();
         popupWindow.setContentView(view);
-//        popupWindow.setWidth(LibApplication.getInstance().getResources().getDisplayMetrics().widthPixels);
+        popupWindow.setWidth(LibApplication.getInstance().getResources().getDisplayMetrics().widthPixels);
         popupWindow.setWidth(WindowManager.LayoutParams.MATCH_PARENT);
         popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
         popupWindow.setFocusable(true);// 加上这个popupwindow中的ListView才可以接收点击事件

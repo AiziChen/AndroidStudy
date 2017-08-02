@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_scroll_view_and_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,5 +8,63 @@
 
     <include layout="@layout/include_titllebar" />
 
+    <com.cnsunrun.androidstudy.view.gridpasswordview.GridPasswordView
+        android:id="@+id/pwd_layout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        app:gpvGridColor="@color/white"
+        app:gpvLineColor="@color/line_bg_light"
+        app:gpvLineWidth="1dp"
+        app:gpvPasswordLength="6"
+        app:gpvPasswordTransformation="*"
+        app:gpvPasswordType="numberPassword"
+        app:gpvTextColor="@color/black_30"
+        app:gpvTextSize="22sp" />
 
+
+    <com.cnsunrun.androidstudy.view.PasswordEditText
+        android:id="@+id/password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:padding="10dp"
+        app:bgCorner="3dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_type_one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式一" />
+
+        <TextView
+            android:id="@+id/tv_type_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式二" />
+
+        <TextView
+            android:id="@+id/tv_type_three"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式三" />
+    </LinearLayout>
 </LinearLayout>
