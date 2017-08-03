@@ -6,10 +6,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.utils.BitMapUtils;
+import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
+import com.cnsunrun.androidstudy.widgtet.NoScrollViewPager;
+import com.flyco.tablayout.SegmentTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 /**
@@ -19,8 +26,15 @@ import com.cnsunrun.androidstudy.utils.BitMapUtils;
 
 public class AllFragment extends Fragment {
 
-    ImageView ivImageview;
-    private BitMapUtils bitMapUtils;
+    @BindView(R.id.tabLayout)
+    SegmentTabLayout tabLayout;
+    @BindView(R.id.tabLayout02)
+    SegmentTabLayout tabLayout02;
+    @BindView(R.id.viewpager)
+    NoScrollViewPager viewpager;
+    private String[] mTitles = {"首页", "消息"};
+    private String[] mTitles_2 = {"首页", "消息", "联系人"};
+    private ArrayList<Fragment> mFragments = new ArrayList<>();
 
     public static AllFragment newInstance() {
         AllFragment fragment = new AllFragment();
@@ -35,11 +49,32 @@ public class AllFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_all, null);
-        initView(rootView);
+        ButterKnife.bind(this, rootView);
+        initLoadData();
         return rootView;
     }
 
-    private void initView(View rootView) {
+    private void initLoadData() {
+        tabLayout.setTabData(mTitles);
+        for (int i = 0; i < mTitles_2.length; i++) {
+            mFragments.add(TabLayoutFragment.newInstance(mTitles_2[i]));
+        }
+        viewpager.setAdapter(new TitlePagerAdapter(getChildFragmentManager(), mFragments, mTitles_2));
+        tabLayout02.setTabData(mTitles_2);
+        viewpager.setOffscreenPageLimit(mFragments.size());
+        tabLayout02.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+                viewpager.setCurrentItem(position);
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+
+            }
+        });
 
     }
+
+
 }

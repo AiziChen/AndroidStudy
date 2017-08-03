@@ -18,6 +18,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 自定义TabLayout
+ */
 public class CustomTabLayoutActivity extends BaseActivity {
     @BindView(R.id.tabLayout)
     SlidingTabLayout tabLayout;
@@ -35,7 +38,7 @@ public class CustomTabLayoutActivity extends BaseActivity {
     @Override
     protected void bindViews() {
         TitleBuilder titleBuilder = new TitleBuilder(this);
-        titleBuilder.setTitleText("自定义TabLayout");
+        titleBuilder.setTitleText("SlidingTabLayout使用");
         titleBuilder.noLeftBack();
     }
 

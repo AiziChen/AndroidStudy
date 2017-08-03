@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import me.weyye.hipermission.HiPermission;
+import me.weyye.hipermission.PermissionCallback;
 
 public class YaSuoImageViewActivity extends BaseActivity {
 
@@ -49,10 +51,37 @@ public class YaSuoImageViewActivity extends BaseActivity {
     @Override
     protected void bindViews() {
 
+
     }
+
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
+        HiPermission.create(mContext).checkMutiPermission(new PermissionCallback() {
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onFinish() {
+                loadFragmentData();
+            }
+
+            @Override
+            public void onDeny(String permission, int position) {
+
+            }
+
+            @Override
+            public void onGuarantee(String permission, int position) {
+
+            }
+        });
+
+    }
+
+    private void loadFragmentData() {
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
@@ -64,7 +93,7 @@ public class YaSuoImageViewActivity extends BaseActivity {
         tabLayout.setTabData(mTabEntities);
         viewpager.setOffscreenPageLimit(mTitles.length);
 
-//        //两位数
+        //两位数
 //        tabLayout.showMsg(0, 55);
 //        tabLayout.setMsgMargin(0, -5, 5);
 //
@@ -86,6 +115,7 @@ public class YaSuoImageViewActivity extends BaseActivity {
 //        if (rtv_2_3 != null) {
 //            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
 //        }
+
     }
 
     @Override

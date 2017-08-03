@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tl="http://schemas.android.com/tools"
-    android:id="@+id/activity_custom_tab_layout"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_basic_navi"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titlebar" />
+    <include layout="@layout/include_titlebar"></include>
 
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/white"
-        app:tl_indicator_width_equal_title="true"
         tl:tl_divider_color="#1A000000"
-        tl:tl_divider_padding="0dp"
+        tl:tl_divider_padding="10dp"
         tl:tl_divider_width="1dp"
         tl:tl_indicator_color="@color/blue_color"
         tl:tl_indicator_height="1.5dp"

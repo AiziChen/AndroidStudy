@@ -38,7 +38,7 @@ public class CridViewActivity extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("TwinklingRefreshLayout的练习");
+        initTitle("TwinklingRefreshLayout");
 
     }
 

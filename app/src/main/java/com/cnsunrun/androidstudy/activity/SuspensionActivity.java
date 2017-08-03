@@ -25,6 +25,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 悬浮搜索栏
+ */
 public class SuspensionActivity extends SwipeBackActivity {
 
     private static final String TAG = "SuspensionActivity";
@@ -106,7 +109,7 @@ public class SuspensionActivity extends SwipeBackActivity {
     }
 
 
-    @OnClick({ R.id.tv_search, R.id.tvSearch})
+    @OnClick({R.id.tv_search, R.id.tvSearch})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_search:

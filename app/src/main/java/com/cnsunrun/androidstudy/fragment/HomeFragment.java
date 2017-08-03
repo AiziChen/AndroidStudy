@@ -37,17 +37,13 @@ public class HomeFragment extends BaseFragment {
     private String[] titles = {
             "TwinklingRefreshLayout的刷新",
             "流式布局和微信群聊图像展示",
-            "FlycotabLayout的练习",
-            "选择Window的对话框",
+            "SegmentTabLayout的使用",
             "搜索栏悬浮",
             "高德地图的练习",
             "RececlerView添加Banner头部",
-            "自定义的TabLayout",
-            "CommonTabLayout",
-            "置吸附置顶的TabLayout",
-            "输入密码框",
+            "SlidingTabLayout使用",
+            "置顶的TabLayout",
             "九宫格显示图片",
-            "对于控件操作的封装"
     };
 
     public static HomeFragment newInstance() {
@@ -95,34 +91,25 @@ public class HomeFragment extends BaseFragment {
                         intent2Activity(FlycotabLayoutActivity.class);
                         break;
                     case 3:
-                        intent2Activity(DropdownSelectActivity.class);
-                        break;
-                    case 4:
                         intent2Activity(SuspensionActivity.class);
                         break;
-                    case 5:
+                    case 4:
                         intent2Activity(MapActivity.class);
                         break;
-                    case 6:
+                    case 5:
                         intent2Activity(RecyclerViewAddHeader.class);
                         break;
-                    case 7:
+                    case 6:
                         intent2Activity(CustomTabLayoutActivity.class);
                         break;
-                    case 8:
-                        intent2Activity(MainActivity.class);
-                        break;
-                    case 9:
+                    case 7:
                         intent2Activity(ChooseImageActivity.class);
                         break;
-                    case 10:
-                        intent2Activity(ScrollViewAndRecyclerView.class);
-                        break;
-                    case 11:
+                    case 8:
                         intent2Activity(PopupWindowActivity.class);
                         break;
-                    case 12:
-                        intent2Activity(AliPayActivity.class);
+                    case 9:
+
                         break;
                 }
             }

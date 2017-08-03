@@ -16,6 +16,7 @@ import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
+import com.cnsunrun.androidstudy.utils.LoadDialog;
 import com.cnsunrun.androidstudy.widgtet.ImageHolderView;
 
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * RecyclerViewAddHeader
+ */
 public class RecyclerViewAddHeader extends BaseActivity {
 
     @BindView(R.id.recyclerview)
@@ -70,6 +74,7 @@ public class RecyclerViewAddHeader extends BaseActivity {
         if (ImageDatas.size() > 1) {
             mBanner.startTurning(ConstantValue.VP_TURN_TIME);
         }
+
     }
 
     @Override
@@ -130,7 +135,6 @@ public class RecyclerViewAddHeader extends BaseActivity {
             ImageDatas.add(imageList[i]);
         }
     }
-
 
 
     @Override

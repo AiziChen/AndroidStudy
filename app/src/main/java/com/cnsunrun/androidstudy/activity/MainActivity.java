@@ -10,6 +10,10 @@ import com.sunrun.toollibrary.utils.ToastUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
+/**
+ * 自定义RatingBar
+ */
 public class MainActivity extends SwipeBackActivity {
 
     @BindView(R.id.ratingBar01)

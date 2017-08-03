@@ -24,7 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 图片选择
+ * 置顶的TabLayout
  */
 public class ChooseImageActivity extends SwipeBackActivity {
 

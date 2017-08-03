@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.activity.MainActivity;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 
 /**
@@ -53,12 +54,11 @@ public class ContactsFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-
                     case 0:
+                        intent2Activity(MainActivity.class);
 
                         break;
                     case 1:
-
 
                         break;
                 }

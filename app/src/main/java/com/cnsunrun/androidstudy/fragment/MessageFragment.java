@@ -11,6 +11,8 @@ import android.widget.ListView;
 import com.amap.api.location.AMapLocation;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.activity.AliPayActivity;
+import com.cnsunrun.androidstudy.activity.DropdownSelectActivity;
+import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 import com.cnsunrun.androidstudy.utils.LocationMapUtils;
@@ -25,7 +27,12 @@ public class MessageFragment extends BaseFragment {
 
     private ListView listView;
 
-    private String[] titles = {"支付宝支付", "高德地图定位"};
+    private String[] titles = {
+            "支付宝支付",
+            "高德地图定位",
+            "输入密码框",
+            "选择Window的对话框",
+    };
 
     public static MessageFragment newInstance() {
         MessageFragment homeFragment = new MessageFragment();
@@ -65,6 +72,12 @@ public class MessageFragment extends BaseFragment {
                         break;
                     case 1:
                         localMap();
+                        break;
+                    case 2:
+                        intent2Activity(ScrollViewAndRecyclerView.class);
+                        break;
+                    case 3:
+                        intent2Activity(DropdownSelectActivity.class);
                         break;
                 }
             }

@@ -16,6 +16,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.utils.LoadDialog;
 import com.cnsunrun.androidstudy.utils.RightMorePopupWindow;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
 import com.sunrun.toollibrary.utils.PopupUtils;
@@ -55,12 +56,6 @@ public class DropdownSelectActivity extends SwipeBackActivity {
     TextView tvTypeTwo;
     @BindView(R.id.tv_type_three)
     TextView tvTypeThree;
-    @BindView(R.id.tv_type_four)
-    TextView tvTypeFour;
-    @BindView(R.id.tv_type_five)
-    TextView tvTypeFive;
-    @BindView(R.id.tv_type_six)
-    TextView tvTypeSix;
     private List<String> mDatas = new ArrayList<>();
     private PopupWindowAdapter adapter;
 
@@ -217,7 +212,7 @@ public class DropdownSelectActivity extends SwipeBackActivity {
     }
 
 
-    @OnClick({R.id.layout_knowledge_type, R.id.layout_knowledge_category, R.id.layout_knowledge_sort, R.id.tv_type_one, R.id.tv_type_two, R.id.tv_type_three, R.id.tv_type_four, R.id.tv_type_five, R.id.tv_type_six})
+    @OnClick({R.id.layout_knowledge_type, R.id.layout_knowledge_category, R.id.layout_knowledge_sort, R.id.tv_type_one, R.id.tv_type_two, R.id.tv_type_three})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.layout_knowledge_type:
@@ -231,7 +226,6 @@ public class DropdownSelectActivity extends SwipeBackActivity {
                 break;
             case R.id.tv_type_one:
                 showDialogOne();
-
                 break;
             case R.id.tv_type_two:
                 final IosDialog dailog = new IosDialog(mContext).builder();
@@ -250,16 +244,17 @@ public class DropdownSelectActivity extends SwipeBackActivity {
                 break;
             case R.id.tv_type_three:
                 break;
-            case R.id.tv_type_four:
-                break;
-            case R.id.tv_type_five:
-                break;
-            case R.id.tv_type_six:
-                break;
         }
     }
 
     private void showDialogOne() {
+        LoadDialog.show(mContext, "加载中...");
+        tvTypeOne.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                LoadDialog.dismiss(mContext);
+            }
+        }, 2000);
 
 
     }

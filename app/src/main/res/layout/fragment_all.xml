@@ -1,27 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="全部的Fragment"
-        android:textSize="20sp" />
 
     <com.cnsunrun.androidstudy.widgtet.DottedDivideLine
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="10dp" />
 
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        tl:tl_bar_color="#ffffff"
+        tl:tl_indicator_color="#2C97DE"
+        tl:tl_indicator_corner_radius="5dp"
+        tl:tl_tab_padding="20dp" />
+
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/tabLayout02"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        tl:tl_bar_color="#ffffff"
+        tl:tl_indicator_color="#EC3663"
+        tl:tl_indicator_margin_bottom="2dp"
+        tl:tl_indicator_margin_left="2dp"
+        tl:tl_indicator_margin_right="2dp"
+        tl:tl_indicator_margin_top="2dp"
+        tl:tl_tab_width="80dp"
+        tl:tl_textBold="BOTH" />
+
+    <com.cnsunrun.androidstudy.widgtet.NoScrollViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
 
 
 </LinearLayout>

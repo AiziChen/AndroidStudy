@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 
-
+/**
+ * 顶部标题栏
+ */
 public class TitleBuilder {
 
     private View viewTitle;
@@ -51,8 +53,8 @@ public class TitleBuilder {
         ivRight = (ImageView) viewTitle.findViewById(R.id.titlebar_iv_right);
         tvLeft = (TextView) viewTitle.findViewById(R.id.titlebar_tv_left);
         tvRight = (TextView) viewTitle.findViewById(R.id.titlebar_tv_right);
-        ivLeft.setOnClickListener(new ExitListener((Activity) context.getContext()));
         ivRight2 = (ImageView) viewTitle.findViewById(R.id.titlebar_iv_right2);
+        ivLeft.setOnClickListener(new ExitListener((Activity) context.getContext()));
     }
 
     //设置字体颜色

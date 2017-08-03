@@ -39,7 +39,7 @@ public class FlycotabLayoutActivity extends BaseActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("FlycotabLayout的练习");
+        initTitle("SegmentTabLayout的使用");
         TitleBuilder titleBuilder = new TitleBuilder(this);
         titleBuilder.setLeftText(null);
         initView();
