@@ -42,8 +42,9 @@ public class HomeFragment extends BaseFragment {
             "高德地图的练习",
             "RececlerView添加Banner头部",
             "SlidingTabLayout使用",
-            "置顶的TabLayout",
+            "置顶的ScrollableLayout",
             "九宫格显示图片",
+            "侧滑菜单DrawerLayout"
     };
 
     public static HomeFragment newInstance() {
@@ -57,7 +58,6 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected View loadViewLayout(LayoutInflater inflater, ViewGroup container) {
         View rootView = inflater.inflate(R.layout.home_fragment, null);
-
         return rootView;
     }
 
@@ -75,7 +75,6 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void setListener() {
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -109,7 +108,7 @@ public class HomeFragment extends BaseFragment {
                         intent2Activity(PopupWindowActivity.class);
                         break;
                     case 9:
-
+                        intent2Activity(AliPayActivity.class);
                         break;
                 }
             }

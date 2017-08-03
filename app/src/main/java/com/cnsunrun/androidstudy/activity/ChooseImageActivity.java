@@ -1,8 +1,6 @@
 package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -29,13 +27,9 @@ import butterknife.ButterKnife;
 public class ChooseImageActivity extends SwipeBackActivity {
 
 
-    @BindView(R.id.collapsingtoolbarlayout)
-    CollapsingToolbarLayout collapsingtoolbarlayout;
     @BindView(R.id.tabLayout)
     TabLayout tabLayout;
-    @BindView(R.id.appBarLayout)
-    AppBarLayout appBarLayout;
-    @BindView(R.id.vp)
+    @BindView(R.id.viewpager)
     ViewPager vp;
     Banner banner;
     private String[] title = {"任务详情", "查看评价", "个人信息", "个人相册"};
@@ -51,6 +45,7 @@ public class ChooseImageActivity extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
+        initTitle("置顶的TabLayout");
         banner = (Banner) findViewById(R.id.banner);
 
     }

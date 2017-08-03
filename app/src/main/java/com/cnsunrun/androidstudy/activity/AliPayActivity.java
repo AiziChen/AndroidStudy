@@ -1,37 +1,38 @@
 package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
-import com.amap.api.location.AMapLocation;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
-import com.cnsunrun.androidstudy.utils.LocationMapUtils;
-import com.sunrun.toollibrary.utils.ToastUtils;
+import com.cnsunrun.androidstudy.fragment.LeftMenuFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * 左侧侧滑菜单
+ */
 public class AliPayActivity extends SwipeBackActivity {
 
 
-    @BindView(R.id.listView)
-    ListView listView;
-
+    @BindView(R.id.titlebar_iv_left)
+    CircleImageView titlebarIvLeft;
+    @BindView(R.id.drawerLayout)
+    DrawerLayout drawerLayout;
 
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_ali_pay);
         ButterKnife.bind(this);
+
     }
 
     @Override
     protected void bindViews() {
-        initTitle("对于控件操作的封装");
     }
 
     @Override
@@ -41,11 +42,36 @@ public class AliPayActivity extends SwipeBackActivity {
 
     @Override
     protected void setListener() {
+        titlebarIvLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+        drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
 
+            }
 
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                LeftMenuFragment fragment = (LeftMenuFragment) getSupportFragmentManager().findFragmentByTag("LEFT");
+                fragment.open();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
 
     }
-
 
 
 }

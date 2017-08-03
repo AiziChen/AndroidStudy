@@ -56,8 +56,8 @@
             app:type="round" />
 
         <com.cnsunrun.androidstudy.widgtet.RoundImageView
-            android:layout_width="65"
-            android:layout_height="65"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="15dp"
             android:src="@drawable/ic_image02"

@@ -45,6 +45,11 @@ public class RecommendFragment extends LibFragment {
         return rootView;
     }
 
+    public void open() {
+
+    }
+
+
     @Override
     protected void bindViews(View view) {
 

@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 九宫格图片展示
+ */
 public class PopupWindowActivity extends SwipeBackActivity {
 
 
