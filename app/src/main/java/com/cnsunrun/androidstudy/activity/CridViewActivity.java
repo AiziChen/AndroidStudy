@@ -1,17 +1,14 @@
 package com.cnsunrun.androidstudy.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
-import com.cnsunrun.androidstudy.widgtet.VerticalItemDecoration;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.lcodecore.tkrefreshlayout.footer.LoadingView;
@@ -22,14 +19,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class CridViewActivity extends Activity {
+public class CridViewActivity extends SwipeBackActivity {
 
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
     @BindView(R.id.twinklingLayout)
@@ -39,41 +31,19 @@ public class CridViewActivity extends Activity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void loadViewLayout() {
         setContentView(R.layout.activity_crid_view);
         ButterKnife.bind(this);
-        initView();
-        listeners();
     }
 
-    private void listeners() {
-        refreshLayout.startRefresh();
-        refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
-            @Override
-            public void onRefresh(final TwinklingRefreshLayout refreshLayout) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshLayout.finishRefreshing();
-                    }
-                }, 1000);
-            }
+    @Override
+    protected void bindViews() {
+        initTitle("TwinklingRefreshLayout的练习");
 
-            @Override
-            public void onLoadMore(final TwinklingRefreshLayout refreshLayout) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshLayout.finishLoadmore();
-                    }
-                }, 1000);
-            }
-        });
     }
 
-    private void initView() {
-        tvTitle.setText("TwinklingRefreshLayout的练习");
+    @Override
+    protected void processLogic(Bundle savedInstanceState) {
         String[] imageList = {
                 "http://s1.cdn.xiachufang.com/bc55fd5aec3911e6bc9d0242ac110002_640w_427h.jpg",
                 "http://s1.cdn.xiachufang.com/957171ee064011e7947d0242ac110002_1280w_853h.jpg",
@@ -107,9 +77,31 @@ public class CridViewActivity extends Activity {
 
     }
 
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
+    @Override
+    protected void setListener() {
+        refreshLayout.startRefresh();
+        refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
+            @Override
+            public void onRefresh(final TwinklingRefreshLayout refreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.finishRefreshing();
+                    }
+                }, 1000);
+            }
+
+            @Override
+            public void onLoadMore(final TwinklingRefreshLayout refreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.finishLoadmore();
+                    }
+                }, 1000);
+            }
+        });
     }
+
 
 }

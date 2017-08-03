@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.NineGridImageViewAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
@@ -22,17 +21,12 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * 流式布局
  */
 public class StreamingActivity extends SwipeBackActivity {
 
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.id_flowlayout)
     TagFlowLayout idFlowlayout;
     @BindView(R.id.nineView01)
@@ -139,7 +133,7 @@ public class StreamingActivity extends SwipeBackActivity {
      * 初始化控件
      */
     private void initView() {
-        tvTitle.setText("流式布局");
+        initTitle("流式布局和仿微信图像");
         mVals.add("三星");
         mVals.add("华为");
         mVals.add("华为荣耀");
@@ -169,8 +163,4 @@ public class StreamingActivity extends SwipeBackActivity {
         });
     }
 
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
-    }
 }

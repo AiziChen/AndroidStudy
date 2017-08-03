@@ -9,7 +9,10 @@
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="联系人的Fragment"
+        android:text="安卓中的自定义控件"
         android:textColor="@color/black"
         android:textSize="15sp" />
+
+
+    <include layout="@layout/include_fragment_layout"></include>
 </LinearLayout>

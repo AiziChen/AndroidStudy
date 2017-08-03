@@ -2,7 +2,6 @@ package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -29,10 +28,6 @@ import butterknife.OnClick;
 public class SuspensionActivity extends SwipeBackActivity {
 
     private static final String TAG = "SuspensionActivity";
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.tv_search)
     TextView tvSearch;
     @BindView(R.id.banner)
@@ -56,7 +51,7 @@ public class SuspensionActivity extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-        tvTitle.setText("悬浮栏的练习");
+        initTitle("悬浮栏的练习");
     }
 
     @Override
@@ -111,12 +106,9 @@ public class SuspensionActivity extends SwipeBackActivity {
     }
 
 
-    @OnClick({R.id.iv_arrow_back, R.id.tv_search, R.id.tvSearch})
+    @OnClick({ R.id.tv_search, R.id.tvSearch})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.iv_arrow_back:
-                finish();
-                break;
             case R.id.tv_search:
                 LoadDialog.show(mContext);
                 view.postDelayed(new Runnable() {

@@ -3,8 +3,6 @@ package com.cnsunrun.androidstudy.activity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
@@ -14,8 +12,6 @@ import com.cnsunrun.androidstudy.utils.PasswordPopupWindow;
 import com.cnsunrun.androidstudy.view.CustomerKeyboard;
 import com.cnsunrun.androidstudy.view.PasswordEditText;
 import com.cnsunrun.androidstudy.view.gridpasswordview.GridPasswordView;
-import com.sunrun.toollibrary.utils.InputMethodUtils;
-import com.sunrun.toollibrary.utils.PopupUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -28,10 +24,6 @@ import butterknife.OnClick;
 public class ScrollViewAndRecyclerView extends SwipeBackActivity {
 
 
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.pwd_layout)
     GridPasswordView pwdLayout;
     @BindView(R.id.password_edit_text)
@@ -53,7 +45,7 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-        tvTitle.setText("密码输入框");
+        initTitle("密码输入框");
     }
 
     @Override
@@ -88,12 +80,9 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
     }
 
 
-    @OnClick({R.id.iv_arrow_back, R.id.tv_type_one, R.id.tv_type_two, R.id.tv_type_three})
+    @OnClick({R.id.tv_type_one, R.id.tv_type_two, R.id.tv_type_three})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.iv_arrow_back:
-                finish();
-                break;
             case R.id.tv_type_one:
                 showTypeOne();
                 break;
@@ -141,7 +130,7 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
             @Override
             public void passwordFull(String password) {
                 ToastUtils.showToast("密码是:" + password);
-                tvTitle.postDelayed(new Runnable() {
+                passwordEditText.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         dialog.dismiss();

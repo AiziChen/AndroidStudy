@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titllebar"></include>
+    <include layout="@layout/include_titlebar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,7 +93,66 @@
         </LinearLayout>
     </LinearLayout>
 
-    <include layout="@layout/include_recyclerview" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
 
+        <TextView
+            android:id="@+id/tv_type_one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式一" />
+
+        <TextView
+            android:id="@+id/tv_type_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式二" />
+
+        <TextView
+            android:id="@+id/tv_type_three"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式三" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_type_four"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式四" />
+
+        <TextView
+            android:id="@+id/tv_type_five"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式五" />
+
+        <TextView
+            android:id="@+id/tv_type_six"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="方式六" />
+    </LinearLayout>
 
 </LinearLayout>

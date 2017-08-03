@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titllebar"></include>
+    <include layout="@layout/include_titlebar"></include>
 
 
     <ListView

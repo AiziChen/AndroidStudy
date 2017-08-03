@@ -4,29 +4,22 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.lzy.ninegrid.ImageInfo;
 import com.lzy.ninegrid.NineGridView;
 import com.lzy.ninegrid.preview.NineGridViewClickAdapter;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sunrun.toollibrary.utils.ImageLoaderUtils;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class PopupWindowActivity extends SwipeBackActivity {
 
 
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.nineView)
     NineGridView nineView;
 
@@ -39,6 +32,7 @@ public class PopupWindowActivity extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
+        initTitle("九宫格图片展示");
 
     }
 
@@ -88,8 +82,4 @@ public class PopupWindowActivity extends SwipeBackActivity {
         }
     }
 
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
-    }
 }

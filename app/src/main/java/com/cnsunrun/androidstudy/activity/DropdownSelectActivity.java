@@ -15,10 +15,12 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
-import com.cnsunrun.androidstudy.adapter.RatingBarAdapter;
-import com.cnsunrun.androidstudy.base.BaseActivity;
-import com.cnsunrun.androidstudy.model.RatingBarModel;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.utils.RightMorePopupWindow;
+import com.cnsunrun.androidstudy.view.TitleBuilder;
 import com.sunrun.toollibrary.utils.PopupUtils;
+import com.sunrun.toollibrary.utils.ToastUtils;
+import com.sunrun.toollibrary.view.IosDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,24 +29,40 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DropdownSelectActivity extends BaseActivity {
+/**
+ * popupWindow的练习和封装
+ */
+public class DropdownSelectActivity extends SwipeBackActivity {
 
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.tv_knowledge_type)
-    TextView tvKnowledgeType;
-    @BindView(R.id.tv_knowledge_category)
-    TextView tvKnowledgeCategory;
-    @BindView(R.id.tv_knowledge_sort)
-    TextView tvKnowledgeSort;
-    private RecyclerView recyclerView;
     private static final int TYPE_ONE = 1;//知识分类
     private static final int TYPE_TWO = 2;//全部主题
     private static final int TYPE_THREE = 3;//默认排序
+    @BindView(R.id.tv_knowledge_type)
+    TextView tvKnowledgeType;
+    @BindView(R.id.layout_knowledge_type)
+    LinearLayout layoutKnowledgeType;
+    @BindView(R.id.tv_knowledge_category)
+    TextView tvKnowledgeCategory;
+    @BindView(R.id.layout_knowledge_category)
+    LinearLayout layoutKnowledgeCategory;
+    @BindView(R.id.tv_knowledge_sort)
+    TextView tvKnowledgeSort;
+    @BindView(R.id.layout_knowledge_sort)
+    LinearLayout layoutKnowledgeSort;
+    @BindView(R.id.tv_type_one)
+    TextView tvTypeOne;
+    @BindView(R.id.tv_type_two)
+    TextView tvTypeTwo;
+    @BindView(R.id.tv_type_three)
+    TextView tvTypeThree;
+    @BindView(R.id.tv_type_four)
+    TextView tvTypeFour;
+    @BindView(R.id.tv_type_five)
+    TextView tvTypeFive;
+    @BindView(R.id.tv_type_six)
+    TextView tvTypeSix;
     private List<String> mDatas = new ArrayList<>();
     private PopupWindowAdapter adapter;
-    private List<RatingBarModel> projuctData = new ArrayList<>();
-    private RatingBarAdapter ratingAdapter;
 
 
     @Override
@@ -52,11 +70,31 @@ public class DropdownSelectActivity extends BaseActivity {
         setContentView(R.layout.activity_dropdown_select);
         ButterKnife.bind(this);
         initView();
-        loadRecyclerView();
     }
 
     @Override
     protected void bindViews() {
+        TitleBuilder titleBuilder = new TitleBuilder(this);
+        titleBuilder.setTitleText("PopupWindow的练习");
+        titleBuilder.setRightImageVisib(View.VISIBLE);
+        titleBuilder.setRightOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTopPopup(v);
+
+            }
+        });
+
+    }
+
+    /**
+     * 右上角的popupWindow
+     *
+     * @param view
+     */
+    private void showTopPopup(View view) {
+        RightMorePopupWindow rightMorePopupWindow = new RightMorePopupWindow(this);
+        rightMorePopupWindow.showPopupWindow(view);
 
     }
 
@@ -70,28 +108,9 @@ public class DropdownSelectActivity extends BaseActivity {
 
     }
 
-    /**
-     * 加载评分条
-     */
-    private void loadRecyclerView() {
-        projuctData.add(new RatingBarModel("语文", 3));
-        projuctData.add(new RatingBarModel("数学", 5));
-        projuctData.add(new RatingBarModel("外语", 4));
-        projuctData.add(new RatingBarModel("政治", 4));
-        projuctData.add(new RatingBarModel("历史", 2));
-        projuctData.add(new RatingBarModel("地理", 1));
-        projuctData.add(new RatingBarModel("物理", 3));
-        projuctData.add(new RatingBarModel("化学", 2));
-        projuctData.add(new RatingBarModel("生物", 5));
-        ratingAdapter = new RatingBarAdapter(projuctData);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(DropdownSelectActivity.this, LinearLayout.VERTICAL, false));
-        recyclerView.setAdapter(ratingAdapter);
-    }
 
     private void initView() {
-
-        tvTitle.setText("选择性提示框的练习");
+        initTitle("选择性提示框的练习");
         mDatas.add("张学友");
         mDatas.add("林忆莲");
         mDatas.add("刘德华");
@@ -197,12 +216,10 @@ public class DropdownSelectActivity extends BaseActivity {
         }
     }
 
-    @OnClick({R.id.iv_arrow_back, R.id.layout_knowledge_type, R.id.layout_knowledge_category, R.id.layout_knowledge_sort})
+
+    @OnClick({R.id.layout_knowledge_type, R.id.layout_knowledge_category, R.id.layout_knowledge_sort, R.id.tv_type_one, R.id.tv_type_two, R.id.tv_type_three, R.id.tv_type_four, R.id.tv_type_five, R.id.tv_type_six})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.iv_arrow_back:
-                finish();
-                break;
             case R.id.layout_knowledge_type:
                 showDownDiaLog(TYPE_ONE, view);
                 break;
@@ -212,6 +229,38 @@ public class DropdownSelectActivity extends BaseActivity {
             case R.id.layout_knowledge_sort:
                 showDownDiaLog(TYPE_THREE, view);
                 break;
+            case R.id.tv_type_one:
+                showDialogOne();
+
+                break;
+            case R.id.tv_type_two:
+                final IosDialog dailog = new IosDialog(mContext).builder();
+                dailog.setMsg("提现帐号")
+                        .setEditHint("请输入提现帐号")
+                        .setEditTextSize(14)
+                        .setNegativeButton("取消", null)
+                        .setPositiveButton("确定", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String result = dailog.getResult();
+                                ToastUtils.showToast(result);
+                            }
+                        }).show();
+
+                break;
+            case R.id.tv_type_three:
+                break;
+            case R.id.tv_type_four:
+                break;
+            case R.id.tv_type_five:
+                break;
+            case R.id.tv_type_six:
+                break;
         }
+    }
+
+    private void showDialogOne() {
+
+
     }
 }

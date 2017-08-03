@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.view.TitleBuilder;
 import com.jaeger.library.StatusBarUtil;
 import com.sunrun.toollibrary.LibActivity;
 
@@ -20,6 +21,14 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
 public abstract class SwipeBackActivity extends LibActivity implements SwipeBackActivityBase {
 
     private SwipeBackActivityHelper mHelper;
+
+    public TitleBuilder initTitle(Object obj) {
+        if (obj instanceof String) {
+            return new TitleBuilder(this).setTitleText((String) obj);
+        } else {
+            return new TitleBuilder(this).setTitleText((int) obj);
+        }
+    }
 
 
     @Override

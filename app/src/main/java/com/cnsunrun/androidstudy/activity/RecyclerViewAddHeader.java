@@ -5,7 +5,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -18,21 +17,15 @@ import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.widgtet.ImageHolderView;
-import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class RecyclerViewAddHeader extends BaseActivity {
 
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
     @BindView(R.id.reflayout)
@@ -52,7 +45,7 @@ public class RecyclerViewAddHeader extends BaseActivity {
 
     @Override
     protected void bindViews() {
-        tvTitle.setText("给RecyclerView添加头部");
+        initTitle("给RecyclerView添加头部");
     }
 
     @Override
@@ -138,10 +131,6 @@ public class RecyclerViewAddHeader extends BaseActivity {
         }
     }
 
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
-    }
 
 
     @Override

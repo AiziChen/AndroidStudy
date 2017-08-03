@@ -103,7 +103,7 @@ public class TitleBuilder {
     }
 
     //没有返回键
-    public TitleBuilder noBack() {
+    public TitleBuilder noLeftBack() {
         ivLeft.setVisibility(View.GONE);
         return this;
     }
@@ -149,6 +149,12 @@ public class TitleBuilder {
         return this;
     }
 
+    // 显示右边图片
+    public TitleBuilder setRightImageVisib(int visibility) {
+        ivRight.setVisibility(visibility);
+        return this;
+    }
+
     //右边第二张图片
     public TitleBuilder setRight2Image(int resId) {
         ivRight2.setVisibility(resId > 0 ? View.VISIBLE : View.GONE);
@@ -168,6 +174,7 @@ public class TitleBuilder {
         tvRight.setVisibility(visibility);
         return this;
     }
+
 
     //获取右边的内容
     public String getRightText() {
@@ -200,12 +207,13 @@ public class TitleBuilder {
         return this;
     }
 
-
-    public void hide() {
+    //隐藏标题栏
+    public void hideViewTitle() {
         viewTitle.setVisibility(View.GONE);
     }
 
-    public void show() {
+    //显示标题栏
+    public void showViewTitle() {
         viewTitle.setVisibility(View.VISIBLE);
     }
 

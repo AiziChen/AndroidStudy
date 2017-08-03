@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titllebar" />
+    <include layout="@layout/include_titlebar" />
 
     <com.cnsunrun.androidstudy.view.gridpasswordview.GridPasswordView
         android:id="@+id/pwd_layout"

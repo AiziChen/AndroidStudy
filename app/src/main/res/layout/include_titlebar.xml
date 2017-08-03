@@ -52,7 +52,7 @@
         <ImageView
             android:id="@+id/titlebar_iv_right"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:src="@drawable/ic_add_more"
@@ -61,7 +61,7 @@
         <ImageView
             android:id="@+id/titlebar_iv_right2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:src="@drawable/ic_add_more"
@@ -70,7 +70,7 @@
         <TextView
             android:id="@+id/titlebar_tv_right"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:clickable="true"
             android:drawablePadding="3dp"
             android:gravity="center"

@@ -3,26 +3,22 @@ package com.cnsunrun.androidstudy.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
+import com.cnsunrun.androidstudy.view.TitleBuilder;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class CustomTabLayoutActivity extends BaseActivity {
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.tabLayout)
     SlidingTabLayout tabLayout;
     @BindView(R.id.viewpager)
@@ -38,7 +34,9 @@ public class CustomTabLayoutActivity extends BaseActivity {
 
     @Override
     protected void bindViews() {
-        tvTitle.setText("自定义TabLayout");
+        TitleBuilder titleBuilder = new TitleBuilder(this);
+        titleBuilder.setTitleText("自定义TabLayout");
+        titleBuilder.noLeftBack();
     }
 
     @Override
@@ -85,8 +83,4 @@ public class CustomTabLayoutActivity extends BaseActivity {
     }
 
 
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
-    }
 }

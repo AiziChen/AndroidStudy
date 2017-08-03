@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titllebar"></include>
+    <include layout="@layout/include_titlebar"></include>
 
     <RelativeLayout
         android:layout_width="match_parent"

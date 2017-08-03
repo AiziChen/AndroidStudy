@@ -7,10 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titllebar" />
+    <include layout="@layout/include_titlebar" />
 
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        app:tl_indicator_width_equal_title="true"
         tl:tl_divider_color="#1A000000"
         tl:tl_divider_padding="0dp"
         tl:tl_divider_width="1dp"
@@ -21,11 +25,7 @@
         tl:tl_textSelectColor="@color/blue_color"
         tl:tl_textUnselectColor="@color/hint_text_color"
         tl:tl_underline_color="#1A000000"
-        tl:tl_underline_height="1dp"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/white"
-        app:tl_indicator_width_equal_title="true" />
+        tl:tl_underline_height="1dp" />
 
 
     <android.support.v4.view.ViewPager

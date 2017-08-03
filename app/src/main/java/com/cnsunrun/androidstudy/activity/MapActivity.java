@@ -1,19 +1,15 @@
 package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.BaseActivity;
-import com.sunrun.toollibrary.LibActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * 高德地图的实现
@@ -21,10 +17,6 @@ import butterknife.OnClick;
 public class MapActivity extends BaseActivity {
     //初始化地图控制器对象
     AMap aMap;
-    @BindView(R.id.iv_arrow_back)
-    ImageView ivArrowBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.mv_map)
     MapView mMapView;
 
@@ -38,6 +30,7 @@ public class MapActivity extends BaseActivity {
     @Override
     protected void bindViews() {
         //获取地图控件引用
+        initTitle("地图使用");
     }
 
     @Override
@@ -90,9 +83,5 @@ public class MapActivity extends BaseActivity {
         mMapView.onDestroy();
     }
 
-    @OnClick(R.id.iv_arrow_back)
-    public void onViewClicked() {
-        finish();
-    }
 
 }

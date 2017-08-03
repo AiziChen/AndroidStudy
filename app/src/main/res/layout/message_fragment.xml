@@ -10,9 +10,11 @@
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="消息的Fragment"
+        android:text="对安卓中控件的封装"
         android:textColor="@color/black"
         android:textSize="15sp" />
+
+    <include layout="@layout/include_fragment_layout" />
 
 
 </LinearLayout>

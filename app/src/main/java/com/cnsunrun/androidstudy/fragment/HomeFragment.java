@@ -1,6 +1,5 @@
 package com.cnsunrun.androidstudy.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,9 +35,9 @@ public class HomeFragment extends BaseFragment {
     private ListView listView;
 
     private String[] titles = {
-            "下拉刷新,上拉加载",
-            "流式布局",
-            "FlycotabLayout",
+            "TwinklingRefreshLayout的刷新",
+            "流式布局和微信群聊图像展示",
+            "FlycotabLayout的练习",
             "选择Window的对话框",
             "搜索栏悬浮",
             "高德地图的练习",
@@ -111,7 +110,7 @@ public class HomeFragment extends BaseFragment {
                         intent2Activity(CustomTabLayoutActivity.class);
                         break;
                     case 8:
-//                        intent2Activity(YaSuoImageViewActivity.class);
+                        intent2Activity(MainActivity.class);
                         break;
                     case 9:
                         intent2Activity(ChooseImageActivity.class);
