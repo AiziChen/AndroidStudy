@@ -109,11 +109,10 @@ public class MessageFragment extends BaseFragment {
      */
     private void toSendAliPay() {
         String orderTitle = "测试支付宝";
-        String orderNumber = "2017072656974848";
+        String orderNumber = "2017080410248504";
         String totalPrice = "0.01";
-        String callUrl = "http://test.cnsunrun.com/shunshou//Api/Pay/Callback/ali_callback";
         AliPayUtils alipay = new AliPayUtils(getActivity());
-        alipay.requestPay(orderTitle, orderNumber, totalPrice, callUrl);
+        alipay.requestPay(orderTitle, orderNumber, totalPrice);
         alipay.setPayListener(new AliPayUtils.OnAlipayListener() {
             @Override
             public void onSuccess() {
