@@ -78,6 +78,7 @@ public class AliPayUtils {
         payThread.start();
     }
 
+
     @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
