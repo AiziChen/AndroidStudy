@@ -10,8 +10,8 @@ import android.widget.ListView;
 
 import com.amap.api.location.AMapLocation;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.activity.AliPayActivity;
 import com.cnsunrun.androidstudy.activity.DropdownSelectActivity;
+import com.cnsunrun.androidstudy.activity.MoreClassificationActivity;
 import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.BaseFragment;
@@ -32,6 +32,7 @@ public class MessageFragment extends BaseFragment {
             "高德地图定位",
             "输入密码框",
             "选择Window的对话框",
+            "仿美团的更多分类功能"
     };
 
     public static MessageFragment newInstance() {
@@ -66,7 +67,6 @@ public class MessageFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-
                     case 0:
                         toSendAliPay();
                         break;
@@ -79,11 +79,13 @@ public class MessageFragment extends BaseFragment {
                     case 3:
                         intent2Activity(DropdownSelectActivity.class);
                         break;
+                    case 4:
+                        intent2Activity(MoreClassificationActivity.class);
+                        break;
                 }
             }
         });
     }
-
 
     /**
      * 高德地图定位

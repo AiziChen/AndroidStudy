@@ -7,12 +7,14 @@
     <color name="yellow_text_color">#F1AB08</color>
     <color name="main_color">#FFCD04</color>
     <color name="main_color_2">#9FA8DA</color>
+    <color name="black_lucency_99">#99000000</color>
     <color name="black">#000000</color>
     <color name="black_30">#222222</color>
     <color name="black_40">#373A43</color>
     <color name="coffee">#5E3300</color>
     <color name="white">#ffffff</color>
     <color name="bg_color">#F2F2F2</color>
+    <color name="gray_color">#EEEEEE</color>
     <color name="main_text_color">#333333</color>
     <color name="line_bg_light">#DFDFDF</color>
     <color name="line_bg_dark">#F2F2F2</color>

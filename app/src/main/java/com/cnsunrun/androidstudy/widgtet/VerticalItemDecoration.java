@@ -14,7 +14,7 @@ import com.orhanobut.logger.Logger;
 import static android.R.attr.orientation;
 
 /**
- * Created by Administrator on 2016/9/22 0022.
+ * RecyclerView的分割线
  */
 public class VerticalItemDecoration extends RecyclerView.ItemDecoration {
     /*

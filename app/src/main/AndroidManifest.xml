@@ -44,7 +44,6 @@
     <!-- 浮动通知权限 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -53,8 +52,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
-
-        <!--支付宝配置开始-->
+        <!-- 支付宝配置开始 -->
 
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
@@ -67,23 +65,23 @@
             android:exported="false"
             android:screenOrientation="behind" />
 
-        <!--支付宝配置结束-->
+        <!-- 支付宝配置结束 -->
 
-        <!--微信支付开始-->
+
+        <!-- 微信支付开始 -->
 
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
 
-        <!--微信支付结束-->
+        <!-- 微信支付结束 -->
 
 
         <!-- 高德地图 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="f118cfd8094fef0a4695714eabe3cb52" />
-
 
         <activity android:name=".activity.YaSuoImageViewActivity">
             <intent-filter>
@@ -108,7 +106,8 @@
         <activity
             android:name=".activity.PopupWindowActivity"
             android:theme="@style/otherPageStyle" />
-        <activity android:name=".activity.AliPayActivity"></activity>
+        <activity android:name=".activity.AliPayActivity" />
+        <activity android:name=".activity.MoreClassificationActivity"></activity>
     </application>
 
 </manifest>

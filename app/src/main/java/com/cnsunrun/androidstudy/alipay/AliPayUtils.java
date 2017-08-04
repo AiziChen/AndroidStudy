@@ -44,7 +44,6 @@ public class AliPayUtils {
      * @param orderTitle  交易标题
      * @param orderNumber 订单号
      * @param totalMoney  订单总金额
-     * @param callBackUrl 回调地址
      */
     public void requestPay(String orderTitle, String orderNumber, String totalMoney) {
 

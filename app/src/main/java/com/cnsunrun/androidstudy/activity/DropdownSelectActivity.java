@@ -3,6 +3,7 @@ package com.cnsunrun.androidstudy.activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -16,7 +17,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
-import com.cnsunrun.androidstudy.utils.LoadDialog;
+import com.cnsunrun.androidstudy.dialog.CommonDialog;
 import com.cnsunrun.androidstudy.utils.RightMorePopupWindow;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
 import com.sunrun.toollibrary.utils.PopupUtils;
@@ -58,6 +59,8 @@ public class DropdownSelectActivity extends SwipeBackActivity {
     TextView tvTypeThree;
     private List<String> mDatas = new ArrayList<>();
     private PopupWindowAdapter adapter;
+
+    AlertDialog cusAlertDialog;
 
 
     @Override
@@ -243,19 +246,29 @@ public class DropdownSelectActivity extends SwipeBackActivity {
 
                 break;
             case R.id.tv_type_three:
+                showDialogThree();
                 break;
         }
     }
 
-    private void showDialogOne() {
-        LoadDialog.show(mContext, "加载中...");
-        tvTypeOne.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                LoadDialog.dismiss(mContext);
-            }
-        }, 2000);
+    private void showDialogThree() {
+        final CommonDialog.Builder builder = new CommonDialog.Builder(DropdownSelectActivity.this);
+        builder.setView(R.layout.dialog_customer_keyboard).fromBottom().fullWidth().create().show();
 
+        builder.getView(R.id.delete_dialog).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.dismiss();
+            }
+        });
+    }
+
+    private void showDialogOne() {
+//        View dialogView = View.inflate(mContext, R.layout.dialog_customer_keyboard, null);
+//        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+//        builder.setView(dialogView);
+//        cusAlertDialog = builder.create();
+//        cusAlertDialog.show();
 
     }
 }

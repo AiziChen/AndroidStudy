@@ -40,14 +40,6 @@ public class LocationMapUtils {
     }
 
     /**
-     * 停止定位
-     */
-    private void stopLocation() {
-        // 停止定位
-        locationClient.stopLocation();
-    }
-
-    /**
      * 默认的定位参数
      */
     private AMapLocationClientOption getDefaultOption() {
@@ -83,6 +75,13 @@ public class LocationMapUtils {
             }
         }
 
+    }
+
+    /**
+     * 停止定位
+     */
+    private void stopLocation() {
+        locationClient.stopLocation();
     }
 
     /**

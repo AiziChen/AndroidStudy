@@ -1,22 +1,16 @@
 package com.cnsunrun.androidstudy.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.utils.BitMapUtils;
 import com.cnsunrun.androidstudy.widgtet.RoundImageView;
 import com.sunrun.toollibrary.LibFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by ZhouBin on 2017/6/8.

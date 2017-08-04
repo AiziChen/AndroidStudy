@@ -9,7 +9,7 @@ import com.cnsunrun.androidstudy.R;
 
 /**
  * Created by ZhouBin on 2017/6/9.
- * Effect:
+ * Effect:  RatingBar
  */
 
 public class YellowRatingBar extends RatingBar {
