@@ -25,8 +25,6 @@ public class AliPayUtils {
     public static final String SELLER_ID = ConstantValue.SELLER_ID;
     // 商户私钥，pkcs8格式
     public static final String RSA_PRIVATE2 = ConstantValue.RSA_PRIVATE2;
-    //回调地址
-    public static final String URL_CALLBACK = ConstantValue.ALIPAY_URL_CALLBACK;
 
     private static final int SDK_PAY_FLAG = 1;
 
@@ -44,10 +42,11 @@ public class AliPayUtils {
      * @param orderTitle  交易标题
      * @param orderNumber 订单号
      * @param totalMoney  订单总金额
+     * @param urlCallback 回调地址
      */
-    public void requestPay(String orderTitle, String orderNumber, String totalMoney) {
+    public void requestPay(String orderTitle, String orderNumber, String totalMoney, String urlCallback) {
 
-        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APP_ID, orderTitle, orderNumber, totalMoney, SELLER_ID, URL_CALLBACK);
+        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APP_ID, orderTitle, orderNumber, totalMoney, SELLER_ID, urlCallback);
 
         String orderParam = OrderInfoUtil2_0.buildOrderParam(params);
 

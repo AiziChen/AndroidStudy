@@ -15,6 +15,7 @@ import com.cnsunrun.androidstudy.activity.MoreClassificationActivity;
 import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.BaseFragment;
+import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.utils.LocationMapUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
@@ -113,8 +114,9 @@ public class MessageFragment extends BaseFragment {
         String orderTitle = "测试支付宝";
         String orderNumber = "2017080410248504";
         String totalPrice = "0.01";
+        String urlCallback= ConstantValue.ALIPAY_URL_CALLBACK;
         AliPayUtils alipay = new AliPayUtils(getActivity());
-        alipay.requestPay(orderTitle, orderNumber, totalPrice);
+        alipay.requestPay(orderTitle, orderNumber, totalPrice,urlCallback);
         alipay.setPayListener(new AliPayUtils.OnAlipayListener() {
             @Override
             public void onSuccess() {
