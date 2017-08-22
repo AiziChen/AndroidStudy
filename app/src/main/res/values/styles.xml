@@ -33,6 +33,13 @@
         <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
     </style>
 
+    <style name="divide_line_ebeb">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/line_bg_dark</item>
+    </style>
+
+
     <!-- 无标题对话框 -->
     <style name="NoTitleDialog" parent="android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>

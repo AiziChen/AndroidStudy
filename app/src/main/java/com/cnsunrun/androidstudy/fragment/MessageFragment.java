@@ -13,6 +13,7 @@ import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.activity.DropdownSelectActivity;
 import com.cnsunrun.androidstudy.activity.MoreClassificationActivity;
 import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
+import com.cnsunrun.androidstudy.activity.SelectDialogActivity;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
@@ -33,7 +34,8 @@ public class MessageFragment extends BaseFragment {
             "高德地图定位",
             "输入密码框",
             "选择Window的对话框",
-            "仿美团的更多分类功能"
+            "仿美团的更多分类功能",
+            "自定义选择框"
     };
 
     public static MessageFragment newInstance() {
@@ -83,6 +85,9 @@ public class MessageFragment extends BaseFragment {
                     case 4:
                         intent2Activity(MoreClassificationActivity.class);
                         break;
+                    case 5:
+                        intent2Activity(SelectDialogActivity.class);
+                        break;
                 }
             }
         });
@@ -114,9 +119,9 @@ public class MessageFragment extends BaseFragment {
         String orderTitle = "测试支付宝";
         String orderNumber = "2017080410248504";
         String totalPrice = "0.01";
-        String urlCallback= ConstantValue.ALIPAY_URL_CALLBACK;
+        String urlCallback = ConstantValue.ALIPAY_URL_CALLBACK;
         AliPayUtils alipay = new AliPayUtils(getActivity());
-        alipay.requestPay(orderTitle, orderNumber, totalPrice,urlCallback);
+        alipay.requestPay(orderTitle, orderNumber, totalPrice, urlCallback);
         alipay.setPayListener(new AliPayUtils.OnAlipayListener() {
             @Override
             public void onSuccess() {

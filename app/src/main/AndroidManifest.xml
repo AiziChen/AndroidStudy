@@ -107,7 +107,8 @@
             android:name=".activity.PopupWindowActivity"
             android:theme="@style/otherPageStyle" />
         <activity android:name=".activity.AliPayActivity" />
-        <activity android:name=".activity.MoreClassificationActivity"></activity>
+        <activity android:name=".activity.MoreClassificationActivity" />
+        <activity android:name=".activity.SelectDialogActivity"></activity>
     </application>
 
 </manifest>
