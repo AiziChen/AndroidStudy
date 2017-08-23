@@ -15,7 +15,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.SelectTypeAdapter;
-import com.cnsunrun.androidstudy.widgtet.DividerItemDecoration;
+import com.cnsunrun.androidstudy.widgtet.DivideLineItemDecoration;
 
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class SelectMoreTypeDailog extends Dialog {
         tvCancel = (TextView) popupView.findViewById(R.id.tv_cancel);
 
         recyclerView.setAdapter(new SelectTypeAdapter(mData));
-        recyclerView.addItemDecoration(new DividerItemDecoration(context, LinearLayout.VERTICAL));
+        recyclerView.addItemDecoration(new DivideLineItemDecoration(context, context.getResources().getColor(R.color.white_30), 1));
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayout.VERTICAL, false));
 
         tvCancel.setOnClickListener(new View.OnClickListener() {

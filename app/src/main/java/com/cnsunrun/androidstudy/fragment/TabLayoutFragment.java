@@ -13,14 +13,10 @@ import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
-import com.cnsunrun.androidstudy.widgtet.VerticalItemDecoration;
 import com.sunrun.toollibrary.LibFragment;
-import com.sunrun.toollibrary.utils.CommonUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.amap.api.col.bz.p;
 
 /**
  * Created by ZhouBin on 2017/7/18.
@@ -84,7 +80,6 @@ public class TabLayoutFragment extends LibFragment {
         adapter = new CridViewAdapter(mDatas);
         recyclerview.setAdapter(adapter);
         recyclerview.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false));
-//        recyclerview.addItemDecoration(new VerticalItemDecoration(mContext, getResources().getColor(R.color.blue_color), 1));
 
     }
 

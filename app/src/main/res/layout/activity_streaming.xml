@@ -12,7 +12,6 @@
         android:id="@+id/id_flowlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
         app:auto_select_effect="false"
         app:max_select="-1" />
 

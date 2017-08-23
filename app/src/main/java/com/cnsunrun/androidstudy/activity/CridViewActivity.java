@@ -66,7 +66,6 @@ public class CridViewActivity extends SwipeBackActivity {
         }
         adapter = new CridViewAdapter(mDatas);
         recyclerview.setLayoutManager(new LinearLayoutManager(CridViewActivity.this));
-//        recyclerview.addItemDecoration(new VerticalItemDecoration(this, getResources().getColor(R.color.line_bg_light), 1));
         SinaRefreshView headerView = new SinaRefreshView(this);
         headerView.setArrowResource(R.drawable.arrow);
 //        headerView.setTextColor(0xff745D5C);
