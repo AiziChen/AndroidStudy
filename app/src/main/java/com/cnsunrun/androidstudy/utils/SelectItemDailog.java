@@ -36,6 +36,7 @@ public class SelectItemDailog extends Dialog {
         lp.gravity = Gravity.BOTTOM;
         window.setAttributes(lp);
         window.setBackgroundDrawableResource(android.R.color.transparent);
+        SelectItemDailog.this.show();
     }
 
     private void initViews(View popupView) {
@@ -60,7 +61,6 @@ public class SelectItemDailog extends Dialog {
         if (tv_Photo_albums != null) {
             tv_Photo_albums.setOnClickListener(onClickListener);
         }
-
     }
 
     /**
@@ -72,7 +72,6 @@ public class SelectItemDailog extends Dialog {
         if (tv_Take_pictures != null) {
             tv_Take_pictures.setOnClickListener(onClickListener);
         }
-
     }
 
 

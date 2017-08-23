@@ -4,11 +4,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.utils.SelectItemDailog;
 import com.cnsunrun.androidstudy.utils.SelectMoreTypeDailog;
 import com.sunrun.toollibrary.utils.ToastUtils;
+
+import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,7 +55,6 @@ public class SelectDialogActivity extends SwipeBackActivity {
     private void showTypeOneDialog() {
 
         final SelectItemDailog selDialog = new SelectItemDailog(mContext);
-        selDialog.show();
         selDialog.setPhotoAlbumsListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,8 +87,13 @@ public class SelectDialogActivity extends SwipeBackActivity {
     }
 
     private void showTypeTwo() {
-        SelectMoreTypeDailog selmoreDialog = new SelectMoreTypeDailog(mContext);
-        selmoreDialog.show();
+        final List<String> mData = Arrays.asList("语文", "数学", "英语", "物理", "化学", "生物", "政治");
+        new SelectMoreTypeDailog(mContext, mData, new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                ToastUtils.showToast("点击了" + mData.get(position));
+            }
+        });
 
     }
 }
