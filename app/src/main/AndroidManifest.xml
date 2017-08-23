@@ -75,7 +75,14 @@
             android:exported="true"
             android:launchMode="singleTop" />
 
+
+        <receiver android:name=".wxpay.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
         <!-- 微信支付结束 -->
+
 
 
         <!-- 高德地图 -->

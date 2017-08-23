@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.wxpay.WXPayUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
@@ -26,7 +27,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        iwxapi = WXAPIFactory.createWXAPI(this, WXPayUtils.APP_ID);
+        iwxapi = WXAPIFactory.createWXAPI(this, ConstantValue.WX_APP_ID);
         iwxapi.handleIntent(getIntent(), this);
     }
 

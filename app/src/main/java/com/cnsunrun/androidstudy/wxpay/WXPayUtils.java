@@ -2,16 +2,24 @@ package com.cnsunrun.androidstudy.wxpay;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
+import android.util.Log;
 
 import com.cnsunrun.androidstudy.utils.ConstantValue;
+import com.sunrun.toollibrary.utils.ToastUtils;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.util.EntityUtils;
+
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Random;
 
@@ -70,4 +78,6 @@ public class WXPayUtils {
         key = key.substring(0, 15);
         return key;
     }
+
+
 }
