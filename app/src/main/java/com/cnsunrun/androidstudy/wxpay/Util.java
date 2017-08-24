@@ -57,7 +57,6 @@ public class Util {
 		if (needRecycle) {
 			bmp.recycle();
 		}
-		
 		byte[] result = output.toByteArray();
 		try {
 			output.close();

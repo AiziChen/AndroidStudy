@@ -105,7 +105,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="方式一" />
+            android:text="微信支付" />
 
         <TextView
             android:id="@+id/tv_type_two"
@@ -113,7 +113,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="方式二" />
+            android:text="Dialog" />
 
         <TextView
             android:id="@+id/tv_type_three"
@@ -121,7 +121,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="方式三" />
+            android:text="popupWindow" />
     </LinearLayout>
 
 

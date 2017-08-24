@@ -3,9 +3,9 @@ package com.cnsunrun.androidstudy.wxapi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.cnsunrun.androidstudy.utils.ConstantValue;
-import com.cnsunrun.androidstudy.wxpay.WXPayUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
@@ -55,7 +55,11 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
                 ToastUtils.showToast("支付失败!");
             }
         }
-        finish();
+        Intent intent = new Intent();//返回App界面
+        intent.putExtra("err_code",baseResp.errCode+"");
+        sendBroadcast(intent);
+        Log.e("TAG", "errCodes" + baseResp.errCode);
+        finish();//这里重要，如果没有 finish（）；将留在微信支付后的界面.
 
 
     }

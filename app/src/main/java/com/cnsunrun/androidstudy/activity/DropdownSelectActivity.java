@@ -18,8 +18,11 @@ import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.dialog.CommonDialog;
+import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.utils.RightMorePopupWindow;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
+import com.cnsunrun.androidstudy.wxpay.PayWXUtils;
+import com.cnsunrun.androidstudy.wxpay.WXPayUtils;
 import com.sunrun.toollibrary.utils.PopupUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 import com.sunrun.toollibrary.view.IosDialog;
@@ -30,6 +33,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.amap.api.col.bz.P;
 
 /**
  * popupWindow的练习和封装
@@ -263,12 +268,20 @@ public class DropdownSelectActivity extends SwipeBackActivity {
         });
     }
 
+    /**
+     * 微信支付
+     */
     private void showDialogOne() {
-//        View dialogView = View.inflate(mContext, R.layout.dialog_customer_keyboard, null);
-//        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-//        builder.setView(dialogView);
-//        cusAlertDialog = builder.create();
-//        cusAlertDialog.show();
+        String callBackUrl = ConstantValue.WX_ORDER_CALLBACK;
+        String title = "微信支付";
+        String orderPrice = "0.01";
+        String describe = "订单支付";
+        String orderNumber = "2017080410248504";
+        WXPayUtils wxPayUtils = new WXPayUtils(this, callBackUrl);
+        wxPayUtils.pay(title, orderPrice, describe, orderNumber);
+//        PayWXUtils payWXUtils=new PayWXUtils(this);
+//        payWXUtils.wXPay(callBackUrl);
+
 
     }
 }
