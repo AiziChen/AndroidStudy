@@ -7,4 +7,10 @@
     <string name="private_chat">发起聊天</string>
     <string name="group_chat">创建群组</string>
     <string name="add_contacts">添加好友</string>
+
+    <string name="edit_pay_password">请输入支付密码</string>
+    <string name="dialog_withdrawal_money">提现金额¥ %s元</string>
+    <string name="Forgot_password">忘记密码?</string>
+
+
 </resources>

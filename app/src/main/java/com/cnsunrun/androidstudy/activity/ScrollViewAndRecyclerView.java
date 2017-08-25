@@ -7,8 +7,9 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.PasswordDialog;
-import com.cnsunrun.androidstudy.utils.PasswordPopupWindow;
+import com.cnsunrun.androidstudy.utils.PasswordEditDialog;
 import com.cnsunrun.androidstudy.view.CustomerKeyboard;
 import com.cnsunrun.androidstudy.view.PasswordEditText;
 import com.cnsunrun.androidstudy.view.gridpasswordview.GridPasswordView;
@@ -96,25 +97,11 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
     }
 
     private void showTypeThree(View view) {
-        PasswordPopupWindow popupwindow = new PasswordPopupWindow(mContext);
-        popupwindow.showPopupWindow(view);
-        popupwindow.setTitle("输入密码");
-        final PasswordEditText password_edit_text = popupwindow.getPasswordEdit();
-        popupwindow.setPasswordClickListeners(new PasswordEditText.PasswordFullListener() {
+
+        AlerDialogUtils.passwordEditDialog(mContext, new PasswordEditText.PasswordFullListener() {
             @Override
             public void passwordFull(String password) {
                 ToastUtils.showToast("密码是:" + password);
-            }
-        });
-        popupwindow.customKeyBoard(new CustomerKeyboard.CustomerKeyboardClickListener() {
-            @Override
-            public void click(String number) {
-                password_edit_text.addpassword(number);
-            }
-
-            @Override
-            public void delete() {
-                password_edit_text.deleteLastPassword();
             }
         });
 
@@ -122,20 +109,10 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
 
     private void showTypeTwo(View view) {
 
-        final PasswordDialog dialog = new PasswordDialog(mContext);
-        dialog.setTitle("请输入订单交易密码");
-//        dialog.setCancelable(false);
-        dialog.show();
-        dialog.setPasswordClickListeners(new PasswordEditText.PasswordFullListener() {
+        AlerDialogUtils.passwordDialog(mContext, new PasswordEditText.PasswordFullListener() {
             @Override
             public void passwordFull(String password) {
                 ToastUtils.showToast("密码是:" + password);
-                passwordEditText.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        dialog.dismiss();
-                    }
-                }, 1500);
             }
         });
     }

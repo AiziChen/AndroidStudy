@@ -7,4 +7,20 @@
     <dimen name="item_margin_horizontal">24dp</dimen>
     <dimen name="item_margin_vertical">8dp</dimen>
 
+    <dimen name="tv_8sp">8sp</dimen>
+    <dimen name="tv_10sp">10sp</dimen>
+    <dimen name="tv_11sp">11sp</dimen>
+    <dimen name="tv_12sp">12sp</dimen>
+    <dimen name="tv_13sp">13sp</dimen>
+    <dimen name="tv_14sp">14sp</dimen>
+    <dimen name="tv_15sp">15sp</dimen>
+    <dimen name="tv_16sp">16sp</dimen>
+    <dimen name="tv_17sp">17sp</dimen>
+    <dimen name="tv_18sp">18sp</dimen>
+    <dimen name="tv_20sp">20sp</dimen>
+    <dimen name="tv_24sp">24sp</dimen>
+    <dimen name="tv_30sp">30sp</dimen>
+
+
+
 </resources>
