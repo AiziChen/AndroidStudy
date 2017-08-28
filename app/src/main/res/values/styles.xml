@@ -79,9 +79,7 @@
     <style name="RatingBarSmall" parent="Base.Widget.AppCompat.RatingBar.Small"></style>
 
 
-    <style name="RatingBarlager" parent="Base.Widget.AppCompat.RatingBar.Indicator">
-
-    </style>
+    <style name="RatingBarlager" parent="Base.Widget.AppCompat.RatingBar.Indicator"></style>
 
     <style name="RatBaringStyle" parent="Base.Widget.AppCompat.RatingBar.Indicator"></style>
 
