@@ -11,9 +11,11 @@ import android.widget.ListView;
 import com.amap.api.location.AMapLocation;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.activity.DropdownSelectActivity;
+import com.cnsunrun.androidstudy.activity.HeaderGradientActivity;
 import com.cnsunrun.androidstudy.activity.MoreClassificationActivity;
 import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
 import com.cnsunrun.androidstudy.activity.SelectDialogActivity;
+import com.cnsunrun.androidstudy.activity.SpreadsDeleteActivity;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
@@ -35,7 +37,9 @@ public class MessageFragment extends BaseFragment {
             "输入密码框",
             "选择Window的对话框",
             "仿美团的更多分类功能",
-            "自定义选择框"
+            "自定义选择框",
+            "侧滑删除Item",
+            "搜索栏渐变"
     };
 
     public static MessageFragment newInstance() {
@@ -87,6 +91,12 @@ public class MessageFragment extends BaseFragment {
                         break;
                     case 5:
                         intent2Activity(SelectDialogActivity.class);
+                        break;
+                    case 6:
+                        intent2Activity(SpreadsDeleteActivity.class);
+                        break;
+                    case 7:
+                        intent2Activity(HeaderGradientActivity.class);
                         break;
                 }
             }

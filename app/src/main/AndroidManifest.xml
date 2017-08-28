@@ -75,14 +75,12 @@
             android:exported="true"
             android:launchMode="singleTop" />
 
-
         <receiver android:name=".wxpay.AppRegister">
             <intent-filter>
                 <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
             </intent-filter>
         </receiver>
         <!-- 微信支付结束 -->
-
 
 
         <!-- 高德地图 -->
@@ -115,7 +113,9 @@
             android:theme="@style/otherPageStyle" />
         <activity android:name=".activity.AliPayActivity" />
         <activity android:name=".activity.MoreClassificationActivity" />
-        <activity android:name=".activity.SelectDialogActivity"></activity>
+        <activity android:name=".activity.SelectDialogActivity" />
+        <activity android:name=".activity.SpreadsDeleteActivity" />
+        <activity android:name=".activity.HeaderGradientActivity"></activity>
     </application>
 
 </manifest>

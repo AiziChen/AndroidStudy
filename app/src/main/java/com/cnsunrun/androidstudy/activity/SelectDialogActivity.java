@@ -25,8 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SelectDialogActivity extends SwipeBackActivity {
-
-
+    private static final String TAG = "SelectDialogActivity";
     @BindView(R.id.tv_type_one)
     TextView tvTypeOne;
     @BindView(R.id.tv_type_two)
