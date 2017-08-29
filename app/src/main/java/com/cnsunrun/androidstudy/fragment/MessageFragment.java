@@ -39,7 +39,7 @@ public class MessageFragment extends BaseFragment {
             "仿美团的更多分类功能",
             "自定义选择框",
             "侧滑删除Item",
-            "搜索栏渐变"
+            "shareSdk的封装"
     };
 
     public static MessageFragment newInstance() {
