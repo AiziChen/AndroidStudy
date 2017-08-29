@@ -9,11 +9,11 @@
 
     <include layout="@layout/include_recyclerview_relayout" />
 
+
     <RelativeLayout
         android:id="@+id/rl_home_title_ber"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp">
+        android:layout_height="30dp">
 
         <ImageView
             android:id="@+id/ic_home_mycenter"
@@ -67,5 +67,4 @@
             android:layout_marginRight="10dp"
             android:src="@drawable/ic_home_search" />
     </RelativeLayout>
-
 </FrameLayout>

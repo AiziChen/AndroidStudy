@@ -124,7 +124,6 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-
                 //滑动的距离
                 mDistanceY += dy;
                 //上方图片的高度

@@ -43,6 +43,11 @@ public class PasswordEditDialog extends Dialog {
         PasswordEditDialog.this.show();
     }
 
+    /**
+     * 初始化控件
+     *
+     * @param popupView
+     */
     private void initViews(View popupView) {
         delete_dialog = (ImageView) popupView.findViewById(R.id.delete_dialog);
         tv_password_title = (TextView) popupView.findViewById(R.id.tv_password_title);

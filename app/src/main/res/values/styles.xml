@@ -76,12 +76,11 @@
         <item name="android:windowExitAnimation">@anim/popupwindow_out</item>
     </style>
 
-    <style name="RatingBarSmall" parent="Base.Widget.AppCompat.RatingBar.Small"></style>
+    <style name="RatingBarSmall" parent="Base.Widget.AppCompat.RatingBar.Small"/>
 
+    <style name="RatingBarlager" parent="Base.Widget.AppCompat.RatingBar.Indicator"/>
 
-    <style name="RatingBarlager" parent="Base.Widget.AppCompat.RatingBar.Indicator"></style>
-
-    <style name="RatBaringStyle" parent="Base.Widget.AppCompat.RatingBar.Indicator"></style>
+    <style name="RatBaringStyle" parent="Base.Widget.AppCompat.RatingBar.Indicator"/>
 
     <style name="otherPageStyle" parent="AppTheme.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
