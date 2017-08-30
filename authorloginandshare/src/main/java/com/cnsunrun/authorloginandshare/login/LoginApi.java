@@ -1,7 +1,6 @@
 package com.cnsunrun.authorloginandshare.login;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Looper;
@@ -15,9 +14,8 @@ import java.util.HashMap;
 
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
+import cn.sharesdk.framework.PlatformDb;
 import cn.sharesdk.framework.ShareSDK;
-
-import static android.R.attr.orientation;
 
 public class LoginApi implements Callback {
     private static final int MSG_AUTH_CANCEL = 1;
@@ -25,21 +23,11 @@ public class LoginApi implements Callback {
     private static final int MSG_AUTH_COMPLETE = 3;
 
     private OnLoginListener loginListener;
-    private String platform;
     private Context context;
     private Handler handler;
 
     public LoginApi() {
         handler = new Handler(Looper.getMainLooper(), this);
-    }
-
-    /**
-     * 设置类型
-     *
-     * @param platform
-     */
-    public void setPlatform(String platform) {
-        this.platform = platform;
     }
 
     /**
@@ -51,7 +39,13 @@ public class LoginApi implements Callback {
         this.loginListener = login;
     }
 
-    public void login(Context context) {
+    /**
+     * 登录授权
+     *
+     * @param context  上下文
+     * @param platform 类型
+     */
+    public void login(Context context, String platform) {
         this.context = context.getApplicationContext();
         if (platform == null) {
             return;
@@ -76,7 +70,7 @@ public class LoginApi implements Callback {
                     Message msg = new Message();
                     msg.what = MSG_AUTH_COMPLETE;
                     msg.arg2 = action;
-                    msg.obj = new Object[]{plat.getName(), res};
+                    msg.obj = new Object[]{plat, res};
                     handler.sendMessage(msg);
                 }
             }
@@ -112,32 +106,32 @@ public class LoginApi implements Callback {
         switch (msg.what) {
             case MSG_AUTH_CANCEL: {
                 // 取消
-                Toast.makeText(context, "canceled", Toast.LENGTH_SHORT).show();
-                if (loginListener != null) {
-                    loginListener.authorizeCancel();
-                }
+                Toast.makeText(context, "登录取消", Toast.LENGTH_SHORT).show();
             }
             break;
             case MSG_AUTH_ERROR: {
                 // 失败
                 Throwable t = (Throwable) msg.obj;
-                String text = "caught error: " + t.getMessage();
-                Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
+                String text = "error: " + t.getMessage();
                 t.printStackTrace();
                 if (loginListener != null) {
                     loginListener.getProfileError(text);
                 }
             }
             break;
-            case MSG_AUTH_COMPLETE: {
-                // 成功
+            case MSG_AUTH_COMPLETE: { // 成功
                 Object[] objs = (Object[]) msg.obj;
-                String plat = (String) objs[0];
+                Platform plat = (Platform) objs[0];
                 @SuppressWarnings("unchecked")
                 HashMap<String, Object> res = (HashMap<String, Object>) objs[1];
-                if (loginListener != null) {
-                    loginListener.authorizeSuccess(plat, res);
+                if (plat.isAuthValid()) {// 判断授权是否有效
+                    PlatformDb platDB = plat.getDb();// 获取数平台数据DB
+                    if (loginListener != null) {
+                        loginListener.authorizeSuccess(plat, platDB);
+
+                    }
                 }
+
             }
             break;
         }

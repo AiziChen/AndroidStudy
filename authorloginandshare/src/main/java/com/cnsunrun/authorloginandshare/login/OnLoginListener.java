@@ -1,6 +1,7 @@
 package com.cnsunrun.authorloginandshare.login;
 
-import java.util.HashMap;
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.PlatformDb;
 
 /**
  * 第三方登录操作过程中会回调这个接口中的方法，不同方法衔接第
@@ -8,26 +9,20 @@ import java.util.HashMap;
  * 现本接口的不同方法，否则第三方登录是没有意义的。
  */
 public interface OnLoginListener {
-
     /**
-     * 成功
+     * 授权成功
      *
      * @param platform
-     * @param res
+     * @param platDB
      */
-    void authorizeSuccess(String platform, HashMap<String, Object> res);
+    void authorizeSuccess(Platform platform, PlatformDb platDB);
 
     /**
-     * 失败
+     * 授权失败
      *
      * @param info
      */
     void getProfileError(String info);
-
-    /**
-     * 取消
-     */
-    void authorizeCancel();
 
 
 }
