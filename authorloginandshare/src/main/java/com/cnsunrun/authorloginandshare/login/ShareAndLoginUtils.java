@@ -4,8 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.cnsunrun.authorloginandshare.R;
-
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformDb;
 import cn.sharesdk.sina.weibo.SinaWeibo;
