@@ -85,7 +85,7 @@ public class HeaderGradientActivity extends SwipeBackActivity {
      * 微信登录
      */
     private void loginFormWeiXin() {
-        ShareAndLoginUtils.authorLogin(mContext, ShareAndLoginUtils.WX_LOGIG, new ShareAndLoginUtils.ConfirmLoginListener() {
+        ShareAndLoginUtils.authorLogin(mContext, ShareAndLoginUtils.WX_LOGIN, new ShareAndLoginUtils.ConfirmLoginListener() {
             @Override
             public void confirmLogin(String userToken, String UserId, String UserName, String UserIcon, String UserGender) {
                 ToastUtils.showToast("登录成功");

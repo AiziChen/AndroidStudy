@@ -16,6 +16,7 @@ import com.cnsunrun.androidstudy.activity.MoreClassificationActivity;
 import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
 import com.cnsunrun.androidstudy.activity.SelectDialogActivity;
 import com.cnsunrun.androidstudy.activity.SpreadsDeleteActivity;
+import com.cnsunrun.androidstudy.activity.ZXingActivity;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
@@ -39,7 +40,8 @@ public class MessageFragment extends BaseFragment {
             "仿美团的更多分类功能",
             "自定义选择框",
             "侧滑删除Item",
-            "shareSdk的封装"
+            "shareSdk的封装",
+            "二维码的生成和扫描"
     };
 
     public static MessageFragment newInstance() {
@@ -97,6 +99,9 @@ public class MessageFragment extends BaseFragment {
                         break;
                     case 7:
                         intent2Activity(HeaderGradientActivity.class);
+                        break;
+                    case 8:
+                       intent2Activity(ZXingActivity.class);
                         break;
                 }
             }

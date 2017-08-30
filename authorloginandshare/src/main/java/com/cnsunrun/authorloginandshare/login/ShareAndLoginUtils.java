@@ -18,7 +18,7 @@ import cn.sharesdk.wechat.friends.Wechat;
 
 public class ShareAndLoginUtils {
 
-    public static final String WX_LOGIG = "wx_login";
+    public static final String WX_LOGIN = "wx_login";
     public static final String QQ_LOGIN = "qq_login";
     public static final String WB_LOGIN = "wb_login";
 
@@ -45,7 +45,7 @@ public class ShareAndLoginUtils {
     public static void authorLogin(final Context context, String type, final ConfirmLoginListener confirmLoginListener) {
         LoginApi loginApi = new LoginApi();
         if (TextUtils.isEmpty(type)) return;
-        if (type.equals(WX_LOGIG)) {  //微信
+        if (type.equals(WX_LOGIN)) {  //微信
             loginApi.login(context, Wechat.NAME);
         } else if (type.endsWith(QQ_LOGIN)) { //QQ
             loginApi.login(context, QQ.NAME);
@@ -72,17 +72,6 @@ public class ShareAndLoginUtils {
     }
 
 
-    /**
-     * 第三方分享
-     *
-     * @param context
-     * @param shareTitle
-     * @param shareText
-     * @param url
-     */
-    public static void authorShare(Context coext, String shareTitle, String shareText, String url) {
-
-    }
 
 
 }

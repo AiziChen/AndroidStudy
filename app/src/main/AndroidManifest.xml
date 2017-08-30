@@ -88,17 +88,18 @@
             android:name="com.amap.api.v2.apikey"
             android:value="f118cfd8094fef0a4695714eabe3cb52" />
 
-        <!--shareSDK开始-->
+        <!-- shareSDK开始 -->
 
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize" >
-
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <data android:scheme="tencent1106208563" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -106,21 +107,25 @@
             <!-- 调用新浪原生SDK，需要注册的回调activity -->
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <activity
                 android:name=".wxapi.WXEntryActivity"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar"
                 android:configChanges="keyboardHidden|orientation|screenSize"
                 android:exported="true"
-                android:screenOrientation="portrait" />
+                android:screenOrientation="portrait"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         </activity>
         <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
-        <meta-data android:name="Mob-AppKey" android:value="208e5082621b9"/>
-        <meta-data android:name="Mob-AppSecret" android:value="ceb4d07929ec069e0497402f0e4819e9"/>
-        <!--shareSDK结束-->
-
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="208e5082621b9" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="ceb4d07929ec069e0497402f0e4819e9" />
+        <!-- shareSDK结束 -->
 
         <activity android:name=".activity.YaSuoImageViewActivity">
             <intent-filter>
@@ -149,7 +154,8 @@
         <activity android:name=".activity.MoreClassificationActivity" />
         <activity android:name=".activity.SelectDialogActivity" />
         <activity android:name=".activity.SpreadsDeleteActivity" />
-        <activity android:name=".activity.HeaderGradientActivity"></activity>
+        <activity android:name=".activity.HeaderGradientActivity" />
+        <activity android:name=".activity.ZXingActivity"></activity>
     </application>
 
 </manifest>
