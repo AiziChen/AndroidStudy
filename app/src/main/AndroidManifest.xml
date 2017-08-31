@@ -155,7 +155,8 @@
         <activity android:name=".activity.SelectDialogActivity" />
         <activity android:name=".activity.SpreadsDeleteActivity" />
         <activity android:name=".activity.HeaderGradientActivity" />
-        <activity android:name=".activity.ZXingActivity"></activity>
+        <activity android:name=".activity.ZXingActivity" />
+        <activity android:name=".activity.ZXingTwoActivity"></activity>
     </application>
 
 </manifest>

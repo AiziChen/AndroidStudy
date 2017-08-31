@@ -17,6 +17,7 @@ import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
 import com.cnsunrun.androidstudy.activity.SelectDialogActivity;
 import com.cnsunrun.androidstudy.activity.SpreadsDeleteActivity;
 import com.cnsunrun.androidstudy.activity.ZXingActivity;
+import com.cnsunrun.androidstudy.activity.ZXingTwoActivity;
 import com.cnsunrun.androidstudy.alipay.AliPayUtils;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
@@ -41,7 +42,8 @@ public class MessageFragment extends BaseFragment {
             "自定义选择框",
             "侧滑删除Item",
             "shareSdk的封装",
-            "二维码的生成和扫描"
+            "二维码的生成",
+            "二维码的扫描"
     };
 
     public static MessageFragment newInstance() {
@@ -101,7 +103,10 @@ public class MessageFragment extends BaseFragment {
                         intent2Activity(HeaderGradientActivity.class);
                         break;
                     case 8:
-                       intent2Activity(ZXingActivity.class);
+                        intent2Activity(ZXingActivity.class);
+                        break;
+                    case 9:
+                        intent2Activity(ZXingTwoActivity.class);
                         break;
                 }
             }

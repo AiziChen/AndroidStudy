@@ -11,6 +11,5 @@
     <string name="edit_pay_password">请输入支付密码</string>
     <string name="dialog_withdrawal_money">提现金额¥ %s元</string>
     <string name="Forgot_password">忘记密码?</string>
-
-
+    <string name="er_code_mes">亲爱的,生日快乐!虽然我不能一直陪在你的身边,但是却止不住我对你时刻的思念.我说过你是一个好女孩,值得我去呵护和爱,我虽然说不出太多哄你开心的情话,但是我会用行动证明我对你的爱!</string>
 </resources>

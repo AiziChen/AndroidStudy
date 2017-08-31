@@ -1,25 +1,26 @@
 package com.cnsunrun.androidstudy.activity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
+import com.cnsunrun.androidstudy.utils.QRCodeUtils;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 二维码的生成和扫描
+ * 二维码的生成
  */
 public class ZXingActivity extends SwipeBackActivity {
 
@@ -28,8 +29,12 @@ public class ZXingActivity extends SwipeBackActivity {
     TextView tvCreatErcode;
     @BindView(R.id.tv_saomiao_ercode)
     TextView tvSaomiaoErcode;
+    @BindView(R.id.tv_ercode_mess)
+    TextView tvErcodeMessage;
     @BindView(R.id.iv_ercode_image)
     ImageView ivErcodeImage;
+
+    private int type = 1;
 
     @Override
     protected void loadViewLayout() {
@@ -39,7 +44,7 @@ public class ZXingActivity extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("二维码的生成和扫描");
+        initTitle("二维码的生成");
 
     }
 
@@ -70,39 +75,42 @@ public class ZXingActivity extends SwipeBackActivity {
 
     //扫描二维码
     private void saoMiaoErCode() {
-
-
+        new IntentIntegrator(this)
+                .setOrientationLocked(false)
+                .setCaptureActivity(ZXingTwoActivity.class) // 设置自定义的activity是CustomActivity
+                .initiateScan(); // 初始化扫描
     }
 
     //生成二维码
     private void creatErCode() {
-        String textMes = "生成一个漂亮的二维码";
-        Bitmap bitMap = encodeAsBitmap(textMes);
-        ivErcodeImage.setImageBitmap(bitMap);
-
-    }
-
-    /**
-     * 生成二维码
-     *
-     * @param str
-     * @return
-     */
-    private Bitmap encodeAsBitmap(String str) {
-        Bitmap bitmap = null;
-        BitMatrix result = null;
-        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-        try {
-            result = multiFormatWriter.encode(str, BarcodeFormat.QR_CODE, 200, 200);
-            // 使用 ZXing Android Embedded 要写的代码
-            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-            bitmap = barcodeEncoder.createBitmap(result);
-        } catch (WriterException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException iae) {
-            return null;
+        if (type == 1) {
+            Bitmap bitmap = QRCodeUtils.createQRCodeWithLogo(getString(R.string.er_code_mes),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.ic_yu_er));
+            ivErcodeImage.setImageBitmap(bitmap);
+            type = 2;
+        } else {
+            String textMes = "Happy birthday, my dear!Although not always accompany in your side, but can't I moments of one's affection for you. You are a good girl, is worth me to care, although I couldn't say a special moving down to coax you happy, but I will use my practical action to prove my love for you!";
+            Bitmap bitmap = QRCodeUtils.createQRCode(textMes);
+            ivErcodeImage.setImageBitmap(bitmap);
+            type = 1;
         }
-        return bitmap;
+
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (intentResult != null) {
+            if (intentResult.getContents() == null) {
+                Toast.makeText(this, "内容为空", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "扫描成功", Toast.LENGTH_LONG).show();
+                String ScanResult = intentResult.getContents();
+                tvErcodeMessage.setText(ScanResult);
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 }

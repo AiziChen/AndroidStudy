@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_zxing"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_zxing_two"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
     android:orientation="vertical">
 
     <include layout="@layout/include_titlebar" />
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/dbv_custom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:zxing_framing_rect_height="260dp"
+        app:zxing_framing_rect_width="260dp"
+        app:zxing_preview_scaling_strategy="fitXY"
+        app:zxing_use_texture_view="true" />
 
 
     <LinearLayout
@@ -15,42 +26,26 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_creat_ercode"
+            android:id="@+id/tv_saomiao_code"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/text_color_999"
+            android:background="@color/text_color_888"
             android:gravity="center"
-            android:text="生成二维码"
+            android:text="闪光灯"
             android:textColor="@color/white" />
 
         <TextView
-            android:id="@+id/tv_saomiao_ercode"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:background="@color/text_color_999"
+            android:background="@color/text_color_888"
             android:gravity="center"
-            android:text="扫描二维码"
+            android:text="手电筒"
             android:textColor="@color/white" />
 
+
     </LinearLayout>
-
-
-    <ImageView
-        android:id="@+id/iv_ercode_image"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp" />
-
-
-    <TextView
-        android:id="@+id/tv_ercode_mess"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/text_color_666"
-        android:textSize="@dimen/tv_14sp" />
 
 </LinearLayout>
