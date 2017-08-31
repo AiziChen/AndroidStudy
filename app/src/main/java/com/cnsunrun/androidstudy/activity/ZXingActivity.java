@@ -94,9 +94,7 @@ public class ZXingActivity extends SwipeBackActivity {
             ivErcodeImage.setImageBitmap(bitmap);
             type = 1;
         }
-
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -22,13 +22,12 @@ public class ShareAndLoginUtils {
     public static final String QQ_LOGIN = "qq_login";
     public static final String WB_LOGIN = "wb_login";
 
-
     public static ShareAndLoginUtils shareAndLoginUtils;
 
     public ShareAndLoginUtils() {
     }
 
-    public static synchronized  ShareAndLoginUtils getShareAndLoginUtils() {
+    public static synchronized ShareAndLoginUtils getShareAndLoginUtils() {
         if (shareAndLoginUtils == null) {
             shareAndLoginUtils = new ShareAndLoginUtils();
         }
@@ -71,7 +70,9 @@ public class ShareAndLoginUtils {
         void confirmLogin(String userToken, String UserId, String UserName, String UserIcon, String UserGender);
     }
 
+    private ConfirmLoginListener confirmLoginListener;
 
-
-
+    public void setConfirmLoginListener(ConfirmLoginListener confirmLoginListener) {
+        this.confirmLoginListener = confirmLoginListener;
+    }
 }

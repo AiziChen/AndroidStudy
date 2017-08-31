@@ -54,8 +54,8 @@ public class ZXingTwoActivity extends SwipeBackActivity implements DecoratedBarc
         captureManager.initializeFromIntent(getIntent(), savedInstanceState);
         captureManager.decode();
 
-
         dbvCustom.setTorchListener(this);
+
     }
 
     @Override
@@ -77,7 +77,6 @@ public class ZXingTwoActivity extends SwipeBackActivity implements DecoratedBarc
             dbvCustom.setTorchOn();
         }
     }
-
 
     @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {

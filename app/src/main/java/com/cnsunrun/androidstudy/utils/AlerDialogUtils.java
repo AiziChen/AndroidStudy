@@ -19,7 +19,7 @@ public class AlerDialogUtils {
     public AlerDialogUtils() {
     }
 
-    public synchronized static AlerDialogUtils getInstance() {
+    public static synchronized AlerDialogUtils getInstance() {
         if (alerDialogUtils == null) {
             alerDialogUtils = new AlerDialogUtils();
         }
@@ -63,7 +63,6 @@ public class AlerDialogUtils {
 
         return passwordDialog(context, Title, hitMessage, false, false, passwordFullListener, null);
     }
-
 
     /**
      * 修改标题和显示忘记密码
