@@ -27,15 +27,15 @@ import java.util.regex.Pattern;
 public class StringUtils {
     /**
      * 把集合里面的字符串用空格连起来
+     *
      * @param list
      * @return
      */
-    public static String getMiddleSpaceString(List<String> list)
-    {
-        StringBuffer sb=new StringBuffer();
+    public static String getMiddleSpaceString(List<String> list) {
+        StringBuffer sb = new StringBuffer();
         for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
-            sb.append(str+" ");
+            sb.append(str + " ");
         }
         return sb.toString();
     }
@@ -45,15 +45,17 @@ public class StringUtils {
         ss.setSpan(new ForegroundColorSpan(color), 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         return ss;
     }
-    public static SpannableString getColorSizeText(String text, int color,int sp) {
+
+    public static SpannableString getColorSizeText(String text, int color, int sp) {
         SpannableString ss = new SpannableString(text);
         ss.setSpan(new ForegroundColorSpan(color), 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(new AbsoluteSizeSpan(CommonUtil.sp2px(LibApplication.getInstance(),sp)), 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new AbsoluteSizeSpan(CommonUtil.sp2px(LibApplication.getInstance(), sp)), 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         return ss;
     }
-    public static SpannableString getSizeText(Context context,String text, int sp) {
+
+    public static SpannableString getSizeText(Context context, String text, int sp) {
         SpannableString ss = new SpannableString(text);
-        ss.setSpan(new AbsoluteSizeSpan(CommonUtil.sp2px(context,sp)), 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new AbsoluteSizeSpan(CommonUtil.sp2px(context, sp)), 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         return ss;
     }
 
@@ -76,13 +78,11 @@ public class StringUtils {
     /**
      * 关键字高亮显示
      *
-     * @param target
-     *            需要高亮的关键字
-     * @param text
-     *            需要显示的文字
+     * @param target 需要高亮的关键字
+     * @param text   需要显示的文字
      * @return spannable 处理完后的结果，记得不要toString()，否则没有效果
      */
-    public static SpannableStringBuilder highlight(String text, String target,int color) {
+    public static SpannableStringBuilder highlight(String text, String target, int color) {
         SpannableStringBuilder spannable = new SpannableStringBuilder(text);
         CharacterStyle span;
         Pattern p = Pattern.compile(target);

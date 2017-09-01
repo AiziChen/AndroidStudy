@@ -1,16 +1,19 @@
 package com.cnsunrun.androidstudy.activity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v7.app.AlertDialog;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
-import com.cnsunrun.androidstudy.utils.PasswordDialog;
-import com.cnsunrun.androidstudy.utils.PasswordEditDialog;
-import com.cnsunrun.androidstudy.view.CustomerKeyboard;
+import com.cnsunrun.androidstudy.utils.InputKeyBoardUtil;
 import com.cnsunrun.androidstudy.view.PasswordEditText;
 import com.cnsunrun.androidstudy.view.gridpasswordview.GridPasswordView;
 import com.sunrun.toollibrary.utils.ToastUtils;
@@ -78,6 +81,16 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View v = getCurrentFocus();
+            InputKeyBoardUtil.hideCloseKeyboard(v, ev, this);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
 
@@ -123,7 +136,7 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
         builder.setView(passwordView);
         final TextView tvTitle = (TextView) passwordView.findViewById(R.id.tv_title);
         PasswordEditText passwordEdit = (PasswordEditText) passwordView.findViewById(R.id.password_edit_text);
-//        builder.setCancelable(false);
+//        builder.setCancelable(false);//点击空白是否消失
         passwordDialog = builder.create();
         passwordDialog.show();
         passwordEdit.setOnPasswordFullListener(new PasswordEditText.PasswordFullListener() {
@@ -135,7 +148,7 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
                     public void run() {
                         passwordDialog.dismiss();
                     }
-                }, 1500);
+                }, 1000);
 
             }
         });

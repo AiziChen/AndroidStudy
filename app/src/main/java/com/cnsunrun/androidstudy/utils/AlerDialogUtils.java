@@ -166,6 +166,7 @@ public class AlerDialogUtils {
                 if (passwordFullListener != null) {
                     passwordFullListener.passwordFull(password);
                 }
+                passwordEditDialog.dismiss();
             }
         });
         passwordEditDialog.customKeyBoard(new CustomerKeyboard.CustomerKeyboardClickListener() {

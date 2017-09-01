@@ -48,7 +48,13 @@ public class CommonUtil {
         }
     }
 
-    public static void callPhone( Context context, final String phone) {
+    /**
+     * 拨号
+     *
+     * @param context
+     * @param phone
+     */
+    public static void callPhone(Context context, final String phone) {
         Intent phoneIntent = new Intent();
         phoneIntent.setAction(Intent.ACTION_CALL);
         phoneIntent.setData(Uri.parse("tel:" + phone));
@@ -253,6 +259,7 @@ public class CommonUtil {
         NetworkInfo info = connectMgr.getActiveNetworkInfo();
         return info != null && info.getType() == ConnectivityManager.TYPE_WIFI;
     }
+
     /*
       * 获得应用版本名称
       */
@@ -314,11 +321,12 @@ public class CommonUtil {
         }
         if (phone.length() != 11 || !phone
                 .matches("^((13)|(14)|(15)|(17)|(18))\\d{9}$")) {
-            if (toast)  ToastUtils.showToast("手机号格式不对");
+            if (toast) ToastUtils.showToast("手机号格式不对");
             return false;
         }
         return true;
     }
+
     /**
      * 手机号验证
      *
@@ -327,13 +335,13 @@ public class CommonUtil {
      */
     public static boolean checkPhone(String phone) {
 
-        return checkPhone(phone,false);
+        return checkPhone(phone, false);
     }
 
     /**
      * 设置屏幕的背景透明度
      *
-     * @param bgAlpha  0.0-1.0
+     * @param bgAlpha 0.0-1.0
      */
     public static void setBackgroundAlpha(Activity activity, float bgAlpha) {
         WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
