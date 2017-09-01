@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
 import com.flyco.tablayout.SlidingTabLayout;
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
 /**
  * 自定义TabLayout
  */
-public class CustomTabLayoutActivity extends BaseActivity {
+public class CustomTabLayoutActivity extends SwipeBackActivity {
     @BindView(R.id.tabLayout)
     SlidingTabLayout tabLayout;
     @BindView(R.id.viewpager)

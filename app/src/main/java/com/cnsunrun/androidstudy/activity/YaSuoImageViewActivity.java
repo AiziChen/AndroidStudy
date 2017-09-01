@@ -6,17 +6,17 @@ import android.support.v4.app.Fragment;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.fragment.ContactsFragment;
 import com.cnsunrun.androidstudy.fragment.HomeFragment;
 import com.cnsunrun.androidstudy.fragment.MessageFragment;
 import com.cnsunrun.androidstudy.fragment.MoreOtherFragment;
-import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
 import com.cnsunrun.androidstudy.utils.TabEntity;
 import com.cnsunrun.androidstudy.widgtet.NoScrollViewPager;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.sunrun.toollibrary.LibActivity;
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 import me.weyye.hipermission.HiPermission;
 import me.weyye.hipermission.PermissionCallback;
 
-public class YaSuoImageViewActivity extends BaseActivity {
+public class YaSuoImageViewActivity extends SwipeBackActivity {
 
     @BindView(R.id.viewpager)
     NoScrollViewPager viewpager;
@@ -45,7 +45,7 @@ public class YaSuoImageViewActivity extends BaseActivity {
     protected void loadViewLayout() {
         setContentView(R.layout.activity_ya_suo_image_view);
         ButterKnife.bind(this);
-
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.red));
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.BaseActivity;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -14,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * 高德地图的实现
  */
-public class MapActivity extends BaseActivity {
+public class MapActivity extends SwipeBackActivity {
     //初始化地图控制器对象
     AMap aMap;
     @BindView(R.id.mv_map)

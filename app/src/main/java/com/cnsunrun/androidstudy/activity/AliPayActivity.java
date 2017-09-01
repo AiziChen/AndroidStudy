@@ -6,8 +6,10 @@ import android.view.Gravity;
 import android.view.View;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.fragment.LeftMenuFragment;
+import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +30,7 @@ public class AliPayActivity extends SwipeBackActivity {
     protected void loadViewLayout() {
         setContentView(R.layout.activity_ali_pay);
         ButterKnife.bind(this);
+//        StatusBarUtil.setColorNoTranslucentForDrawerLayout(this, drawerLayout, 0);
 
     }
 

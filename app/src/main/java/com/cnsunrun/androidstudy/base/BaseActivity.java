@@ -18,7 +18,12 @@ public abstract class BaseActivity extends LibActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
+        //设置状态栏颜色
+//        StatusBarUtil.setColor(this, getResources().getColor(R.color.white));
+        //设置状态栏半透明
+//        StatusBarUtil.setTranslucent(this, 40);
+        //设置状态栏全透明
+        StatusBarUtil.setTransparent(this);
     }
 
     public TitleBuilder initTitle(Object obj) {

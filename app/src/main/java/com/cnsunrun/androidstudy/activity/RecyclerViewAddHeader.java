@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
+import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.utils.LoadDialog;
@@ -28,7 +29,7 @@ import butterknife.ButterKnife;
 /**
  * RecyclerViewAddHeader
  */
-public class RecyclerViewAddHeader extends BaseActivity {
+public class RecyclerViewAddHeader extends SwipeBackActivity {
 
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
