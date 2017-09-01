@@ -3,8 +3,12 @@ package com.cnsunrun.androidstudy.utils;
 import android.content.Context;
 import android.view.View;
 
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.view.CustomerKeyboard;
 import com.cnsunrun.androidstudy.view.PasswordEditText;
+
+import java.util.List;
 
 /**
  * Created by ZhouBin on 2017/8/25.
@@ -182,6 +186,21 @@ public class AlerDialogUtils {
 
         });
         return passwordEditDialog;
+    }
+
+    /**
+     * 右上角的popupWindow
+     *
+     * @param context             上下文
+     * @param mDatas              数据
+     * @param view                显示的控件
+     * @param onItemClickListener 点击回调
+     * @return
+     */
+    public static RightMorePopupWindow rightMorePopupWindow(Context context, List<ProductMes> mDatas, View view, OnItemClickListener onItemClickListener) {
+        RightMorePopupWindow rightMorePopupWindow = new RightMorePopupWindow(context, mDatas, onItemClickListener);
+        rightMorePopupWindow.showPopupWindow(view);
+        return rightMorePopupWindow;
     }
 
 

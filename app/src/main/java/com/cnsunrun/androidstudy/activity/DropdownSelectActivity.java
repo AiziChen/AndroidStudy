@@ -19,6 +19,8 @@ import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.dialog.CommonDialog;
+import com.cnsunrun.androidstudy.model.ProductMes;
+import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.cnsunrun.androidstudy.utils.RightMorePopupWindow;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
@@ -97,9 +99,25 @@ public class DropdownSelectActivity extends SwipeBackActivity {
      * @param view
      */
     private void showTopPopup(View view) {
-        RightMorePopupWindow rightMorePopupWindow = new RightMorePopupWindow(this);
-        rightMorePopupWindow.showPopupWindow(view);
+        String[] imageList = {
+                "http://s1.cdn.xiachufang.com/bc55fd5aec3911e6bc9d0242ac110002_640w_427h.jpg",
+                "http://s1.cdn.xiachufang.com/957171ee064011e7947d0242ac110002_1280w_853h.jpg",
+                "http://s1.cdn.xiachufang.com/bd54e300886c11e6a9a10242ac110002_640w_640h.jpg",
+                "http://s2.cdn.xiachufang.com/2b6a110e88c611e6a9a10242ac110002_1000w_667h.jpg",
+                "http://s1.cdn.xiachufang.com/af570278afe611e6bc9d0242ac110002_1280w_962h.jpg"
+        };
 
+        List<ProductMes> mDatas = new ArrayList<>();
+        for (int i = 0; i < imageList.length; i++) {
+            mDatas.add(new ProductMes(imageList[i], "测试数据" + i));
+        }
+
+        AlerDialogUtils.rightMorePopupWindow(mContext, mDatas, view, new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                showToast("点击了" + position);
+            }
+        });
     }
 
     @Override
@@ -237,18 +255,6 @@ public class DropdownSelectActivity extends SwipeBackActivity {
                 showDialogOne();
                 break;
             case R.id.tv_type_two:
-                final IosDialog dailog = new IosDialog(mContext).builder();
-                dailog.setMsg("提现帐号")
-                        .setEditHint("请输入提现帐号")
-                        .setEditTextSize(14)
-                        .setNegativeButton("取消", null)
-                        .setPositiveButton("确定", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                String result = dailog.getResult();
-                                ToastUtils.showToast(result);
-                            }
-                        }).show();
 
                 break;
             case R.id.tv_type_three:
@@ -258,15 +264,6 @@ public class DropdownSelectActivity extends SwipeBackActivity {
     }
 
     private void showDialogThree() {
-        final CommonDialog.Builder builder = new CommonDialog.Builder(DropdownSelectActivity.this);
-        builder.setView(R.layout.dialog_customer_keyboard).fromBottom().fullWidth().create().show();
-
-        builder.getView(R.id.delete_dialog).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                builder.dismiss();
-            }
-        });
     }
 
     /**

@@ -2,12 +2,20 @@ package com.cnsunrun.androidstudy.utils;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.adapter.RightTopWindowAdapter;
+import com.cnsunrun.androidstudy.model.ProductMes;
+
+import java.util.List;
 
 /**
  * Created by ZhouBin on 2017/8/3.
@@ -16,33 +24,42 @@ import com.cnsunrun.androidstudy.R;
 
 public class RightMorePopupWindow extends PopupWindow {
 
-    public RightMorePopupWindow(Context context) {
+    public RightMorePopupWindow(Context context, List<ProductMes> mDatas, OnItemClickListener onItemClickListener) {
         super(context);
         View rightPopupWindow = View.inflate(context, R.layout.right_top_popupwindow, null);
-        initViews(rightPopupWindow);
-        // 设置SelectPicPopupWindow的View
+        initViews(context, rightPopupWindow, mDatas, onItemClickListener);
         this.setContentView(rightPopupWindow);
-        // 设置SelectPicPopupWindow弹出窗体的宽
         this.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
-        // 设置SelectPicPopupWindow弹出窗体的高
         this.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        // 设置SelectPicPopupWindow弹出窗体可点击
         this.setFocusable(true);
         this.setOutsideTouchable(true);
-        // 刷新状态
         this.update();
-        // 实例化一个ColorDrawable颜色为半透明
         ColorDrawable dw = new ColorDrawable(0000000000);
-        // 点back键和其他地方使其消失,设置了这个才能触发OnDismisslistener ，设置其他控件变化等操作
         this.setBackgroundDrawable(dw);
-        // 设置SelectPicPopupWindow弹出窗体动画效果
         this.setAnimationStyle(R.style.AnimationPreview);
     }
 
-    private void initViews(View rightPopupWindow) {
-        RelativeLayout re_addfriends = (RelativeLayout) rightPopupWindow.findViewById(R.id.re_addfriends);
-        RelativeLayout re_chatroom = (RelativeLayout) rightPopupWindow.findViewById(R.id.re_chatroom);
-        RelativeLayout re_scanner = (RelativeLayout) rightPopupWindow.findViewById(R.id.re_scanner);
+    /**
+     * 初始化控件
+     *
+     * @param context
+     * @param rightPopupWindow
+     * @param mDatas
+     * @param onItemClickListener
+     */
+    private void initViews(Context context, View rightPopupWindow, List<ProductMes> mDatas, final OnItemClickListener onItemClickListener) {
+        RecyclerView recyclerView = (RecyclerView) rightPopupWindow.findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(new RightTopWindowAdapter(mDatas));
+        recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayout.VERTICAL, false));
+        recyclerView.addOnItemTouchListener(new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onSimpleItemClick(adapter, view, position);
+                }
+                RightMorePopupWindow.this.dismiss();
+            }
+        });
 
     }
 
