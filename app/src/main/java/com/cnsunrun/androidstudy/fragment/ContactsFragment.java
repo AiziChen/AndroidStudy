@@ -21,7 +21,9 @@ public class ContactsFragment extends BaseFragment {
 
     private ListView listView;
 
-    private String[] titles = {"自定义星级评分条"};
+    private String[] titles = {
+            "自定义星级评分条"
+    };
 
     public static ContactsFragment newInstance() {
         ContactsFragment homeFragment = new ContactsFragment();

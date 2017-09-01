@@ -36,6 +36,9 @@ public abstract class SwipeBackActivity extends LibActivity implements SwipeBack
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
         mHelper.onActivityCreate();
+//        StatusBarUtil.setTransparent(this);
+//        StatusBarUtil.setTranslucent(this, 100);
+//        StatusBarUtil.setColor(this, getResources().getColor(R.color.red));
     }
 
     @Override

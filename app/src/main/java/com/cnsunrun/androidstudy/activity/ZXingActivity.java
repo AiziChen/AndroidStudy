@@ -44,7 +44,7 @@ public class ZXingActivity extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("二维码的生成");
+        initTitle("二维码的生成和扫描");
 
     }
 
