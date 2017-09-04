@@ -43,7 +43,7 @@ public class MessageFragment extends BaseFragment {
             "侧滑删除Item",
             "shareSdk的封装",
             "二维码的生成和扫描",
-            "状态栏的问题"
+            "二维码的相关操作"
     };
 
     public static MessageFragment newInstance() {

@@ -85,7 +85,7 @@ public class ZXingActivity extends SwipeBackActivity {
     private void creatErCode() {
         if (type == 1) {
             Bitmap bitmap = QRCodeUtils.createQRCodeWithLogo(getString(R.string.er_code_mes),
-                    BitmapFactory.decodeResource(getResources(), R.drawable.ic_yu_er));
+                    BitmapFactory.decodeResource(getResources(), R.drawable.ic_def_head));
             ivErcodeImage.setImageBitmap(bitmap);
             type = 2;
         } else {
