@@ -21,7 +21,7 @@ public abstract class BaseActivity extends LibActivity {
         //设置状态栏颜色
 //        StatusBarUtil.setColor(this, getResources().getColor(R.color.white));
         //设置状态栏半透明
-        StatusBarUtil.setTranslucent(this, 100);
+//        StatusBarUtil.setTranslucent(this, 100);
         //设置状态栏全透明
 //        StatusBarUtil.setTransparent(this);
     }

@@ -6,7 +6,7 @@ package com.cnsunrun.androidstudy.Factory;
  * Effect:
  */
 
-public class ProductTwo implements ProductFactory {
+public class ProductTwo extends ProductFactory {
     @Override
     public String ProductName(String name) {
         return "苹果手机";

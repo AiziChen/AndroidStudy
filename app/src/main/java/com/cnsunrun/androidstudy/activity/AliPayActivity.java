@@ -18,7 +18,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * 左侧侧滑菜单
  */
-public class AliPayActivity extends SwipeBackActivity {
+public class AliPayActivity extends BaseActivity {
 
 
     @BindView(R.id.titlebar_iv_left)

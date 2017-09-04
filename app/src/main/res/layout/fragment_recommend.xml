@@ -56,12 +56,12 @@
             app:type="round" />
 
         <com.cnsunrun.androidstudy.widgtet.RoundImageView
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="25dp"
             android:src="@drawable/ic_image02"
-            app:borderRadius="15dp"
+            app:borderRadius="32dp"
             app:type="round" />
 
     </LinearLayout>
@@ -117,6 +117,7 @@
             app:riv_tile_mode="clamp" />
 
         <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/roundedImageView"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_gravity="center_vertical"

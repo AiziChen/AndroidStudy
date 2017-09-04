@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 import me.weyye.hipermission.HiPermission;
 import me.weyye.hipermission.PermissionCallback;
 
-public class YaSuoImageViewActivity extends SwipeBackActivity {
+public class YaSuoImageViewActivity extends BaseActivity {
 
     @BindView(R.id.viewpager)
     NoScrollViewPager viewpager;

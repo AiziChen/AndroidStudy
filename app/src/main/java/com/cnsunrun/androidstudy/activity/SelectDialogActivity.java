@@ -1,7 +1,6 @@
 package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -9,11 +8,10 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.adapter.HorizontalViewAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.utils.LoadDialog;
 import com.cnsunrun.androidstudy.utils.SelectItemDailog;
 import com.cnsunrun.androidstudy.utils.SelectMoreTypeDailog;
-import com.cnsunrun.androidstudy.widgtet.DividerGridItemDecoration;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
 import java.util.ArrayList;
@@ -71,7 +69,6 @@ public class SelectDialogActivity extends SwipeBackActivity {
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_select_dialog);
-
         ButterKnife.bind(this);
     }
 
@@ -124,17 +121,23 @@ public class SelectDialogActivity extends SwipeBackActivity {
                 showTypeTwo();
                 break;
             case R.id.tv_type_three:
-                recyclerView.setAdapter(new HorizontalViewAdapter(imageData));
-//                recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.HORIZONTAL, false));
-//                recyclerView.addItemDecoration(new DivideLineItemDecoration(mContext, LinearLayout.HORIZONTAL, getResources().getColor(R.color.red), 1));
-                recyclerView.setLayoutManager(new GridLayoutManager(mContext, 3));
-                recyclerView.addItemDecoration(new DividerGridItemDecoration(mContext, getResources().getColor(R.color.red), 1));
+                LoadDialog.show(mContext, "加载中...");
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        LoadDialog.dismiss(mContext);
+                    }
+                }, 1500);
+
+//                recyclerView.setAdapter(new HorizontalViewAdapter(imageData));
+//                recyclerView.setLayoutManager(new GridLayoutManager(mContext, 3));
+//                recyclerView.addItemDecoration(new DividerGridItemDecoration(mContext, getResources().getColor(R.color.red), 1));
                 break;
         }
     }
 
     private void showTypeTwo() {
-        final List<String> mData = Arrays.asList("语文", "数学", "英语", "物理", "化学", "生物", "政治");
+        final List<String> mData = Arrays.asList("语文", "数学", "英语", "物理", "化学", "生物");
         new SelectMoreTypeDailog(mContext, mData, new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
