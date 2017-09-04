@@ -121,6 +121,7 @@ public class InputKeyBoardUtil {
 
     /**
      * 点击空白区域,使软键盘隐藏
+     * 重写 dispatchTouchEvent 方法
      * View view = getCurrentFocus(); 获取当前窗口的焦点
      *
      * @param view
