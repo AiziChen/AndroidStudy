@@ -77,7 +77,7 @@ public class SelectDialogActivity extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("自定以Dialog");
+        initTitle("自定义Dialog");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
     }
