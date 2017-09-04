@@ -13,7 +13,7 @@ import com.cnsunrun.androidstudy.R;
 
 /**
  * Created by ZhouBin on 2017/8/2.
- * Effect:
+ * Effect: 自定义星级评分条
  */
 
 public class RatingBar extends LinearLayout {

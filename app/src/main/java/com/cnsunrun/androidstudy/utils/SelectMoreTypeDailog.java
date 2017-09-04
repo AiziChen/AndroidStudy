@@ -58,7 +58,7 @@ public class SelectMoreTypeDailog extends Dialog {
         tvCancel = (TextView) popupView.findViewById(R.id.tv_cancel);
 
         recyclerView.setAdapter(new SelectTypeAdapter(mData));
-        recyclerView.addItemDecoration(new DivideLineItemDecoration(context, context.getResources().getColor(R.color.bg_color), 1));
+//        recyclerView.addItemDecoration(new DivideLineItemDecoration(context, context.getResources().getColor(R.color.bg_color), 1));
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayout.VERTICAL, false));
 
         tvCancel.setOnClickListener(new View.OnClickListener() {

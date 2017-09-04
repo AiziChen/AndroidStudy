@@ -20,7 +20,10 @@
             android:text="相册选择"
             android:textColor="@color/blue_color" />
 
-        <View style="@style/divide_line_ebeb" />
+        <View
+            style="@style/divide_line_ebeb"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
 
         <TextView
             android:id="@+id/tv_Take_pictures"
