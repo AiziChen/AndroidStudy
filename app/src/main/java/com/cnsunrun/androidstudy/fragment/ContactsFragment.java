@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.activity.BezierViewPagerActivity;
 import com.cnsunrun.androidstudy.activity.MainActivity;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 
@@ -22,7 +23,8 @@ public class ContactsFragment extends BaseFragment {
     private ListView listView;
 
     private String[] titles = {
-            "自定义星级评分条"
+            "自定义星级评分条",
+            "自定义BezierViewPager"
     };
 
     public static ContactsFragment newInstance() {
@@ -58,10 +60,9 @@ public class ContactsFragment extends BaseFragment {
                 switch (position) {
                     case 0:
                         intent2Activity(MainActivity.class);
-
                         break;
                     case 1:
-
+                        intent2Activity(BezierViewPagerActivity.class);
                         break;
                 }
             }

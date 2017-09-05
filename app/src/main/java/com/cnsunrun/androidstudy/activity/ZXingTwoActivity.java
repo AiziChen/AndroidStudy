@@ -53,7 +53,6 @@ public class ZXingTwoActivity extends SwipeBackActivity implements DecoratedBarc
         captureManager = new CaptureManager(this, dbvCustom);
         captureManager.initializeFromIntent(getIntent(), savedInstanceState);
         captureManager.decode();
-
         dbvCustom.setTorchListener(this);
 
     }

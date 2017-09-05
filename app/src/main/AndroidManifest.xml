@@ -157,7 +157,8 @@
         <activity android:name=".activity.HeaderGradientActivity" />
         <activity android:name=".activity.ZXingActivity" />
         <activity android:name=".activity.ZXingTwoActivity" />
-        <activity android:name=".activity.StatusBarActivity"></activity>
+        <activity android:name=".activity.StatusBarActivity" />
+        <activity android:name=".activity.BezierViewPagerActivity"/>
     </application>
 
 </manifest>

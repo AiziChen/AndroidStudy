@@ -1,9 +1,6 @@
 package com.cnsunrun.androidstudy.activity;
 
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.view.View;
 
 import com.allen.library.SuperTextView;
