@@ -14,7 +14,7 @@ import com.cnsunrun.androidstudy.R;
 
 /**
  * Created by ZhouBin on 2017/9/4.
- * Effect:
+ * Effect: 右滑返回上一级
  */
 
 public class SwipeLayout extends ViewGroup {

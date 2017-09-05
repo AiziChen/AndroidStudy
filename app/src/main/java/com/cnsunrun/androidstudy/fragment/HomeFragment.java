@@ -13,16 +13,12 @@ import com.cnsunrun.androidstudy.activity.AliPayActivity;
 import com.cnsunrun.androidstudy.activity.ChooseImageActivity;
 import com.cnsunrun.androidstudy.activity.CridViewActivity;
 import com.cnsunrun.androidstudy.activity.CustomTabLayoutActivity;
-import com.cnsunrun.androidstudy.activity.DropdownSelectActivity;
 import com.cnsunrun.androidstudy.activity.FlycotabLayoutActivity;
-import com.cnsunrun.androidstudy.activity.MainActivity;
 import com.cnsunrun.androidstudy.activity.MapActivity;
 import com.cnsunrun.androidstudy.activity.PopupWindowActivity;
 import com.cnsunrun.androidstudy.activity.RecyclerViewAddHeader;
-import com.cnsunrun.androidstudy.activity.ScrollViewAndRecyclerView;
 import com.cnsunrun.androidstudy.activity.StreamingActivity;
 import com.cnsunrun.androidstudy.activity.SuspensionActivity;
-import com.cnsunrun.androidstudy.activity.YaSuoImageViewActivity;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 
 /**
@@ -38,8 +34,8 @@ public class HomeFragment extends BaseFragment {
             "TwinklingRefreshLayout的刷新",
             "流式布局和微信群聊图像展示",
             "SegmentTabLayout的使用",
-            "搜索栏悬浮",
-            "高德地图的练习",
+            "superTextView的使用",
+            "贝塞尔曲线的练习",
             "RececlerView添加Banner头部",
             "SlidingTabLayout使用",
             "置顶的ScrollableLayout",

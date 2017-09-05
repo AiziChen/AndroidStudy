@@ -8,35 +8,30 @@
 
     <include layout="@layout/include_titlebar" />
 
-    <com.cnsunrun.androidstudy.view.gridpasswordview.GridPasswordView
-        android:id="@+id/pwd_layout"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        app:gpvGridColor="@color/white"
-        app:gpvLineColor="@color/line_bg_light"
-        app:gpvLineWidth="1dp"
-        app:gpvPasswordLength="6"
-        app:gpvPasswordTransformation="*"
-        app:gpvPasswordType="numberPassword"
-        app:gpvTextColor="@color/black_30"
-        app:gpvTextSize="22sp" />
-
 
     <com.cnsunrun.androidstudy.view.PasswordEditText
         android:id="@+id/password_edit_text"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_margin="15dp"
         android:background="@null"
-        android:padding="10dp"
-        app:bgCorner="3dp" />
+        android:inputType="numberPassword"
+        app:bgCorner="3dp"
+        app:passwordNumber="6" />
+
+
+    <com.cnsunrun.androidstudy.view.PayPsdInputView
+        android:id="@+id/pay_psd_input_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:inputType="numberPassword"
+        app:bottomLineColor="@color/text_color_666"
+        app:circleColor="@color/text_color_666"
+        app:maxCount="6"
+        app:psdType="bottomLine"
+        app:radius="3dp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"

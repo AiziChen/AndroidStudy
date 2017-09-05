@@ -4,12 +4,67 @@
     android:id="@+id/activity_suspension"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_color"
     android:orientation="vertical">
 
     <include layout="@layout/include_titlebar"></include>
 
+    <com.allen.library.SuperTextView
+        android:id="@+id/super_tv_01"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:sBottomDividerLineMarginLR="10dp"
+        app:sLeftIconHeight="30dp"
+        app:sLeftIconRes="@drawable/ic_def_head"
+        app:sLeftIconWidth="35dp"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="我的信息"
+        app:sRightIconRes="@drawable/ic_to_more_2x" />
 
+    <com.allen.library.SuperTextView
+        android:id="@+id/super_tv_02"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:sBottomDividerLineMarginLR="10dp"
+        app:sLeftIconHeight="25dp"
+        app:sLeftIconRes="@drawable/ic_opinion_icon"
+        app:sLeftIconWidth="25dp"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="我的订单"
+        app:sRightIconRes="@drawable/ic_to_more_2x"
+        app:sRightTextSize="13sp"
+        app:sRightTextString="15" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/super_tv_03"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:sBackgroundDrawableRes="@color/white"
+        app:sBottomDividerLineMarginLR="10dp"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="我的图像"
+        app:sRightIconRes="@drawable/ic_to_more_2x"
+        app:sRightTvDrawableHeight="50dp"
+        app:sRightTvDrawableRight="@drawable/ic_def_head"
+        app:sRightTvDrawableWidth="50dp"
+        app:sUseRipple="false" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/super_tv_04"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        app:sDividerLineHeight="1dp"
+        app:sLeftTextSize="14sp"
+        app:sLeftTextString="收货地址"
+        app:sRightIconRes="@drawable/ic_to_more_2x"
+        app:sUseRipple="false" />
+
+    <com.cnsunrun.androidstudy.view.RadarWaveView
+        android:id="@+id/radar_wave_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/ic_beijing_2x" />
 
 
 </LinearLayout>

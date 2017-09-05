@@ -1,13 +1,8 @@
 package com.cnsunrun.androidstudy.activity;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.support.v7.app.AlertDialog;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
@@ -15,7 +10,7 @@ import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.InputKeyBoardUtil;
 import com.cnsunrun.androidstudy.view.PasswordEditText;
-import com.cnsunrun.androidstudy.view.gridpasswordview.GridPasswordView;
+import com.cnsunrun.androidstudy.view.PayPsdInputView;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -28,18 +23,16 @@ import butterknife.OnClick;
 public class ScrollViewAndRecyclerView extends SwipeBackActivity {
 
 
-    @BindView(R.id.pwd_layout)
-    GridPasswordView pwdLayout;
     @BindView(R.id.password_edit_text)
     PasswordEditText passwordEditText;
+    @BindView(R.id.pay_psd_input_view)
+    PayPsdInputView payPsdInputView;
     @BindView(R.id.tv_type_one)
     TextView tvTypeOne;
     @BindView(R.id.tv_type_two)
     TextView tvTypeTwo;
     @BindView(R.id.tv_type_three)
     TextView tvTypeThree;
-
-    AlertDialog passwordDialog;
 
     @Override
     protected void loadViewLayout() {
@@ -54,25 +47,12 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-        String password = pwdLayout.getPassWord();
 
 
     }
 
     @Override
     protected void setListener() {
-        pwdLayout.setOnPasswordChangedListener(new GridPasswordView.OnPasswordChangedListener() {
-            @Override
-            public void onTextChanged(String psw) {
-
-            }
-
-            @Override
-            public void onInputFinish(String psw) {
-                ToastUtils.showToast("密码是:" + psw);
-
-            }
-        });
 
         passwordEditText.setOnPasswordFullListener(new PasswordEditText.PasswordFullListener() {
             @Override
@@ -80,7 +60,6 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
                 ToastUtils.showToast("密码是:" + password);
             }
         });
-
 
     }
 
@@ -131,27 +110,7 @@ public class ScrollViewAndRecyclerView extends SwipeBackActivity {
     }
 
     private void showTypeOne() {
-        View passwordView = View.inflate(mContext, R.layout.include_password_dialog, null);
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setView(passwordView);
-        final TextView tvTitle = (TextView) passwordView.findViewById(R.id.tv_title);
-        PasswordEditText passwordEdit = (PasswordEditText) passwordView.findViewById(R.id.password_edit_text);
-//        builder.setCancelable(false);//点击空白是否消失
-        passwordDialog = builder.create();
-        passwordDialog.show();
-        passwordEdit.setOnPasswordFullListener(new PasswordEditText.PasswordFullListener() {
-            @Override
-            public void passwordFull(String password) {
-                ToastUtils.showToast("密码是:" + password);
-                tvTitle.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        passwordDialog.dismiss();
-                    }
-                }, 1000);
-
-            }
-        });
 
     }
+
 }
