@@ -38,7 +38,6 @@ public class ContactsFragment extends BaseFragment {
     @Override
     protected View loadViewLayout(LayoutInflater inflater, ViewGroup container) {
         View rootView = inflater.inflate(R.layout.contacts_fragment, null);
-
         return rootView;
     }
 
