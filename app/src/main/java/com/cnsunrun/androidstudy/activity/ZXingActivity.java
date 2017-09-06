@@ -14,10 +14,12 @@ import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.utils.QRCodeUtils;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.sunrun.toollibrary.utils.CommonUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 
 /**
  * 二维码的生成
@@ -50,7 +52,7 @@ public class ZXingActivity extends SwipeBackActivity {
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-
+        creatErCode();
     }
 
     @Override
@@ -88,11 +90,17 @@ public class ZXingActivity extends SwipeBackActivity {
                     BitmapFactory.decodeResource(getResources(), R.drawable.ic_def_head));
             ivErcodeImage.setImageBitmap(bitmap);
             type = 2;
-        } else {
+        } else if (type == 2) {
             String textMes = "Happy birthday, my dear!Although not always accompany in your side, but can't I moments of one's affection for you. You are a good girl, is worth me to care, although I couldn't say a special moving down to coax you happy, but I will use my practical action to prove my love for you!";
             Bitmap bitmap = QRCodeUtils.createQRCode(textMes);
             ivErcodeImage.setImageBitmap(bitmap);
+            type = 3;
+        } else {
+            String mess = getString(R.string.er_code_mes);
+            Bitmap bitmap = QRCodeEncoder.syncEncodeQRCode(mess, CommonUtil.dip2px(mContext, 150), getResources().getColor(R.color.black), BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_def_head));
+            ivErcodeImage.setImageBitmap(bitmap);
             type = 1;
+
         }
     }
 

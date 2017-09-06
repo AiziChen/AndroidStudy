@@ -24,7 +24,7 @@ public class ContactsFragment extends BaseFragment {
 
     private String[] titles = {
             "自定义星级评分条",
-            "自定义BezierViewPager"
+            "BGAQRCode_ZXing"
     };
 
     public static ContactsFragment newInstance() {
