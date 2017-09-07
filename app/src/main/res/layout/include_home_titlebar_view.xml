@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_home_title_view"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/green_a7dc57"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:id="@+id/rl_home_title_ber_02"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/ic_home_mycenter_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_home_my_center" />
+
+        <RelativeLayout
+            android:id="@+id/ll_home_local_02"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_common_banner"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_localize_address_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="middle"
+                android:gravity="center_vertical"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:text="武汉市洪山区新都会"
+                android:textColor="@color/white"
+                android:textSize="@dimen/tv_15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_borrow_down" />
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_home_search_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_search_whit" />
+    </RelativeLayout>
+
+</LinearLayout>

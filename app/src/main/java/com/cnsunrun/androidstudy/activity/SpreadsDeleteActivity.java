@@ -5,6 +5,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -15,7 +16,6 @@ import com.cnsunrun.androidstudy.adapter.SpreadsDeleteAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.view.HeanderSearchView;
-import com.sunrun.toollibrary.LibActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ import butterknife.OnClick;
 public class SpreadsDeleteActivity extends SwipeBackActivity {
 
     @BindView(R.id.recyclerview)
-    RecyclerView recyclerView;
+    RecyclerView recyclerview;
     @BindView(R.id.reflayout)
     SwipeRefreshLayout reflayout;
     @BindView(R.id.ic_home_mycenter)
@@ -43,6 +43,10 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
     ImageView ivHomeSearch;
     @BindView(R.id.rl_home_title_ber)
     RelativeLayout rlHomeTitleBer;
+    @BindView(R.id.ll_home_search_me_view)
+    LinearLayout llHomeSearchMeView;
+    @BindView(R.id.activity_spreads_delete)
+    FrameLayout activitySpreadsDelete;
     private List<ProductMes> mDatas = new ArrayList<>();
     private SpreadsDeleteAdapter spreadsDeleteAdapter;
     private List<String> bannerData = new ArrayList<>();
@@ -53,6 +57,8 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
     protected void loadViewLayout() {
         setContentView(R.layout.activity_spreads_delete);
         ButterKnife.bind(this);
+
+
     }
 
     @Override
@@ -94,8 +100,8 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
             bannerData.add(imageList[i]);
         }
         spreadsDeleteAdapter = new SpreadsDeleteAdapter(mDatas);
-        recyclerView.setAdapter(spreadsDeleteAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false));
+        recyclerview.setAdapter(spreadsDeleteAdapter);
+        recyclerview.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false));
 
         heanderSearchView = new HeanderSearchView(mContext);
 
@@ -115,7 +121,7 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
                 reflayout.setRefreshing(false);
             }
         });
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        recyclerview.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
@@ -131,19 +137,20 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
                 if (mDistanceY < headHeight) {
                     //滑动距离小于上方图片的1/2时，设置白色搜索按钮，透明度从0-255
                     if (mDistanceY < headHeight / 2) {
-                        rlHomeTitleBer.setBackgroundColor(getResources().getColor(R.color.title_color));
+                        llHomeSearchMeView.setBackgroundColor(getResources().getColor(R.color.white_30));
                         float scale = (float) mDistanceY / (headHeight / 2);
                         float alpha = scale * 255;
-                        rlHomeTitleBer.getBackground().setAlpha((int) alpha);
+                        llHomeSearchMeView.getBackground().setAlpha((int) alpha);
                     } else {//滑动距离大于上方图片的1/2并小于上方图片时，设置黑色搜索按钮，透明度从0-255
-                        rlHomeTitleBer.setBackgroundColor(getResources().getColor(R.color.gray_color_7E7E7F));
+                        llHomeSearchMeView.setBackgroundColor(getResources().getColor(R.color.green_a7dc57));
                         float scale = (float) (mDistanceY - headHeight / 2) / (headHeight / 2);
                         float alpha = scale * 255;
-                        rlHomeTitleBer.getBackground().setAlpha((int) alpha);
+                        llHomeSearchMeView.getBackground().setAlpha((int) alpha);
                     }
                 } else {
                     //当快速往下滑时，llSearch最后设置的alpha不约等于255，测试的为132,所以要再设置
-                    rlHomeTitleBer.getBackground().setAlpha(255);
+                    llHomeSearchMeView.setBackgroundColor(getResources().getColor(R.color.green_color));
+                    llHomeSearchMeView.getBackground().setAlpha(255);
                 }
             }
         });
@@ -163,4 +170,5 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
                 break;
         }
     }
+
 }
