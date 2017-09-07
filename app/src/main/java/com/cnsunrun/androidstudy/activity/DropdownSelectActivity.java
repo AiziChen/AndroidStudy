@@ -16,19 +16,13 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
-import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
-import com.cnsunrun.androidstudy.dialog.CommonDialog;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
-import com.cnsunrun.androidstudy.utils.RightMorePopupWindow;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
-import com.cnsunrun.androidstudy.wxpay.PayWXUtils;
 import com.cnsunrun.androidstudy.wxpay.WXPayUtils;
 import com.sunrun.toollibrary.utils.PopupUtils;
-import com.sunrun.toollibrary.utils.ToastUtils;
-import com.sunrun.toollibrary.view.IosDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +30,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static com.amap.api.col.bz.P;
 
 /**
  * popupWindow的练习和封装
@@ -255,7 +247,7 @@ public class DropdownSelectActivity extends SwipeBackActivity {
                 showDialogOne();
                 break;
             case R.id.tv_type_two:
-
+                showDialogTwo();
                 break;
             case R.id.tv_type_three:
                 showDialogThree();
@@ -263,7 +255,12 @@ public class DropdownSelectActivity extends SwipeBackActivity {
         }
     }
 
+    private void showDialogTwo() {
+
+    }
+
     private void showDialogThree() {
+
     }
 
     /**
