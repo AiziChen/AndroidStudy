@@ -26,6 +26,7 @@
                 android:id="@+id/ic_home_mycenter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/ic_home_my_center" />
 
@@ -44,12 +45,13 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:ellipsize="middle"
                     android:gravity="center_vertical"
                     android:maxLength="10"
                     android:singleLine="true"
-                    android:text="武汉市洪山区新都会"
+                    android:text="武汉市洪山区紫松花园123号"
                     android:textColor="@color/white"
                     android:textSize="@dimen/tv_15sp" />
 
@@ -71,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/ic_home_search" />
         </RelativeLayout>
@@ -78,6 +81,5 @@
     </LinearLayout>
 
 
-    <!--<include layout="@layout/include_home_titlebar_view" />-->
 
 </FrameLayout>

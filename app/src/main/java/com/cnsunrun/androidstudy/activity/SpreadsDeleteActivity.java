@@ -137,20 +137,29 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
                 if (mDistanceY < headHeight) {
                     //滑动距离小于上方图片的1/2时，设置白色搜索按钮，透明度从0-255
                     if (mDistanceY < headHeight / 2) {
-                        llHomeSearchMeView.setBackgroundColor(getResources().getColor(R.color.white_30));
+                        llHomeSearchMeView.setBackgroundColor(getResources().getColor(R.color.green_color_bbd594));
                         float scale = (float) mDistanceY / (headHeight / 2);
                         float alpha = scale * 255;
                         llHomeSearchMeView.getBackground().setAlpha((int) alpha);
+                        ivHomeSearch.setImageResource(R.drawable.ic_home_search);
+                        icHomeMycenter.setImageResource(R.drawable.ic_home_my_center);
+                        llHomeLocal.setBackgroundResource(R.drawable.ic_common_banner);
                     } else {//滑动距离大于上方图片的1/2并小于上方图片时，设置黑色搜索按钮，透明度从0-255
                         llHomeSearchMeView.setBackgroundColor(getResources().getColor(R.color.green_a7dc57));
                         float scale = (float) (mDistanceY - headHeight / 2) / (headHeight / 2);
                         float alpha = scale * 255;
                         llHomeSearchMeView.getBackground().setAlpha((int) alpha);
+                        ivHomeSearch.setImageResource(R.drawable.ic_home_search_white);
+                        icHomeMycenter.setImageResource(R.drawable.ic_home_my_center_white);
+                        llHomeLocal.setBackgroundColor(0);
                     }
                 } else {
                     //当快速往下滑时，llSearch最后设置的alpha不约等于255，测试的为132,所以要再设置
                     llHomeSearchMeView.setBackgroundColor(getResources().getColor(R.color.green_color));
                     llHomeSearchMeView.getBackground().setAlpha(255);
+                    ivHomeSearch.setImageResource(R.drawable.ic_home_search_white);
+                    icHomeMycenter.setImageResource(R.drawable.ic_home_my_center_white);
+                    llHomeLocal.setBackgroundColor(0);
                 }
             }
         });
@@ -161,12 +170,14 @@ public class SpreadsDeleteActivity extends SwipeBackActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ic_home_mycenter:
+                showToast("点击了个人中心");
                 break;
             case R.id.tv_localize_address:
-                break;
             case R.id.ll_home_local:
+                showToast("点击了地址");
                 break;
             case R.id.iv_home_search:
+                showToast("点击了搜索");
                 break;
         }
     }
