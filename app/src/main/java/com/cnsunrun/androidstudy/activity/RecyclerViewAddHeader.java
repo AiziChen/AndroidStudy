@@ -33,11 +33,13 @@ public class RecyclerViewAddHeader extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
+
         initTitle("给RecyclerView添加头部");
     }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
+
         initViewData();
 
     }
