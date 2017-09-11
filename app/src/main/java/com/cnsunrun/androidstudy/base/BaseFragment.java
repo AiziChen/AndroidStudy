@@ -2,12 +2,14 @@ package com.cnsunrun.androidstudy.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.cnsunrun.androidstudy.view.TitleBuilder;
 import com.sunrun.toollibrary.LibFragment;
+import com.sunrun.toollibrary.utils.ToastUtils;
 
 /**
  * Created by ZhouBin on 2017/8/2.
@@ -40,4 +42,12 @@ public abstract class BaseFragment extends LibFragment {
     protected void onVisible() {
         super.onVisible();
     }
+
+
+    protected void showToast(String text){
+        if(!TextUtils.isEmpty(text)){
+            ToastUtils.showToast(text);
+        }
+    }
+
 }

@@ -15,7 +15,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.SelectTypeAdapter;
-import com.cnsunrun.androidstudy.widgtet.DivideLineItemDecoration;
 
 import java.util.List;
 

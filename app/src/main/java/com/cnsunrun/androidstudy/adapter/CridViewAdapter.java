@@ -7,7 +7,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.widgtet.RoundImageView;
-import com.orhanobut.logger.Logger;
 
 import java.util.List;
 
@@ -27,7 +26,6 @@ public class CridViewAdapter extends BaseQuickAdapter<ProductMes, BaseViewHolder
     protected void convert(BaseViewHolder helper, ProductMes item) {
         RoundImageView imageView = helper.getView(R.id.iv_roundimage);
         Glide.with(mContext).load(item.getImageUrl()).into(imageView);
-        Logger.d("ImageUrl==" + item.getImageUrl());
         helper.setText(R.id.tv_message, item.getProductMes());
 
     }

@@ -1,11 +1,8 @@
 package com.cnsunrun.androidstudy.base;
 
 import android.os.Bundle;
-import android.view.View;
 
-import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
-import com.jaeger.library.StatusBarUtil;
 import com.sunrun.toollibrary.LibActivity;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
@@ -30,15 +27,11 @@ public abstract class SwipeBackActivity extends LibActivity implements SwipeBack
         }
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
         mHelper.onActivityCreate();
-//        StatusBarUtil.setTransparent(this);
-//        StatusBarUtil.setTranslucent(this, 100);
-//        StatusBarUtil.setColor(this, getResources().getColor(R.color.red));
     }
 
     @Override

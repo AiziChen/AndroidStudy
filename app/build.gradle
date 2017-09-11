@@ -68,8 +68,7 @@ dependencies {
     compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
     compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
 
-    compile 'top.zibin:Luban:1.1.3' //图片压缩
-
+    compile 'com.github.yilylong:CBDialog:v1.0.3'
 
     android {
         useLibrary 'org.apache.http.legacy'
