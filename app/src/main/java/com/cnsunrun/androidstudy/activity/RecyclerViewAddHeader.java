@@ -1,11 +1,21 @@
 package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.adapter.CridGameLoveAdapter;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.model.ProductMes;
+import com.mcxtzhang.layoutmanager.swipecard.CardConfig;
+import com.mcxtzhang.layoutmanager.swipecard.OverLayCardLayoutManager;
+import com.mcxtzhang.layoutmanager.swipecard.RenRenCallback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +33,10 @@ public class RecyclerViewAddHeader extends SwipeBackActivity {
     TextView tvTypeTwo;
     @BindView(R.id.tv_type_three)
     TextView tvTypeThree;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
+    private List<ProductMes> productMesList = new ArrayList<>();
+
 
     @Override
     protected void loadViewLayout() {
@@ -33,7 +47,6 @@ public class RecyclerViewAddHeader extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-
         initTitle("给RecyclerView添加头部");
     }
 
@@ -71,6 +84,17 @@ public class RecyclerViewAddHeader extends SwipeBackActivity {
                 "http://s2.cdn.xiachufang.com/c7d3fad4876611e6b87c0242ac110003_616w_800h.jpg",
                 "http://s1.cdn.xiachufang.com/af570278afe611e6bc9d0242ac110002_1280w_962h.jpg"
         };
+
+        for (int i = 0; i < imageList.length; i++) {
+            productMesList.add(new ProductMes(imageList[i], "标题" + i));
+        }
+        CridGameLoveAdapter adapter = new CridGameLoveAdapter(productMesList);
+        recyclerView.setLayoutManager(new OverLayCardLayoutManager());
+        recyclerView.setAdapter(adapter);
+        CardConfig.initConfig(this);
+        ItemTouchHelper.Callback callback = new RenRenCallback(recyclerView, adapter, productMesList);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
 

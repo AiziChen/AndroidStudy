@@ -68,8 +68,8 @@ dependencies {
     compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
     compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
 
-    compile 'com.github.yilylong:CBDialog:v1.0.3'
-
+    compile 'com.github.mcxtzhang:ZLayoutManager:V1.1.0'
+    
     android {
         useLibrary 'org.apache.http.legacy'
     }
