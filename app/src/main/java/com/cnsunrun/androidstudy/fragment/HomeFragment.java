@@ -36,7 +36,7 @@ public class HomeFragment extends BaseFragment {
             "SegmentTabLayout的使用",
             "superTextView的使用",
             "贝塞尔曲线的练习",
-            "RececlerView添加Banner头部",
+            "仿人人网的卡片式布局",
             "SlidingTabLayout使用",
             "置顶的ScrollableLayout",
             "九宫格显示图片",

@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * RecyclerViewAddHeader
+ * 仿人人网的卡片式布局
  */
 public class RecyclerViewAddHeader extends SwipeBackActivity {
 
@@ -47,7 +47,7 @@ public class RecyclerViewAddHeader extends SwipeBackActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("给RecyclerView添加头部");
+        initTitle("仿人人网的卡片式布局");
     }
 
     @Override
