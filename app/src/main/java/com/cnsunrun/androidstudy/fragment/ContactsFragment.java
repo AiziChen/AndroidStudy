@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.activity.BezierViewPagerActivity;
+import com.cnsunrun.androidstudy.activity.CountDownActivity;
 import com.cnsunrun.androidstudy.activity.MainActivity;
 import com.cnsunrun.androidstudy.base.BaseFragment;
 
@@ -24,7 +25,8 @@ public class ContactsFragment extends BaseFragment {
 
     private String[] titles = {
             "自定义星级评分条",
-            "BGAQRCode_ZXing"
+            "BGAQRCode_ZXing",
+            "自定义倒计时控件"
     };
 
     public static ContactsFragment newInstance() {
@@ -62,6 +64,9 @@ public class ContactsFragment extends BaseFragment {
                         break;
                     case 1:
                         intent2Activity(BezierViewPagerActivity.class);
+                        break;
+                    case 2:
+                        intent2Activity(CountDownActivity.class);
                         break;
                 }
             }
