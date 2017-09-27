@@ -9,6 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.LoadDialog;
 import com.cnsunrun.androidstudy.utils.SelectItemDailog;
 import com.cnsunrun.androidstudy.utils.SelectMoreTypeDailog;
@@ -92,20 +93,15 @@ public class SelectDialogActivity extends SwipeBackActivity {
     }
 
     private void showTypeOneDialog() {
-
-        final SelectItemDailog selDialog = new SelectItemDailog(mContext);
-        selDialog.setPhotoAlbumsListener(new View.OnClickListener() {
+        AlerDialogUtils.SelectItemDailog(mContext, new SelectItemDailog.OnButtonClickListener() {
             @Override
-            public void onClick(View v) {
+            public void selectItemOne() {
                 ToastUtils.showToast("点击了相册获取");
-                selDialog.dismiss();
             }
-        });
-        selDialog.setTakePicturesListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
+            public void selectItemTwo() {
                 ToastUtils.showToast("点击了拍照");
-                selDialog.dismiss();
             }
         });
 

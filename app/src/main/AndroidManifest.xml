@@ -162,7 +162,8 @@
         <activity android:name=".activity.ZXingTwoActivity" />
         <activity android:name=".activity.StatusBarActivity" />
         <activity android:name=".activity.BezierViewPagerActivity" />
-        <activity android:name=".activity.CountDownActivity"></activity>
+        <activity android:name=".activity.CountDownActivity" />
+        <activity android:name=".activity.SelectImageHeandActivity"></activity>
     </application>
 
 </manifest>

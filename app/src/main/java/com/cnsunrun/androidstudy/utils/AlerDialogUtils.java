@@ -204,4 +204,31 @@ public class AlerDialogUtils {
     }
 
 
+    /**
+     * 选择方式
+     *
+     * @param context
+     * @param onButtonClickListener
+     */
+    public static void SelectItemDailog(Context context, final SelectItemDailog.OnButtonClickListener onButtonClickListener) {
+        final SelectItemDailog selectItemDailog = new SelectItemDailog(context);
+        selectItemDailog.setOnButtonClickListener(new SelectItemDailog.OnButtonClickListener() {
+            @Override
+            public void selectItemOne() {
+                if (onButtonClickListener != null) {
+                    onButtonClickListener.selectItemOne();
+                }
+                selectItemDailog.dismiss();
+            }
+
+            @Override
+            public void selectItemTwo() {
+                if (onButtonClickListener != null) {
+                    onButtonClickListener.selectItemTwo();
+                }
+                selectItemDailog.dismiss();
+            }
+        });
+    }
+
 }

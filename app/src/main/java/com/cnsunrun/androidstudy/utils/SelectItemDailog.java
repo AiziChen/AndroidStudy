@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by ZhouBin on 2017/8/22.
  * Effect: 选择条目的对话框
@@ -17,18 +21,23 @@ import com.cnsunrun.androidstudy.R;
 
 public class SelectItemDailog extends Dialog {
 
-    private TextView tv_Photo_albums, tv_Take_pictures, tv_cancel;
 
+    @BindView(R.id.tv_Photo_albums)
+    TextView tvPhotoAlbums;
+    @BindView(R.id.tv_Take_pictures)
+    TextView tvTakePictures;
+    @BindView(R.id.tv_cancel)
+    TextView tvCancel;
+    private OnButtonClickListener onButtonClickListener;
 
     public SelectItemDailog(Context context) {
         super(context);
 
         Window window = this.getWindow();
         window.requestFeature(Window.FEATURE_NO_TITLE);
-//        window.getDecorView().setPadding(0, 0, 0, 0);
         View popupView = View.inflate(context, R.layout.select_item_popupwindow, null);
+        ButterKnife.bind(this, popupView);
         window.setContentView(popupView);
-        initViews(popupView);
         WindowManager.LayoutParams lp = window.getAttributes();
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
@@ -37,42 +46,33 @@ public class SelectItemDailog extends Dialog {
         window.setAttributes(lp);
         window.setBackgroundDrawableResource(android.R.color.transparent);
         SelectItemDailog.this.show();
+
     }
 
-    private void initViews(View popupView) {
-        tv_Photo_albums = (TextView) popupView.findViewById(R.id.tv_Photo_albums);
-        tv_Take_pictures = (TextView) popupView.findViewById(R.id.tv_Take_pictures);
-        tv_cancel = (TextView) popupView.findViewById(R.id.tv_cancel);
+    public interface OnButtonClickListener {
+        void selectItemOne();
 
-        tv_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SelectItemDailog.this.dismiss();
-            }
-        });
+        void selectItemTwo();
+
     }
 
-    /**
-     * 相册选择
-     *
-     * @param onClickListener
-     */
-    public void setPhotoAlbumsListener(View.OnClickListener onClickListener) {
-        if (tv_Photo_albums != null) {
-            tv_Photo_albums.setOnClickListener(onClickListener);
+    public void setOnButtonClickListener(OnButtonClickListener onButtonClickListener) {
+        this.onButtonClickListener = onButtonClickListener;
+    }
+
+    @OnClick({R.id.tv_Photo_albums, R.id.tv_Take_pictures})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_Photo_albums:
+                if (onButtonClickListener != null) {
+                    onButtonClickListener.selectItemOne();
+                }
+                break;
+            case R.id.tv_Take_pictures:
+                if (onButtonClickListener != null) {
+                    onButtonClickListener.selectItemTwo();
+                }
+                break;
         }
     }
-
-    /**
-     * 拍照获取
-     *
-     * @param onClickListener
-     */
-    public void setTakePicturesListener(View.OnClickListener onClickListener) {
-        if (tv_Take_pictures != null) {
-            tv_Take_pictures.setOnClickListener(onClickListener);
-        }
-    }
-
-
 }
