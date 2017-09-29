@@ -3,6 +3,7 @@ package com.cnsunrun.androidstudy.base;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.cnsunrun.androidstudy.dao.DBManager;
 import com.sunrun.toollibrary.LibApplication;
 import com.sunrun.toollibrary.utils.FileUtils;
 
@@ -28,6 +29,7 @@ public class BaseApplication extends LibApplication {
         instance = this;
         FileUtils.init("android");
         MultiDex.install(this);
+        DBManager.copyDB(this);
     }
 
     @Override

@@ -49,18 +49,7 @@ public class SelectItemDailog extends Dialog {
 
     }
 
-    public interface OnButtonClickListener {
-        void selectItemOne();
-
-        void selectItemTwo();
-
-    }
-
-    public void setOnButtonClickListener(OnButtonClickListener onButtonClickListener) {
-        this.onButtonClickListener = onButtonClickListener;
-    }
-
-    @OnClick({R.id.tv_Photo_albums, R.id.tv_Take_pictures})
+    @OnClick({R.id.tv_Photo_albums, R.id.tv_Take_pictures, R.id.tv_cancel})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_Photo_albums:
@@ -73,6 +62,21 @@ public class SelectItemDailog extends Dialog {
                     onButtonClickListener.selectItemTwo();
                 }
                 break;
+            case R.id.tv_cancel:
+                SelectItemDailog.this.dismiss();
+                break;
         }
     }
+
+    public interface OnButtonClickListener {
+        void selectItemOne();
+
+        void selectItemTwo();
+
+    }
+
+    public void setOnButtonClickListener(OnButtonClickListener onButtonClickListener) {
+        this.onButtonClickListener = onButtonClickListener;
+    }
+
 }

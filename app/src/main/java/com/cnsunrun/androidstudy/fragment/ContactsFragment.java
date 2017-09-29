@@ -27,7 +27,7 @@ public class ContactsFragment extends BaseFragment {
     private String[] titles = {
             "自定义星级评分条",
             "BGAQRCode_ZXing",
-            "自定义倒计时控件",
+            "省市区选择",
             "选择更换图像"
     };
 
