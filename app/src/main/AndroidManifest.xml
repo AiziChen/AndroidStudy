@@ -86,6 +86,19 @@
         <!-- 微信支付结束 -->
 
 
+        <!--7.0下相机拍照配置开始-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <!--7.0下相机拍照配置结束-->
+
+
         <!-- 高德地图 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
