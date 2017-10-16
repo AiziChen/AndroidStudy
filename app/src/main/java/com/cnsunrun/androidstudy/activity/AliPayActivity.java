@@ -7,9 +7,7 @@ import android.view.View;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.BaseActivity;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.fragment.LeftMenuFragment;
-import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

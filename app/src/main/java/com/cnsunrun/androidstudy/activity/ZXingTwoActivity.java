@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
@@ -20,7 +20,7 @@ import butterknife.OnClick;
 /**
  * 二维码的扫描
  */
-public class ZXingTwoActivity extends SwipeBackActivity implements DecoratedBarcodeView.TorchListener {
+public class ZXingTwoActivity extends BaseActivity implements DecoratedBarcodeView.TorchListener {
 
     @BindView(R.id.tv_saomiao_code)
     TextView tvSaomiaoCode;

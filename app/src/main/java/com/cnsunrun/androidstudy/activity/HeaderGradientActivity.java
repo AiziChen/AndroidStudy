@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.authorloginandshare.login.ShareAndLoginUtils;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
@@ -17,7 +17,7 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 /**
  * shareSDk封装
  */
-public class HeaderGradientActivity extends SwipeBackActivity {
+public class HeaderGradientActivity extends BaseActivity {
 
     @BindView(R.id.tv_share)
     TextView tvShare;

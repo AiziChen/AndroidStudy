@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.SelectItemDailog;
 import com.sunrun.toollibrary.utils.CommonUtil;
@@ -29,7 +29,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * 更换用户图像
  */
-public class SelectImageHeandActivity extends SwipeBackActivity {
+public class SelectImageHeandActivity extends BaseActivity {
 
     private static final String TAG = "SelectImageHeandActivit";
     @BindView(R.id.tv_select_type)

@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
@@ -21,7 +20,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class CridViewActivity extends SwipeBackActivity {
+public class CridViewActivity extends BaseActivity {
 
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;

@@ -1,23 +1,21 @@
 package com.cnsunrun.androidstudy.activity;
 
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.widget.Toast;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bingoogolapple.qrcode.core.QRCodeView;
-import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 
 
 /**
  * 自定义BezierViewPager
  */
-public class BezierViewPagerActivity extends SwipeBackActivity implements QRCodeView.Delegate {
+public class BezierViewPagerActivity extends BaseActivity implements QRCodeView.Delegate {
 
     @BindView(R.id.zxingview)
     QRCodeView mQRCodeView;

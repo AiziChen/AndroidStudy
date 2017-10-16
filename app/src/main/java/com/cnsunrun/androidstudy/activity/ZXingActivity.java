@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.QRCodeUtils;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -24,7 +24,7 @@ import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 /**
  * 二维码的生成
  */
-public class ZXingActivity extends SwipeBackActivity {
+public class ZXingActivity extends BaseActivity {
 
 
     @BindView(R.id.tv_creat_ercode)

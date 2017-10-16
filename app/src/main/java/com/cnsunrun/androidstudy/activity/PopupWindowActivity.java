@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.lzy.ninegrid.ImageInfo;
 import com.lzy.ninegrid.NineGridView;
 import com.lzy.ninegrid.preview.NineGridViewClickAdapter;
@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 /**
  * 九宫格图片展示
  */
-public class PopupWindowActivity extends SwipeBackActivity {
+public class PopupWindowActivity extends BaseActivity {
 
 
     @BindView(R.id.nineView)

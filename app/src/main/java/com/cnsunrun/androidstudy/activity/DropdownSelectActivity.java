@@ -16,7 +16,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.PopupWindowAdapter;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
@@ -34,7 +34,7 @@ import butterknife.OnClick;
 /**
  * popupWindow的练习和封装
  */
-public class DropdownSelectActivity extends SwipeBackActivity {
+public class DropdownSelectActivity extends BaseActivity {
 
     private static final int TYPE_ONE = 1;//知识分类
     private static final int TYPE_TWO = 2;//全部主题

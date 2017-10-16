@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.NineGridImageViewAdapter;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.view.NineGridImageView;
 import com.sunrun.toollibrary.utils.ImageLoaderUtils;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 /**
  * 流式布局
  */
-public class StreamingActivity extends SwipeBackActivity {
+public class StreamingActivity extends BaseActivity {
 
     @BindView(R.id.id_flowlayout)
     TagFlowLayout idFlowlayout;

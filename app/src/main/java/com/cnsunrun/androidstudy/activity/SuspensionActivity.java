@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.allen.library.SuperTextView;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.view.RadarWaveView;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
@@ -16,7 +16,7 @@ import butterknife.OnClick;
 /**
  * superTextView的使用
  */
-public class SuspensionActivity extends SwipeBackActivity {
+public class SuspensionActivity extends BaseActivity {
 
     private static final String TAG = "SuspensionActivity";
     @BindView(R.id.super_tv_01)

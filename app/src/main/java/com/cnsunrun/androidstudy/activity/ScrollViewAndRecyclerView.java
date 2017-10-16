@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.InputKeyBoardUtil;
 import com.cnsunrun.androidstudy.view.PasswordEditText;
@@ -20,7 +20,7 @@ import butterknife.OnClick;
 /**
  * 输入密码框
  */
-public class ScrollViewAndRecyclerView extends SwipeBackActivity {
+public class ScrollViewAndRecyclerView extends BaseActivity {
 
 
     @BindView(R.id.password_edit_text)

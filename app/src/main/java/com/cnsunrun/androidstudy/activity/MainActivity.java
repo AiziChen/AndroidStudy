@@ -3,7 +3,7 @@ package com.cnsunrun.androidstudy.activity;
 import android.os.Bundle;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.widgtet.RatingBar;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 /**
  * 自定义RatingBar
  */
-public class MainActivity extends SwipeBackActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.ratingBar01)
     RatingBar ratingBar01;

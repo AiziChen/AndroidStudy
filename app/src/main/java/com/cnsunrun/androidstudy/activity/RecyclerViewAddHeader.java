@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.CridGameLoveAdapter;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.mcxtzhang.layoutmanager.swipecard.CardConfig;
 import com.mcxtzhang.layoutmanager.swipecard.OverLayCardLayoutManager;
@@ -24,7 +24,7 @@ import butterknife.OnClick;
 /**
  * 仿人人网的卡片式布局
  */
-public class RecyclerViewAddHeader extends SwipeBackActivity {
+public class RecyclerViewAddHeader extends BaseActivity {
 
 
     @BindView(R.id.tv_type_one)

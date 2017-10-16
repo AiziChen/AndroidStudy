@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.GridViewAdapter;
 import com.cnsunrun.androidstudy.adapter.ViewPagerAdapter;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.sunrun.toollibrary.utils.CommonUtil;
 import com.sunrun.toollibrary.utils.ToastUtils;
@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 /**
  * 仿美团的更多分类功能
  */
-public class MoreClassificationActivity extends SwipeBackActivity {
+public class MoreClassificationActivity extends BaseActivity {
 
     @BindView(R.id.viewpager)
     ViewPager viewpager;

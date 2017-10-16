@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.QRCodeUtils;
 
 import butterknife.BindView;
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 /**
  * 状态栏的问题
  */
-public class StatusBarActivity extends SwipeBackActivity {
+public class StatusBarActivity extends BaseActivity {
 
 
     @BindView(R.id.edit_Message)

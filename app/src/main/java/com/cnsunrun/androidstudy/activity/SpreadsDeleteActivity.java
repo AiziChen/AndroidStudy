@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.SpreadsDeleteAdapter;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.view.HeanderSearchView;
 
@@ -27,7 +27,7 @@ import butterknife.OnClick;
 /**
  * 侧滑删除
  */
-public class SpreadsDeleteActivity extends SwipeBackActivity {
+public class SpreadsDeleteActivity extends BaseActivity {
 
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.LoadDialog;
 import com.cnsunrun.androidstudy.utils.SelectItemDailog;
@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectDialogActivity extends SwipeBackActivity {
+public class SelectDialogActivity extends BaseActivity {
     private static final String TAG = "SelectDialogActivity";
     @BindView(R.id.tv_type_one)
     TextView tvTypeOne;

@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
 import com.cnsunrun.androidstudy.fragment.ContactsFragment;
 import com.cnsunrun.androidstudy.fragment.HomeFragment;
 import com.cnsunrun.androidstudy.fragment.MessageFragment;

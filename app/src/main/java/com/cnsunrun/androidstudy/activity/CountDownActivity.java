@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.AreaCityDialog;
 
 import butterknife.BindView;
@@ -14,7 +14,7 @@ import butterknife.OnClick;
 /**
  * 省市区选择
  */
-public class CountDownActivity extends SwipeBackActivity {
+public class CountDownActivity extends BaseActivity {
 
 
     @BindView(R.id.tv_select_city)

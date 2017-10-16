@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.base.SwipeBackActivity;
+import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.view.CircleProgressBarView;
 import com.cnsunrun.androidstudy.view.WaveViewByBezier;
 import com.cnsunrun.androidstudy.view.WaveViewBySinCos;
@@ -18,7 +18,7 @@ import butterknife.OnClick;
 /**
  * 贝塞尔曲线的练习
  */
-public class MapActivity extends SwipeBackActivity {
+public class MapActivity extends BaseActivity {
 
     @BindView(R.id.tv_start)
     TextView tvStart;
