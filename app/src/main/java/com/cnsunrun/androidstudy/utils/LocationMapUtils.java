@@ -61,7 +61,7 @@ public class LocationMapUtils {
     /**
      * 定位的回调
      */
-    public static class LocationChangeListsner implements AMapLocationListener {
+    public static class LocationChangeListener implements AMapLocationListener {
 
         @Override
         public void onLocationChanged(AMapLocation aMapLocation) {

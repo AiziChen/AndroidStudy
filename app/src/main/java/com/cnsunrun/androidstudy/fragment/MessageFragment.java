@@ -118,10 +118,11 @@ public class MessageFragment extends BaseFragment {
      */
     private void localMap() {
         LocationMapUtils locationMapUtils = new LocationMapUtils(mContext);
-        locationMapUtils.initOnLocationMap(new LocationMapUtils.LocationChangeListsner() {
+        locationMapUtils.initOnLocationMap(new LocationMapUtils.LocationChangeListener() {
             @Override
             public void onLocationChanged(AMapLocation aMapLocation) {
                 if (aMapLocation != null && aMapLocation.getErrorCode() == 0) {
+                    //定位成功，执行以后操作
                     String address = aMapLocation.getAddress();
                     ToastUtils.showToast(address);
                 } else {
