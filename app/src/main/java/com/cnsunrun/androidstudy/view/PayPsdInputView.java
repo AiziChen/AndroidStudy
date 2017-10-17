@@ -18,7 +18,7 @@ import com.cnsunrun.androidstudy.R;
 
 /**
  * Created by ZhouBin on 2017/9/5.
- * Effect:
+ * Effect: 密码输入框
  */
 
 public class PayPsdInputView extends EditText {

@@ -28,7 +28,7 @@ public class ContactsFragment extends BaseFragment {
             "自定义星级评分条",
             "BGAQRCode_ZXing",
             "省市区选择",
-            "选择更换图像"
+            "选择更换图像和SwitchButton开关",
     };
 
     public static ContactsFragment newInstance() {

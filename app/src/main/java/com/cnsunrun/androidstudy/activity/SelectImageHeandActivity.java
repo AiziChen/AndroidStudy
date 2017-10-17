@@ -46,7 +46,7 @@ public class SelectImageHeandActivity extends BaseActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("更换用户图像");
+        initTitle("更换用户图像和SwitchButton");
 
     }
 
