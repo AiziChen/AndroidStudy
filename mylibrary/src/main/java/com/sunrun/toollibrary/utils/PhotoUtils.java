@@ -21,9 +21,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
-import com.sunrun.toollibrary.utils.FileUtils;
-import com.sunrun.toollibrary.utils.ToastUtils;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,7 +32,7 @@ public class PhotoUtils {
     public static final int REQUEST_CODE_FROM_CAMERA = 5001;
     public static final int REQUEST_CODE_FROM_ALBUM = 5002;
     public static final int REQUEST_CODE_CROP_PICTURE = 5003;
-    public  static final int DEFUALT_COMPRESS_SIZE = 150;
+    public static final int DEFUALT_COMPRESS_SIZE = 150;
 
     /**
      * 存放拍照图片的uri地址
@@ -69,7 +66,6 @@ public class PhotoUtils {
     }
 
 
-
     /**
      * 打开相机拍照获取图片
      */
@@ -93,11 +89,10 @@ public class PhotoUtils {
     }
 
 
-
     /**
      * 打开本地相册选取图片
      */
-    public  static void pickImageFromAlbum(final Activity activity) {
+    public static void pickImageFromAlbum(final Activity activity) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
@@ -145,7 +140,7 @@ public class PhotoUtils {
         }
 
 
-        return TextUtils.isEmpty(path)?getPath(context,uri):path;
+        return TextUtils.isEmpty(path) ? getPath(context, uri) : path;
     }
 
     //以下是关键，原本uri返回的是file:///...来着的，android4.4返回的是content:///...
@@ -190,7 +185,7 @@ public class PhotoUtils {
                 }
 
                 final String selection = "_id=?";
-                final String[] selectionArgs = new String[] {
+                final String[] selectionArgs = new String[]{
                         split[1]
                 };
 
@@ -214,7 +209,7 @@ public class PhotoUtils {
     }
 
     private static String getDataColumn(Context context, Uri uri, String selection,
-                                       String[] selectionArgs) {
+                                        String[] selectionArgs) {
 
         Cursor cursor = null;
         final String column = "_data";
@@ -251,13 +246,6 @@ public class PhotoUtils {
     private static boolean isGooglePhotosUri(Uri uri) {
         return "com.google.android.apps.photos.content".equals(uri.getAuthority());
     }
-
-
-
-
-
-
-
 
 
     /**
@@ -413,7 +401,6 @@ public class PhotoUtils {
         }
         return f.getAbsolutePath();
     }
-
 
 
 }
