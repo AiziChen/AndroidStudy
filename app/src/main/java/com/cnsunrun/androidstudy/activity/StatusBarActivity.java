@@ -15,7 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 状态栏的问题
+ * 二维码的相关操作
  */
 public class StatusBarActivity extends BaseActivity {
 

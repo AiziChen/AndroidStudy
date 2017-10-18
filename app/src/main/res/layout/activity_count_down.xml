@@ -9,31 +9,38 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="45dp"
         android:orientation="horizontal">
 
-
         <TextView
+            android:id="@+id/tv_select_type_one"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="选择城市:"
-            android:textColor="@color/text_color_333"
+            android:text="相册获取"
+            android:textColor="@color/text_color_666"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tv_select_city"
+            android:id="@+id/tv_select_type_two"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="8"
-            android:gravity="center_vertical"
-            android:text=""
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="拍照获取"
             android:textColor="@color/text_color_666"
             android:textSize="15sp" />
 
     </LinearLayout>
 
+    <View style="@style/divide_line_ebeb" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
 
 </LinearLayout>
