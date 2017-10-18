@@ -142,5 +142,57 @@
         <attr name="isOpened" format="boolean" />
     </declare-styleable>
 
+    <!--雷达图自定义-->
+    <declare-styleable name="CustomRadarChart">
+        <!-- 蜘蛛网线条宽度 -->
+        <attr name="radarLineWidth" format="dimension" />
+        <!-- 蜘蛛网颜色 -->
+        <attr name="radarLineColor" format="color" />
+        <!-- 半径分成N段-->
+        <attr name="radarLineSegments" format="integer" />
+        <!-- 文字颜色 -->
+        <attr name="radarTextColor" format="color" />
+        <!-- 文字字体大小-->
+        <attr name="radarTextSize" format="integer" />
+        <!-- 数据展示覆盖区域颜色 -->
+        <attr name="radarCoverColor" format="color" />
+    </declare-styleable>
 
+    <declare-styleable name="ArcView">
+        <attr name="arcColor" format="color" />
+        <attr name="arc_bgColor" format="color" />
+        <attr name="arc_textColor" format="color" />
+        <attr name="arc_textSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomDotIndicator">
+        <attr name="dotColor" format="color" />
+        <attr name="dotRadius" format="dimension" />
+        <attr name="dotFillOrStroke" format="integer" />
+        <attr name="dotStrokeWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomRectangleIndicator">
+        <attr name="rectColor" format="color" />
+        <attr name="rectHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTriangleIndicator">
+        <attr name="triangleColor" format="color" />
+        <attr name="triangleWidth" format="dimension" />
+        <attr name="triangleHeight" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomViewGroup">
+        <attr name="custom_gravity" />
+
+    </declare-styleable>
+    <attr name="custom_gravity">
+        <flag name="top" value="0x30" />
+        <flag name="right" value="0x05" />
+        <flag name="bottom" value="0x50" />
+        <flag name="left" value="0x03" />
+
+    </attr>
 </resources>
