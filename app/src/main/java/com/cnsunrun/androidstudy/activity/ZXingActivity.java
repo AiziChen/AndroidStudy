@@ -91,7 +91,7 @@ public class ZXingActivity extends BaseActivity {
             ivErcodeImage.setImageBitmap(bitmap);
             type = 2;
         } else if (type == 2) {
-            String textMes = "Happy birthday, my dear!Although not always accompany in your side, but can't I moments of one's affection for you. You are a good girl, is worth me to care, although I couldn't say a special moving down to coax you happy, but I will use my practical action to prove my love for you!";
+            String textMes = getString(R.string.er_code_mes);
             Bitmap bitmap = QRCodeUtils.createQRCode(textMes);
             ivErcodeImage.setImageBitmap(bitmap);
             type = 3;
