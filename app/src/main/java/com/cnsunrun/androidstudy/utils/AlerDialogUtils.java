@@ -178,12 +178,10 @@ public class AlerDialogUtils {
             public void click(String number) {
                 password_edit_text.addpassword(number);
             }
-
             @Override
             public void delete() {
                 password_edit_text.deleteLastPassword();
             }
-
         });
         return passwordEditDialog;
     }

@@ -51,13 +51,11 @@ public class MessageFragment extends BaseFragment {
         Bundle bundle = new Bundle();
         homeFragment.setArguments(bundle);
         return homeFragment;
-
     }
 
     @Override
     protected View loadViewLayout(LayoutInflater inflater, ViewGroup container) {
         View rootView = inflater.inflate(R.layout.message_fragment, null);
-
         return rootView;
     }
 
