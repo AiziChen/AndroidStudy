@@ -1,71 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<cn.hugeterry.coordinatortablayout.CoordinatorTabLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_map"
+    android:id="@+id/coordinatortablayout"
     android:layout_width="match_parent"
-    android:screenOrientation="landscape"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/include_titlebar"></include>
-
-    <LinearLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tv_start"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="开始"
-            android:textColor="@color/text_color_666"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tv_pause"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="暂停"
-            android:textColor="@color/text_color_666"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tv_stop"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="停止"
-            android:textColor="@color/text_color_666"
-            android:textSize="15sp" />
-
-    </LinearLayout>
-
-    <com.cnsunrun.androidstudy.view.WaveViewByBezier
-        android:id="@+id/wave_view_bezier"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_marginTop="10dp" />
-
-    <com.cnsunrun.androidstudy.view.WaveViewBySinCos
-        android:id="@+id/wave_view_besincos"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_marginTop="10dp" />
-
-    <com.cnsunrun.androidstudy.view.CircleProgressBarView
-        android:id="@+id/circle_progressbar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        app:circleBgColor="@color/bg_color"
-        app:progressColor="@color/blue_color" />
-
-
-</LinearLayout>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</cn.hugeterry.coordinatortablayout.CoordinatorTabLayout>

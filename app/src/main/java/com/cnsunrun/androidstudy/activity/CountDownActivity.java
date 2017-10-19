@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.actionbar.StatusBarUtils;
 import com.cnsunrun.androidstudy.adapter.SelectImageViewAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.GlideSelectImageLoader;
@@ -46,7 +47,7 @@ public class CountDownActivity extends BaseActivity {
     protected void loadViewLayout() {
         setContentView(R.layout.activity_count_down);
         ButterKnife.bind(this);
-
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.start_color), 0);
     }
 
     @Override

@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * popupWindow的练习和封装
+ * 能力雷达图
  */
 public class DropdownSelectActivity extends BaseActivity {
 
@@ -37,7 +37,7 @@ public class DropdownSelectActivity extends BaseActivity {
     @Override
     protected void bindViews() {
         TitleBuilder titleBuilder = new TitleBuilder(this);
-        titleBuilder.setTitleText("PopupWindow的练习");
+        titleBuilder.setTitleText("能力雷达图");
         titleBuilder.setRightImageVisib(View.VISIBLE);
         titleBuilder.setRightOnClickListener(new View.OnClickListener() {
             @Override

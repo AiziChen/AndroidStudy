@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.actionbar.StatusBarUtils;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.AlerDialogUtils;
 import com.cnsunrun.androidstudy.utils.SelectItemDailog;
@@ -42,6 +43,7 @@ public class SelectImageHeandActivity extends BaseActivity {
     protected void loadViewLayout() {
         setContentView(R.layout.activity_select_image_heand);
         ButterKnife.bind(this);
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.start_color), 0);
     }
 
     @Override

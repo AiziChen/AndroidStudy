@@ -9,14 +9,12 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.SeekBar;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.adapter.GridViewAdapter;
 import com.cnsunrun.androidstudy.adapter.ViewPagerAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
-import com.cnsunrun.androidstudy.view.ArcView;
 import com.sunrun.toollibrary.utils.CommonUtil;
 import com.sunrun.toollibrary.utils.ToastUtils;
 
@@ -35,10 +33,6 @@ public class MoreClassificationActivity extends BaseActivity {
     ViewPager viewpager;
     @BindView(R.id.ll_dot)
     LinearLayout llDot;
-    @BindView(R.id.sb_indicator)
-    SeekBar sbIndicator;
-    @BindView(R.id.av_progress)
-    ArcView avProgress;
     private List<ProductMes> mDatas = new ArrayList<>();
     // 总的页数
     private int pageCount;
@@ -85,8 +79,6 @@ public class MoreClassificationActivity extends BaseActivity {
         for (int i = 0; i < imageList.length; i++) {
             mDatas.add(new ProductMes(imageList[i], "数据" + i));
         }
-        sbIndicator.setMax(100);
-        avProgress.setMaxProgress(sbIndicator.getMax());
     }
 
     @Override
@@ -155,23 +147,5 @@ public class MoreClassificationActivity extends BaseActivity {
 
             }
         });
-
-        sbIndicator.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                avProgress.setProgress(progress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
     }
 }

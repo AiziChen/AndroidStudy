@@ -1,124 +1,81 @@
 package com.cnsunrun.androidstudy.activity;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.MenuItem;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.adapter.TitlePagerAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
-import com.cnsunrun.androidstudy.view.CircleProgressBarView;
-import com.cnsunrun.androidstudy.view.WaveViewByBezier;
-import com.cnsunrun.androidstudy.view.WaveViewBySinCos;
+import com.cnsunrun.androidstudy.fragment.TabLayoutFragment;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
+import cn.hugeterry.coordinatortablayout.CoordinatorTabLayout;
 
 /**
- * 贝塞尔曲线的练习
+ * 折叠控件
  */
 public class MapActivity extends BaseActivity {
 
-    @BindView(R.id.tv_start)
-    TextView tvStart;
-    @BindView(R.id.tv_pause)
-    TextView tvPause;
-    @BindView(R.id.tv_stop)
-    TextView tvStop;
-    @BindView(R.id.wave_view_bezier)
-    WaveViewByBezier waveViewBezier;
-    @BindView(R.id.wave_view_besincos)
-    WaveViewBySinCos waveViewBesincos;
-    @BindView(R.id.circle_progressbar)
-    CircleProgressBarView circleProgressbar;
+
+    @BindView(R.id.vp)
+    ViewPager vp;
+    @BindView(R.id.coordinatortablayout)
+    CoordinatorTabLayout coordinatortablayout;
+    private ArrayList<Fragment> mFragments;
+    private final String[] mTitles = {"任务详情", "查看评价", "个人信息", "个人相册"};
+    private int[] mImageArray, mColorArray;
 
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_map);
         ButterKnife.bind(this);
-
     }
 
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus && Build.VERSION.SDK_INT >= 19) {
-            View decorView = getWindow().getDecorView();
-            decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        }
-    }
 
     @Override
     protected void bindViews() {
-        initTitle("贝塞尔曲线的练习");
     }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-
-
-        circleProgressbar.setProgressWithAnimation(60);
-
+        mFragments = new ArrayList<>();
+        for (String title : mTitles) {
+            mFragments.add(TabLayoutFragment.newInstance(title));
+        }
+        vp.setAdapter(new TitlePagerAdapter(getSupportFragmentManager(), mFragments, mTitles));
+        vp.setOffscreenPageLimit(4);
+        mImageArray = new int[]{
+                R.drawable.ic_image01,
+                R.drawable.ic_image02,
+                R.drawable.ic_image01,
+                R.drawable.ic_image02,
+        };
+        mColorArray = new int[]{
+                android.R.color.holo_blue_light,
+                android.R.color.holo_red_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_green_light};
+        coordinatortablayout.setTransulcentStatusBar(this)
+                .setTitle("折叠控件")
+                .setBackEnable(true)
+                .setImageArray(mImageArray, mColorArray)
+                .setupWithViewPager(vp);
     }
 
     @Override
     protected void setListener() {
-        circleProgressbar.setProgressListener(new CircleProgressBarView.ProgressListener() {
-            @Override
-            public void currentProgressListener(float currentProgress) {
-
-            }
-        });
     }
 
-    /**
-     * 开始
-     */
-    private void start() {
-        waveViewBezier.startAnimation();
-        waveViewBesincos.startAnimation();
-        circleProgressbar.startProgressAnimation();
-
-
-    }
-
-    /**
-     * 暂停
-     */
-    private void pause() {
-        waveViewBezier.pauseAnimation();
-        waveViewBesincos.pauseAnimation();
-        circleProgressbar.pauseProgressAnimation();
-    }
-
-    /**
-     * 停止
-     */
-    private void stop() {
-        waveViewBezier.stopAnimation();
-        waveViewBesincos.stopAnimation();
-        circleProgressbar.stopProgressAnimation();
-    }
-
-    @OnClick({R.id.tv_start, R.id.tv_pause, R.id.tv_stop})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.tv_start:
-                start();
-                break;
-            case R.id.tv_pause:
-                pause();
-                break;
-            case R.id.tv_stop:
-                stop();
-                break;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
         }
+        return super.onOptionsItemSelected(item);
     }
 }

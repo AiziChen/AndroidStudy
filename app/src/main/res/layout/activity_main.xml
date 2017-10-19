@@ -1,45 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_titlebar"></include>
+    <com.cnsunrun.androidstudy.view.ArcHeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="260dp" />
 
-    <com.cnsunrun.androidstudy.widgtet.RatingBar
-        android:id="@+id/ratingBar01"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        app:starCount="5"
-        app:starEmpty="@drawable/ic_xinxin_kon"
-        app:starFill="@drawable/ic_xinxin_quan"
-        app:starHalf="@drawable/ic_xinxin_banke"
-        app:starImageSize="35dp"
-        app:starPadding="15dp"
-        app:starStep="0"
-        app:stepSize="Full" />
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
 
-    <com.cnsunrun.androidstudy.widgtet.RatingBar
-        android:id="@+id/ratingBar02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        app:clickable="false"
-        app:starCount="5"
-        app:starEmpty="@drawable/ic_xinxin_kon"
-        app:starFill="@drawable/ic_xinxin_quan"
-        app:starHalf="@drawable/ic_xinxin_banke"
-        app:starImageSize="20dp"
-        app:starPadding="10dp"
-        app:starStep="0"
-        app:stepSize="Full" />
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:visibility="visible"
+            app:indicator_drawable_selected="@drawable/sel_banner_show"
+            app:indicator_drawable_unselected="@drawable/sel_banner_hide" />
+
+    </LinearLayout>
 
 
-</LinearLayout>
+</FrameLayout>

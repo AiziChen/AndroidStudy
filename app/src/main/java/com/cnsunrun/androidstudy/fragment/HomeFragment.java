@@ -35,7 +35,7 @@ public class HomeFragment extends BaseFragment {
             "流式布局和微信群聊图像展示",
             "SegmentTabLayout的使用",
             "superTextView的使用",
-            "贝塞尔曲线的练习",
+            "折叠控件 ",
             "仿人人网的卡片式布局",
             "SlidingTabLayout使用",
             "置顶的ScrollableLayout",

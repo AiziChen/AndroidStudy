@@ -46,7 +46,6 @@ public class StatusBarActivity extends BaseActivity {
                 }
             }
         });
-
     }
 
     @Override

@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.view.TitleBuilder;
-import com.jaeger.library.StatusBarUtil;
 import com.sunrun.toollibrary.LibActivity;
 
 /**

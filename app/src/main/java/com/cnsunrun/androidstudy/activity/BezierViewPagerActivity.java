@@ -5,6 +5,7 @@ import android.os.Vibrator;
 import android.widget.Toast;
 
 import com.cnsunrun.androidstudy.R;
+import com.cnsunrun.androidstudy.actionbar.StatusBarUtils;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 
 import butterknife.BindView;
@@ -24,6 +25,7 @@ public class BezierViewPagerActivity extends BaseActivity implements QRCodeView.
     protected void loadViewLayout() {
         setContentView(R.layout.activity_bezier_view_pager);
         ButterKnife.bind(this);
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.start_color), 0);
     }
 
     @Override

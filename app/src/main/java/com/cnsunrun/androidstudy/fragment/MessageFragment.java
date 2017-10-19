@@ -37,7 +37,7 @@ public class MessageFragment extends BaseFragment {
             "支付宝支付",
             "高德地图定位",
             "输入密码框",
-            "选择Window的对话框",
+            "能力雷达图",
             "仿美团的更多分类功能",
             "自定义选择框",
             "侧滑删除Item",

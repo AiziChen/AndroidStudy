@@ -25,7 +25,7 @@ public class ContactsFragment extends BaseFragment {
     private ListView listView;
 
     private String[] titles = {
-            "自定义星级评分条",
+            "圆弧形标题控件",
             "BGAQRCode_ZXing",
             "多张图片选择",
             "选择更换图像和SwitchButton开关",
