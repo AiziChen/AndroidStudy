@@ -48,6 +48,12 @@ public class StatusBarUtils {
         setRootView(activity);
     }
 
+    /**
+     * imageView作为头部
+     * @param activity
+     * @param alpha
+     * @param needOffsetView
+     */
     public static void setTranslucentImageHeader(Activity activity, int alpha, View needOffsetView) {
         setFullScreen(activity);
         //获取windowphone下的decorView
@@ -130,6 +136,10 @@ public class StatusBarUtils {
         return 0xff << 24 | red << 16 | green << 8 | blue;
     }
 
+    /**
+     * 全屏显示
+     * @param activity
+     */
     public static void setFullScreen(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = activity.getWindow();
