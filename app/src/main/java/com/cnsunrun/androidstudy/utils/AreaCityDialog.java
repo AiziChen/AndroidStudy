@@ -18,6 +18,7 @@ import java.util.List;
 /**
  * Created by ZhouBin on 2017/9/29.
  * Effect:  省市区三级选择的控件
+ * 有bug,会出现下标越界的情况，数据库查询的结果
  */
 
 public class AreaCityDialog {

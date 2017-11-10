@@ -17,7 +17,6 @@ import java.util.List;
 
 public class AlerDialogUtils {
 
-
     public static AlerDialogUtils alerDialogUtils;
 
     public AlerDialogUtils() {
