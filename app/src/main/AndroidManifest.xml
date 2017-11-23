@@ -86,7 +86,7 @@
         <!-- 微信支付结束 -->
 
 
-        <!--7.0下相机拍照配置开始 -->
+        <!-- 7.0下相机拍照配置开始 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -96,7 +96,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-        <!--7.0下相机拍照配置结束-->
+        <!-- 7.0下相机拍照配置结束 -->
 
 
         <!-- 高德地图 -->
@@ -111,8 +111,6 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
-
-
             <intent-filter>
                 <data android:scheme="tencent1106208563" />
 
@@ -121,7 +119,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
 
             <!-- 调用新浪原生SDK，需要注册的回调activity -->
             <intent-filter>
@@ -179,7 +176,8 @@
         <activity android:name=".activity.StatusBarActivity" />
         <activity android:name=".activity.BezierViewPagerActivity" />
         <activity android:name=".activity.CountDownActivity" />
-        <activity android:name=".activity.SelectImageHeandActivity"></activity>
+        <activity android:name=".activity.SelectImageHeandActivity" />
+        <activity android:name=".activity.HorizontalStepViewActivity"></activity>
     </application>
 
 </manifest>

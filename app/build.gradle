@@ -31,54 +31,74 @@ dependencies {
     compile project(':mylibrary')
 //    compile project(':library')
     compile project(':authorloginandshare')
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:recyclerview-v7:25.0.0'
-    compile 'com.android.support:cardview-v7:25.0.0'
-    compile 'com.jakewharton:butterknife:8.5.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.9'
-    compile 'com.lcodecorex:tkrefreshlayout:1.0.7'    //下拉刷新控件
-    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'  //glide
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
-    compile 'com.youth.banner:banner:1.4.9' //轮播控件
-    compile 'com.zhy:flowlayout-lib:1.0.3'    //流式布局
-    compile 'com.nineoldandroids:library:2.4.0'   //多样式tablayout
-    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.0@aar'
-    compile 'com.android.support:design:25.0.1'
-    compile 'com.bigkoo:convenientbanner:2.0.5'     //轮播控件
+    //下拉刷新控件
+    //glide
+    //轮播控件
+    //流式布局
+    //多样式tablayout
+    //轮播控件
     compile files('libs/AMap3DMap_5.2.0_AMapSearch_5.1.0_AMapLocation_3.4.0_20170602.jar')  //高德地图
-    compile 'me.weyye.hipermission:library:1.0.6'   //权限
-    compile 'com.jaeger.statusbarutil:library:1.4.0'  //状态栏
-    compile 'com.makeramen:roundedimageview:2.3.0'  //圆角图片
+    //权限
+    //状态栏
+    //圆角图片
     compile files('libs/alipaySdk-20170710.jar') //支付宝
     compile files('libs/libammsdk.jar')   //微信
-    compile 'com.lzy.widget:ninegridview:0.2.0'  //九宫格控件
-    compile 'ru.noties:scrollable:1.3.0'  //上拉置顶
-    compile 'com.contrarywind:Android-PickerView:3.2.5' //时间选择器和省市区三级选择
+    //九宫格控件
+    //上拉置顶
+    //时间选择器和省市区三级选择
 
-    compile 'com.wx.wheelview:wheelview:1.3.3' //省市区选择控件
+    //省市区选择控件
 
-    compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5' //侧滑删除
+    //侧滑删除
 
-    compile 'com.journeyapps:zxing-android-embedded:3.5.0' //二维码的生成和扫描
+    //二维码的生成和扫描
 
-    compile 'com.github.lygttpod:SuperTextView:2.1.3'    //万能的textview
+    //万能的textview
 
-    compile 'com.google.zxing:core:3.2.1'     //二维码
-    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
-    compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
+    //二维码
 
-    compile 'com.github.mcxtzhang:ZLayoutManager:V1.1.0'
+    //指定版本
 
-    compile 'com.lzy.widget:imagepicker:0.6.1'  //指定版本
+    //水平进度条
 
-    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.1.0'
-    
     android {
         useLibrary 'org.apache.http.legacy'
     }
 
 
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:recyclerview-v7:25.0.0'
+    compile 'com.android.support:cardview-v7:25.0.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.9'
+    compile 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
+    compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.zhy:flowlayout-lib:1.0.3'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.0@aar'
+    compile 'com.android.support:design:25.0.1'
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'me.weyye.hipermission:library:1.0.6'
+    compile 'com.jaeger.statusbarutil:library:1.4.0'
+    compile 'com.makeramen:roundedimageview:2.3.0'
+    compile 'com.lzy.widget:ninegridview:0.2.0'
+    compile 'ru.noties:scrollable:1.3.0'
+    compile 'com.contrarywind:Android-PickerView:3.2.5'
+    compile 'com.wx.wheelview:wheelview:1.3.3'
+    compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5'
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0'
+    compile 'com.github.lygttpod:SuperTextView:2.1.3'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
+    compile 'com.github.mcxtzhang:ZLayoutManager:V1.1.0'
+    compile 'com.lzy.widget:imagepicker:0.6.1'
+    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.1.0'
+    compile 'com.anton46:stepsview:0.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
 }
