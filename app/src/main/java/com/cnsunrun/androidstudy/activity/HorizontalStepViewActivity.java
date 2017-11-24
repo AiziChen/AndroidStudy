@@ -2,24 +2,25 @@ package com.cnsunrun.androidstudy.activity;
 
 import android.os.Bundle;
 
-import com.anton46.stepsview.StepsView;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.BaseActivity;
+import com.githang.stepview.StepView;
+
+import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HorizontalStepViewActivity extends BaseActivity {
 
-    @BindView(R.id.stepsView)
-    StepsView stepsView;
 
+    @BindView(R.id.step_view)
+    StepView stepView;
 
     @Override
     protected void loadViewLayout() {
         setContentView(R.layout.activity_horizontal_step_view);
         ButterKnife.bind(this);
-
 
     }
 
@@ -30,14 +31,9 @@ public class HorizontalStepViewActivity extends BaseActivity {
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-        String[] steps = {"刘德华", "周星驰", "成龙", "张曼玉", "林青霞"};
 
-        stepsView.setLabels(steps)
-                .setBarColorIndicator(mContext.getResources().getColor(R.color.material_blue_grey_800))
-                .setProgressColorIndicator(mContext.getResources().getColor(R.color.orange))
-                .setLabelColorIndicator(mContext.getResources().getColor(R.color.orange))
-                .setCompletedPosition(3)
-                .drawView();
+        stepView.setSteps(Arrays.asList("张靓颖", "霉霉", "贾斯汀", "阿黛尔", "水果姐"));
+        stepView.selectedStep(3);
     }
 
     @Override

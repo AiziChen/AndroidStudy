@@ -31,35 +31,10 @@ dependencies {
     compile project(':mylibrary')
 //    compile project(':library')
     compile project(':authorloginandshare')
-    //下拉刷新控件
-    //glide
-    //轮播控件
-    //流式布局
-    //多样式tablayout
-    //轮播控件
     compile files('libs/AMap3DMap_5.2.0_AMapSearch_5.1.0_AMapLocation_3.4.0_20170602.jar')  //高德地图
-    //权限
-    //状态栏
-    //圆角图片
     compile files('libs/alipaySdk-20170710.jar') //支付宝
     compile files('libs/libammsdk.jar')   //微信
-    //九宫格控件
-    //上拉置顶
-    //时间选择器和省市区三级选择
 
-    //省市区选择控件
-
-    //侧滑删除
-
-    //二维码的生成和扫描
-
-    //万能的textview
-
-    //二维码
-
-    //指定版本
-
-    //水平进度条
 
     android {
         useLibrary 'org.apache.http.legacy'
@@ -101,4 +76,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
+    compile 'com.githang:stepview:0.1'
 }

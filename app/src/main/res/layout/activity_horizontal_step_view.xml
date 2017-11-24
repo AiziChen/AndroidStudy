@@ -9,10 +9,18 @@
     <include layout="@layout/include_titlebar" />
 
 
-    <com.anton46.stepsview.StepsView
-        android:id="@+id/stepsView"
+    <com.githang.stepview.StepView
+        android:id="@+id/step_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        app:svCircleColor="@color/bg_color"
+        app:svFillRadius="10dp"
+        app:svLineWidth="5dp"
+        app:svSelectedColor="@color/orange_90"
+        app:svStrokeWidth="1dp" />
 
 
 </LinearLayout>
