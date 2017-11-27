@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
+import com.cnsunrun.androidstudy.adapter.CardViewAdapter;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
@@ -27,7 +27,7 @@ public class CridViewActivity extends BaseActivity {
     @BindView(R.id.twinklingLayout)
     TwinklingRefreshLayout refreshLayout;
     private List<ProductMes> mDatas = new ArrayList<>();
-    private CridViewAdapter adapter;
+    private CardViewAdapter adapter;
 
 
     @Override
@@ -64,7 +64,7 @@ public class CridViewActivity extends BaseActivity {
         for (int i = 0; i < imageList.length; i++) {
             mDatas.add(new ProductMes(imageList[i], "测试数据" + i));
         }
-        adapter = new CridViewAdapter(mDatas);
+        adapter = new CardViewAdapter(mDatas);
         recyclerview.setLayoutManager(new LinearLayoutManager(CridViewActivity.this));
         SinaRefreshView headerView = new SinaRefreshView(this);
         headerView.setArrowResource(R.drawable.arrow);

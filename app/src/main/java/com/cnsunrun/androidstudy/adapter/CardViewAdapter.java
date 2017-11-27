@@ -15,10 +15,10 @@ import java.util.List;
  * Effect:CridView的adapter
  */
 
-public class CridViewAdapter extends BaseQuickAdapter<ProductMes, BaseViewHolder> {
+public class CardViewAdapter extends BaseQuickAdapter<ProductMes, BaseViewHolder> {
 
 
-    public CridViewAdapter(List<ProductMes> data) {
+    public CardViewAdapter(List<ProductMes> data) {
         super(R.layout.item_cridview, data);
     }
 

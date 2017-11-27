@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cnsunrun.androidstudy.R;
-import com.cnsunrun.androidstudy.adapter.CridViewAdapter;
+import com.cnsunrun.androidstudy.adapter.CardViewAdapter;
 import com.cnsunrun.androidstudy.model.ProductMes;
 import com.cnsunrun.androidstudy.utils.ConstantValue;
 import com.sunrun.toollibrary.LibFragment;
@@ -28,8 +28,8 @@ public class TabLayoutFragment extends LibFragment {
     private TextView tvTitle;
     private String title;
     private RecyclerView recyclerview;
-    private List<ProductMes> mDatas = new ArrayList<>();
-    private CridViewAdapter adapter;
+    private List<ProductMes> mDates = new ArrayList<>();
+    private CardViewAdapter adapter;
 
     public static TabLayoutFragment newInstance(String title) {
         TabLayoutFragment fragment = new TabLayoutFragment();
@@ -75,9 +75,9 @@ public class TabLayoutFragment extends LibFragment {
                 "http://s1.cdn.xiachufang.com/af570278afe611e6bc9d0242ac110002_1280w_962h.jpg"
         };
         for (int i = 0; i < imageList.length; i++) {
-            mDatas.add(new ProductMes(imageList[i], "测试数据" + i));
+            mDates.add(new ProductMes(imageList[i], "测试数据" + i));
         }
-        adapter = new CridViewAdapter(mDatas);
+        adapter = new CardViewAdapter(mDates);
         recyclerview.setAdapter(adapter);
         recyclerview.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false));
 
