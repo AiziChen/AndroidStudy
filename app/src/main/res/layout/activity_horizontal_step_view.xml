@@ -22,5 +22,43 @@
         app:svSelectedColor="@color/orange_90"
         app:svStrokeWidth="1dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_tye_one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="类型一"
+            android:textColor="@color/blue_color"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_type_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="类型二"
+            android:textColor="@color/blue_color"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_type_three"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="类型三"
+            android:textColor="@color/blue_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -30,7 +30,7 @@ public class ContactsFragment extends BaseFragment {
             "BGAQRCode_ZXing",
             "多张图片选择",
             "选择更换图像和SwitchButton开关",
-            "水平进度步骤"
+            "水平进度步骤",
     };
 
     public static ContactsFragment newInstance() {
