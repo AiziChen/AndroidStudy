@@ -177,7 +177,8 @@
         <activity android:name=".activity.BezierViewPagerActivity" />
         <activity android:name=".activity.CountDownActivity" />
         <activity android:name=".activity.SelectImageHeandActivity" />
-        <activity android:name=".activity.HorizontalStepViewActivity"></activity>
+        <activity android:name=".activity.HorizontalStepViewActivity" />
+        <activity android:name=".activity.FontLibraryUsageActivity"></activity>
     </application>
 
 </manifest>

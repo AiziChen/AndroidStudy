@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.activity.BezierViewPagerActivity;
 import com.cnsunrun.androidstudy.activity.CountDownActivity;
+import com.cnsunrun.androidstudy.activity.FontLibraryUsageActivity;
 import com.cnsunrun.androidstudy.activity.HorizontalStepViewActivity;
 import com.cnsunrun.androidstudy.activity.MainActivity;
 import com.cnsunrun.androidstudy.activity.SelectImageHeandActivity;
@@ -31,6 +32,7 @@ public class ContactsFragment extends BaseFragment {
             "多张图片选择",
             "选择更换图像和SwitchButton开关",
             "水平进度步骤",
+            "字体库的使用"
     };
 
     public static ContactsFragment newInstance() {
@@ -77,6 +79,9 @@ public class ContactsFragment extends BaseFragment {
                         break;
                     case 4:
                         intent2Activity(HorizontalStepViewActivity.class);
+                        break;
+                    case 5:
+                        intent2Activity(FontLibraryUsageActivity.class);
                         break;
                 }
             }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_titlebar" />
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/stv_12"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="空心文字"
+        android:textSize="18sp"
+        app:solid="#EEF3E2"
+        app:text_fill_color="@color/transparent"
+        app:text_stroke="true"
+        app:text_stroke_color="#811D99"
+        app:text_stroke_width="1dp" />
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/stv_13"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="文字描边"
+        android:textSize="18sp"
+        app:solid="#D9B0E2"
+        app:text_fill_color="@color/white"
+        app:text_stroke="true"
+        app:text_stroke_color="#461B50"
+        app:text_stroke_width="1dp" />
+
+    <com.coorchice.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="按照时间排序"
+        android:textSize="15sp"
+        app:solid="#ffbb33"
+        app:text_fill_color="#ff4040"
+        app:text_stroke="true"
+        app:text_stroke_color="#4e2206"
+        app:text_stroke_width="2dp" />
+
+    <com.coorchice.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="5000"
+        android:textSize="26sp"
+        app:solid="#ffbb33"
+        app:text_fill_color="#ff4040"
+        app:text_stroke="true"
+        app:text_stroke_color="#4e2206"
+        app:text_stroke_width="2dp" />
+
+    <com.coorchice.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="按照积分排序"
+        android:textSize="16sp"
+        app:solid="#EEF3E2"
+        app:text_fill_color="#f6f6f5"
+        app:text_stroke="true"
+        app:text_stroke_color="#4e2e1f"
+        app:text_stroke_width="1dp" />
+
+    <com.coorchice.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="哈士奇公仔"
+        android:textSize="16sp"
+        app:solid="#ffffff"
+        app:text_fill_color="#f6f6f5"
+        app:text_stroke="true"
+        app:text_stroke_color="#4e2e1f"
+        app:text_stroke_width="2dp" />
+
+
+</LinearLayout>

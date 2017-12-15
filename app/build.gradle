@@ -73,8 +73,9 @@ dependencies {
     compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.1.0'
     compile 'com.anton46:stepsview:0.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.githang:stepview:0.1'
+    compile 'com.github.chenBingX:SuperTextView:v1.4'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
-    compile 'com.githang:stepview:0.1'
 }
