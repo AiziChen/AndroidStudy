@@ -14,9 +14,6 @@ import android.support.v4.app.DialogFragment;
 import android.view.Window;
 import android.view.WindowManager;
 
-/**
- * Created by Haoz on 2017/4/6 0006.
- */
 
 public class CommonDialogFragment extends DialogFragment {
 

@@ -92,29 +92,6 @@ public class YaSuoImageViewActivity extends BaseActivity {
         tabLayout.setTabData(mTabEntities);
         viewpager.setOffscreenPageLimit(mTitles.length);
 
-        //两位数
-//        tabLayout.showMsg(0, 55);
-//        tabLayout.setMsgMargin(0, -5, 5);
-//
-//        //三位数
-//        tabLayout.showMsg(1, 100);
-//        tabLayout.setMsgMargin(1, -5, 5);
-//
-//        //设置未读消息红点
-//        tabLayout.showDot(2);
-//        MsgView rtv_2_2 = tabLayout.getMsgView(2);
-//        if (rtv_2_2 != null) {
-//            UnreadMsgUtils.setSize(rtv_2_2, CommonUtil.dip2px(mContext, 7.5f));
-//        }
-//
-//        //设置未读消息背景
-//        tabLayout.showMsg(3, 5);
-//        tabLayout.setMsgMargin(3, 0, 5);
-//        MsgView rtv_2_3 = tabLayout.getMsgView(3);
-//        if (rtv_2_3 != null) {
-//            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
-//        }
-
     }
 
     @Override

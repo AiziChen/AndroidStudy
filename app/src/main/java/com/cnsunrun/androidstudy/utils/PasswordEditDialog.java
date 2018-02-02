@@ -77,7 +77,6 @@ public class PasswordEditDialog extends Dialog {
 
     /**
      * 设置标题
-     *
      * @param title
      */
     public void setTitle(String title) {
