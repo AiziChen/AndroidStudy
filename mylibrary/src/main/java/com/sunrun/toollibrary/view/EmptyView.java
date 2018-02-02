@@ -11,9 +11,6 @@ import android.widget.TextView;
 import com.sunrun.toollibrary.R;
 
 
-/**
- * Created by RayYeung on 2016/8/18.
- */
 public class EmptyView extends RelativeLayout {
 
     private ImageView ivHint;

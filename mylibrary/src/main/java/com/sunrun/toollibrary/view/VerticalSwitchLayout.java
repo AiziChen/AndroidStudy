@@ -41,13 +41,9 @@ public class VerticalSwitchLayout extends LinearLayout implements View.OnClickLi
         View.inflate(getContext(), R.layout.layout_vertical_switch, this);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         tvContent = (TextView) findViewById(R.id.tvContent);
-
         setOnClickListener(this);
-
-
         measure(0, 0);
         int height = getMeasuredHeight();
-
         final ObjectAnimator inAnimator = ObjectAnimator.ofFloat(tvContent, "translationY", height, 0);
         inAnimator.setDuration(switchDuaration);
         inAnimator.addListener(new Animator.AnimatorListener() {
