@@ -34,7 +34,7 @@ public class ContactsFragment extends BaseFragment {
             "选择更换图像和SwitchButton开关",
             "水平进度步骤",
             "字体库的使用",
-            "手势监听的练习"
+            "自定义圆环控件"
     };
 
     public static ContactsFragment newInstance() {
