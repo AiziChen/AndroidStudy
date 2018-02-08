@@ -47,7 +47,7 @@ public class NineGridImageView<T> extends ViewGroup {
     public NineGridImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NineGridImageView);
-        this.mGap = (int) typedArray.getDimension(R.styleable.NineGridImageView_imgGap, CommonUtil.dip2px(context, 2));
+        this.mGap = (int) typedArray.getDimension(R.styleable.NineGridImageView_imgGap, CommonUtil.dip2px(context, 1.5f));
         typedArray.recycle();
     }
 
