@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.cnsunrun.androidstudy.R;
 import com.cnsunrun.androidstudy.base.BaseActivity;
 import com.cnsunrun.androidstudy.utils.QRCodeUtils;
+import com.cnsunrun.androidstudy.view.TitleBuilder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,7 +34,7 @@ public class StatusBarActivity extends BaseActivity {
 
     @Override
     protected void bindViews() {
-        initTitle("二维码").setRightText("保存").setRightOnClickListener(new View.OnClickListener() {
+        initTitle("二维码").setRightText("生成").setRightOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String erCodeMes = editMessage.getText().toString().trim();
